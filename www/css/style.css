@@ -33,6 +33,7 @@ body{
 
     width:560px;
 
+
     background:white;
 
     border:none;
@@ -130,12 +131,18 @@ label{
     height:60px;
 
     border:none;
+
 }
 
 .btn-login:hover{
     background:#ff6b1d;
 
     color:white;
+
+    transform: translateY(-2px);
+    
+    box-shadow: 0 8px 20px rgba(255, 90, 0, .25);
+
 }
 
 .divisor{
@@ -201,10 +208,15 @@ footer{
     color:#666;
 
     font-size:18px;
+
+    text-align:center;
+
+    position:relative;
+
+    z-index:2;
 }
 
 .bg-top{
-
     position:absolute;
 
     top:0;
@@ -218,11 +230,9 @@ footer{
     pointer-events:none;
 
     z-index:0;
-
 }
 
 .bg-bottom{
-
     position:absolute;
 
     bottom:0;
@@ -236,5 +246,4 @@ footer{
     pointer-events:none;
 
     z-index:0;
-
 }

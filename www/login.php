@@ -26,9 +26,9 @@
     <img src="imagens/bg-top.svg" class="bg-top" alt="">
     <img src="imagens/bg-bottom.svg" class="bg-bottom" alt="">
 
-<form method="POST" action="telaPrincipal.php">
+    <div class="login-box">
 
-    <fieldset class="login-box">
+    <form method="POST" action="telaPrincipal.php">
 
         <img src="Imagens/Logo_sem_fundo.png" alt="Logo" class="logo">
 
@@ -112,10 +112,8 @@
             </a>
 
         </div>
-
-    </fieldset>
-
-</form>
+    </form>
+</div>
 
 <footer>
 
