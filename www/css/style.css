@@ -5,13 +5,10 @@
 }
 
 body{
-
     font-family:Arial, Helvetica, sans-serif;
-
 }
 
 .fundo{
-
     min-height:100vh;
 
     display:flex;
@@ -22,16 +19,19 @@ body{
 
     flex-direction:column;
 
-    background:
-    radial-gradient(circle at top right,#ffc400 0,#ffc400 18%,transparent 19%),
-    radial-gradient(circle at bottom left,#ff5a00 0,#ff5a00 22%,transparent 23%),
-    white;
+    position:relative;
 
+    overflow:hidden;
+
+    background: white;
 }
 
 .login-box{
 
-    width:500px;
+    position: relative;
+    z-index: 2;
+
+    width:560px;
 
     background:white;
 
@@ -39,26 +39,22 @@ body{
 
     border-radius:25px;
 
-    padding:45px;
+    padding:35px 45px;
 
     box-shadow:0px 10px 35px rgba(0,0,0,.15);
-
 }
 
 .logo{
-
     display:block;
 
     margin:auto;
 
-    width:250px;
+    width:280px;
 
-    margin-bottom:15px;
-
+    margin-bottom:0;
 }
 
 h1{
-
     color:#ff5a00;
 
     text-align:center;
@@ -68,75 +64,59 @@ h1{
     font-weight:bold;
 
     margin-bottom:10px;
-
 }
 
 .subtitulo{
-
     text-align:center;
 
     color:#666;
 
-    margin-bottom:35px;
+    margin-bottom:30px;
 
     font-size:20px;
-
 }
 
 label{
-
     font-weight:bold;
 
     font-size:20px;
 
     margin-bottom:10px;
-
 }
 
 .input-group{
-
     margin-top:8px;
-
 }
 
 .input-group-text{
-
     background:white;
 
     border-right:none;
 
     color:#ff5a00;
-
 }
 
 .form-control{
-
-    height:58px;
+    height:60px;
 
     border-left:none;
 
-    font-size:18px;
-
+    font-size:20px;
 }
 
 .form-control:focus{
-
     box-shadow:none;
 
     border-color:#ced4da;
-
 }
 
 .olho{
-
     cursor:pointer;
 
     background:white;
-
 }
 
 .btn-login{
-
     background:#ff5a00;
 
     color:white;
@@ -150,19 +130,15 @@ label{
     height:60px;
 
     border:none;
-
 }
 
 .btn-login:hover{
-
     background:#ff6b1d;
 
     color:white;
-
 }
 
 .divisor{
-
     display:flex;
 
     align-items:center;
@@ -170,32 +146,26 @@ label{
     text-align:center;
 
     margin:35px 0;
-
 }
 
 .divisor::before,
 .divisor::after{
-
     content:"";
 
     flex:1;
 
     border-bottom:1px solid #d9d9d9;
-
 }
 
 .divisor span{
-
     margin:0 15px;
 
     color:#777;
 
     font-size:20px;
-
 }
 
 .links{
-
     display:flex;
 
     flex-direction:column;
@@ -203,11 +173,9 @@ label{
     gap:20px;
 
     align-items:center;
-
 }
 
 .links a{
-
     color:#ff5a00;
 
     text-decoration:none;
@@ -215,29 +183,58 @@ label{
     font-size:22px;
 
     font-weight:bold;
-
 }
 
 .links a i{
-
     margin-right:10px;
-
 }
 
 .links a:hover{
-
     color:#ff5a00;
 
     text-decoration:underline;
-
 }
 
 footer{
-
     margin-top:25px;
 
     color:#666;
 
     font-size:18px;
+}
+
+.bg-top{
+
+    position:absolute;
+
+    top:0;
+
+    right:0;
+
+    width:42vw;
+
+    max-width:550px;
+
+    pointer-events:none;
+
+    z-index:0;
+
+}
+
+.bg-bottom{
+
+    position:absolute;
+
+    bottom:0;
+
+    left:0;
+
+    width:45vw;
+
+    max-width:600px;
+
+    pointer-events:none;
+
+    z-index:0;
 
 }
