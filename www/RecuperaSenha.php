@@ -32,10 +32,10 @@
 
         <img src="Imagens/Logo_sem_fundo.png" alt="Logo" class="logo">
 
-        <h1>Recuperação de senha</h1>
+        <h1>Recuperar senha</h1>
 
         <p class="subtitulo">
-            Crie uma nova senha para acessar sua conta
+            Informe seu e-mail e sua data de nascimento para criar uma nova senha
         </p>
 
         <label>Email</label>
@@ -51,10 +51,25 @@
             <input
                 class="form-control"
                 type="email"
-                name="email"
+                name="email" required
                 placeholder="Digite seu email">
 
         </div>
+
+        <label>Data de nascimento</label>
+
+        <div class="input-group mb-3">
+
+            <span class="input-group-text">
+                <i class="bi bi-calendar-date-fill"></i>
+            </span>
+
+            <input
+                class="form-control"
+                type="date"
+                name="dataNascimento" required>  
+
+            </div>
 
         <label>Nova senha</label>
 
@@ -70,7 +85,7 @@
                 id="senha"
                 class="form-control"
                 type="password"
-                name="novaSenha"
+                name="novaSenha" required
                 placeholder="Digite sua nova senha">
 
             <span class="input-group-text olho">
@@ -95,7 +110,7 @@
                 id="senha"
                 class="form-control"
                 type="password"
-                name="confirmaNovaSenha"
+                name="confirmaNovaSenha" required
                 placeholder="Confirma sua nova senha">
 
             <span class="input-group-text olho">
@@ -111,7 +126,7 @@
             class="btn btn-login w-100"
             type="submit"
             name="enviar"
-            value="Entrar">
+            value="Atualizar senha">
 
         <div class="divisor">
 
