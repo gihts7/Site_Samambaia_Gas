@@ -1,0 +1,215 @@
+body{
+
+    font-family: Arial, Helvetica, sans-serif;
+
+}
+
+/*cabeçalho*/
+.navbar{
+
+    background:white;
+
+    padding:1px 0;
+
+    box-shadow:0 2px 12px rgba(0,0,0,.08);
+
+}
+
+.logo-menu{
+
+    width:140px;
+
+}
+
+.nav-link{
+
+    color:#444;
+
+    font-size:18px;
+
+    font-weight:bold;
+
+    margin:0 30px;
+
+}
+.nav-link:hover{
+
+    color:#ff5a00;
+
+}
+
+.btn-login-menu{
+
+    background:#ff5a00;
+
+    color:white;
+
+    padding:10px 24px;
+
+    border-radius:10px;
+
+    font-weight:bold;
+
+    text-decoration:none;
+
+}
+
+.btn-login-menu:hover{
+
+    background:#ff6b1d;
+
+    color:white;
+
+}
+
+/*tela inicial*/
+#inicio{
+
+    margin-bottom:80px;
+
+}
+
+.carousel{
+
+    margin-bottom:50px;
+
+}
+
+.carousel img{
+
+    width:100%;
+
+    height:450px;
+
+    object-fit:cover;
+
+}
+
+.sobre{
+
+    width:75%;
+
+    margin:auto;
+
+    text-align:center;
+
+}
+
+.sobre h2{
+
+    color:#ff5a00;
+
+    font-size:42px;
+
+    font-weight:bold;
+
+    margin-bottom:25px;
+
+}
+
+.sobre p{
+
+    font-size:22px;
+
+    color:#555;
+
+    line-height:1.8;
+
+    margin-bottom:35px;
+
+}
+
+.btn-conhecer{
+
+    background:#ff5a00;
+
+    color:white;
+
+    text-decoration:none;
+
+    padding:16px 35px;
+
+    border-radius:12px;
+
+    font-size:20px;
+
+    font-weight:bold;
+
+    transition:.3s;
+
+}
+
+.btn-conhecer:hover{
+
+    background:#ff6b1d;
+
+    color:white;
+
+}
+
+/* Diferenciais */
+.diferenciais{
+
+    display:flex;
+
+    justify-content:center;
+
+    gap:40px;
+
+    margin-top:50px;
+
+    flex-wrap:wrap;
+
+}
+
+.diferencial{
+
+    width:280px;
+
+    text-align:center;
+
+    padding:25px;
+
+    border-radius:18px;
+
+    transition:.3s;
+
+}
+
+.diferencial:hover{
+
+    transform:translateY(-6px);
+
+}
+
+.diferencial i{
+
+    font-size:55px;
+
+    color:#ff5a00;
+
+    margin-bottom:20px;
+
+}
+
+.diferencial h4{
+
+    color:#333;
+
+    font-size:24px;
+
+    font-weight:bold;
+
+    margin-bottom:15px;
+
+}
+
+.diferencial p{
+
+    color:#666;
+
+    font-size:18px;
+
+    line-height:1.6;
+
+}
