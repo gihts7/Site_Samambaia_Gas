@@ -51,7 +51,7 @@
             <input
                 class="form-control"
                 type="email"
-                name="email"
+                name="email" required
                 placeholder="Digite seu email">
 
         </div>
@@ -70,12 +70,12 @@
                 id="senha"
                 class="form-control"
                 type="password"
-                name="senha"
+                name="senha" required
                 placeholder="Digite sua senha">
 
             <span class="input-group-text olho">
 
-                <i id="olho" class="bi bi-eye-fill"></i>
+                <i class="bi bi-eye-fill"></i>
 
             </span>
 

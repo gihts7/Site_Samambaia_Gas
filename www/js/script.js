@@ -1,27 +1,31 @@
-const senha = document.getElementById("senha");
+const olhos = document.querySelectorAll(".olho");
 
-const olho = document.getElementById("olho");
+olhos.forEach((botao) => {
 
-olho.addEventListener("click", function () {
+    botao.addEventListener("click", () => {
 
-    if (senha.type === "password") {
+        // Procura o input dentro do mesmo input-group
+        const grupo = botao.closest(".input-group");
+        const input = grupo.querySelector("input");
 
-        senha.type = "text";
+        const icone = botao.querySelector("i");
 
-        olho.classList.remove("bi-eye-fill");
+        if (input.type === "password") {
 
-        olho.classList.add("bi-eye-slash-fill");
+            input.type = "text";
 
-    }
+            icone.classList.remove("bi-eye-fill");
+            icone.classList.add("bi-eye-slash-fill");
 
-    else {
+        } else {
 
-        senha.type = "password";
+            input.type = "password";
 
-        olho.classList.remove("bi-eye-slash-fill");
+            icone.classList.remove("bi-eye-slash-fill");
+            icone.classList.add("bi-eye-fill");
 
-        olho.classList.add("bi-eye-fill");
+        }
 
-    }
+    });
 
 });

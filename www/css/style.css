@@ -31,8 +31,8 @@ body{
     position: relative;
     z-index: 2;
 
-    width:560px;
-
+    width:100%;
+    max-width:680px;
 
     background:white;
 
@@ -40,7 +40,7 @@ body{
 
     border-radius:25px;
 
-    padding:35px 45px;
+    padding:35px 55px;
 
     box-shadow:0px 10px 35px rgba(0,0,0,.15);
 }
@@ -109,6 +109,26 @@ label{
     box-shadow:none;
 
     border-color:#ced4da;
+}
+
+select.form-control{
+
+    height:60px;
+
+    font-size:20px;
+
+    border-left:none;
+
+    appearance:auto;
+
+}
+
+select.form-control:focus{
+
+    box-shadow:none;
+
+    border-color:#ced4da;
+
 }
 
 .olho{
