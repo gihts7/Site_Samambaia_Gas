@@ -542,11 +542,94 @@
     </section>
 
 
+    <!--infos -->
 
-    <!-- Diferenciais -->
-    <section id="infos">
+    <section id="sobre" class="sobre">
 
-        <p>c</p>
+    <div class="container">
+
+        <div class="texto-sobre">
+
+            <span class="titulo-menor">
+                SOBRE A SAMAMBAIA GÁS
+            </span>
+
+            <h2>
+                Há anos levando qualidade e segurança para sua família
+            </h2>
+
+            <p>
+                A <strong>Samambaia Gás</strong> atua na revenda de GLP, água
+                mineral e acessórios, oferecendo atendimento rápido,
+                produtos de qualidade e preços justos para Santo Antônio
+                da Patrulha e Caraá.
+            </p>
+
+            <p>
+                Nosso compromisso é garantir segurança, comodidade e um
+                atendimento próximo aos nossos clientes, sempre buscando
+                oferecer a melhor experiência em cada entrega.
+            </p>
+
+            <a href="#produtos" class="btn btn-laranja">
+                Faça seu pedido
+            </a>
+
+        </div>
+
+        <div class="card-atendimento">
+
+            <h3>Informações sobre nosso atendimento</h3>
+
+            <div class="row">
+
+                <div class="col-md-6">
+
+                    <div class="info-item">
+                        <i class="bi bi-geo-alt-fill"></i>
+
+                        <span>R. Cap. José Machado da Silva, 148 - Menino Deus, Santo Antônio da Patrulha - RS</span>
+
+                        <a href="https://maps.app.goo.gl/StxQxMfcGpcHGpZx7"
+                        target="_blank"
+                        class="link-mapa">
+
+                            Ver no Google Maps
+
+                        </a>
+                    </div>
+
+                    <div class="info-item">
+                        <i class="bi bi-truck"></i>
+                        <span>Entrega rápida para Santo Antônio e Caraá. Conferir disponibilidade de entrega para interior e município Caraá</span>
+                    </div>
+
+                </div>
+
+                <div class="col-md-6">
+
+                    <div class="info-item">
+                        <i class="bi bi-whatsapp"></i>
+                        <span>Pedidos e informações pelo WhatsApp (51)9422-6636 ou pelo telefone 3662-1451</span>
+                    </div>
+
+                    <div class="info-item">
+                        <i class="bi bi-clock-fill"></i>
+                        <span>Segunda à domigo das 7:00 às 22:00, incluindo feriados</span>
+                    </div>
+
+                    <div class="info-item">
+                        <i class="bi bi-shield-check"></i>
+                        <span>Revenda autorizada</span>
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
 
     </section>
 
