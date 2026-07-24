@@ -164,11 +164,11 @@ body{
 
 .diferencial{
 
-    width:280px;
+    width:290px;
 
     text-align:center;
 
-    padding:25px;
+    padding:30px;
 
     border-radius:18px;
 
@@ -211,5 +211,229 @@ body{
     font-size:18px;
 
     line-height:1.6;
+
+}
+
+/* */
+
+.produtos{
+
+    padding:60px 0;
+
+    background:#fff;
+
+}
+
+.produtos h2{
+
+    text-align:center;
+
+    font-size:42px;
+
+    font-weight:bold;
+
+    color:#222;
+
+}
+
+.subtitulo-produtos{
+
+    text-align:center;
+
+    color:#777;
+
+    margin-top:12px;
+
+    margin-bottom:45px;
+
+    font-size:20px;
+
+}
+
+.categorias{
+
+    display:flex;
+
+    justify-content:center;
+
+    gap:18px;
+
+    margin-bottom:50px;
+
+    flex-wrap:wrap;
+
+}
+
+.categoria{
+
+    border:2px solid #ff5a00;
+
+    background:white;
+
+    color:#ff5a00;
+
+    padding:12px 28px;
+
+    border-radius:50px;
+
+    font-size:18px;
+
+    font-weight:bold;
+
+    transition:.3s;
+
+}
+
+.categoria:hover{
+
+    background:#ff5a00;
+
+    color:white;
+
+}
+
+.categoria.ativa{
+
+    background:#ff5a00;
+
+    color:white;
+
+}
+
+.cards-produtos{
+
+    display:grid;
+
+    grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+
+    gap:30px;
+
+}
+
+.produto{
+
+    background:white;
+
+    border-radius:20px;
+
+    padding:30px;
+
+    box-shadow:0 8px 25px rgba(0,0,0,.08);
+
+    text-align:center;
+
+    transition:.3s;
+
+}
+
+.produto:hover{
+
+    transform:translateY(-8px);
+
+}
+
+.produto img{
+
+    width:170px;
+
+    height:170px;
+
+    object-fit:contain;
+
+    margin-bottom:20px;
+
+}
+
+.produto h3{
+
+    font-size:24px;
+
+    font-weight:bold;
+
+    color:#222;
+
+}
+
+.preco{
+
+    font-size:30px;
+
+    color:#ff5a00;
+
+    font-weight:bold;
+
+    margin:18px 0;
+
+}
+
+.quantidade{
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    gap:18px;
+
+    margin-bottom:25px;
+
+}
+
+.quantidade button{
+
+    width:38px;
+
+    height:38px;
+
+    border:none;
+
+    border-radius:50%;
+
+    background:#ffe5d6;
+
+    color:#ff5a00;
+
+    font-size:22px;
+
+    font-weight:bold;
+
+}
+
+.quantidade span{
+
+    font-size:22px;
+
+    font-weight:bold;
+
+}
+
+.btn-adicionar{
+
+    width:100%;
+
+    border:none;
+
+    background:#ff5a00;
+
+    color:white;
+
+    height:55px;
+
+    border-radius:12px;
+
+    font-size:18px;
+
+    font-weight:bold;
+
+    transition:.3s;
+
+}
+
+.btn-adicionar:hover{
+
+    background:#ff6b1d;
+
+    transform:translateY(-2px);
 
 }

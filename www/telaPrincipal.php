@@ -207,9 +207,337 @@
 
 
     <!-- Produtos -->
-    <section id="produtos">
+    <section id="produtos" class="produtos">
 
-        <p>b</p>
+    <div class="container">
+
+        <h2>Nossos Produtos</h2>
+
+        <p class="subtitulo-produtos">
+            Escolha uma categoria e adicione os produtos ao seu pedido.
+        </p>
+
+        <!-- Categorias -->
+
+        <div class="categorias">
+
+            <button class="categoria ativa">
+                <i class="bi bi-grid-fill"></i>
+                Todos
+            </button>
+
+            <button class="categoria">
+                <i class="bi bi-fire"></i>
+                GLPs
+            </button>
+
+            <button class="categoria">
+                <i class="bi bi-droplet-fill"></i>
+                Água
+            </button>
+
+            <button class="categoria">
+                <i class="bi bi-tools"></i>
+                Acessórios
+            </button>
+
+        </div>
+
+        <!-- Produtos -->
+
+        <div class="cards-produtos">
+
+            <!-- Produto -->
+
+            <div class="produto">
+
+                <img src="imagens/p5.png">
+
+                <h3>Botijão P5</h3>
+
+                <p class="preco">
+                    R$ 110,00
+                </p>
+
+                <div class="quantidade">
+
+                    <button>-</button>
+
+                    <span>1</span>
+
+                    <button>+</button>
+
+                </div>
+
+                <button class="btn-adicionar">
+
+                    <i class="bi bi-cart-plus"></i>
+
+                    Adicionar
+
+                </button>
+
+            </div>
+
+            <!-- Produto -->
+
+            <div class="produto">
+
+                <img src="imagens/p13.png">
+
+                <h3>Botijão P13</h3>
+
+                <p class="preco">
+                    R$ 110,00
+                </p>
+
+                <div class="quantidade">
+
+                    <button>-</button>
+
+                    <span>1</span>
+
+                    <button>+</button>
+
+                </div>
+
+                <button class="btn-adicionar">
+
+                    <i class="bi bi-cart-plus"></i>
+
+                    Adicionar
+
+                </button>
+
+            </div>
+
+            <!-- Produto -->
+
+            <div class="produto">
+
+                <img src="imagens/p20.png">
+
+                <h3>Botijão P20</h3>
+
+                <p class="preco">
+                    R$ 200,00
+                </p>
+
+                <div class="quantidade">
+
+                    <button>-</button>
+
+                    <span>1</span>
+
+                    <button>+</button>
+
+                </div>
+
+                <button class="btn-adicionar">
+
+                    <i class="bi bi-cart-plus"></i>
+
+                    Adicionar
+
+                </button>
+
+            </div>
+
+            <!-- Produto -->
+
+            <div class="produto">
+
+                <img src="imagens/p45.png">
+
+                <h3>Botijão P45</h3>
+
+                <p class="preco">
+                    R$ 420,00
+                </p>
+
+                <div class="quantidade">
+
+                    <button>-</button>
+
+                    <span>1</span>
+
+                    <button class="mais">+</button>
+
+                </div>
+
+                <button class="btn-adicionar">
+
+                    <i class="bi bi-cart-plus"></i>
+
+                    Adicionar
+
+                </button>
+
+            </div>
+
+            <!-- Produto -->
+
+            <div class="produto">
+
+                <img src="imagens/500ml.png">
+
+                <h3>Água mineral 500ml</h3>
+
+                <p class="preco">
+                    R$ 5,00
+                </p>
+
+                <div class="quantidade">
+
+                    <button>-</button>
+
+                    <span>1</span>
+
+                    <button>+</button>
+
+                </div>
+
+                <button class="btn-adicionar">
+
+                    <i class="bi bi-cart-plus"></i>
+
+                    Adicionar
+
+                </button>
+
+            </div>
+
+            <!-- Produto -->
+
+            <div class="produto">
+
+                <img src="imagens/500mlgas.png">
+
+                <h3>Água mineral com gás 500ml</h3>
+
+                <p class="preco">
+                    R$ 5,00
+                </p>
+
+                <div class="quantidade">
+
+                    <button>-</button>
+
+                    <span>1</span>
+
+                    <button>+</button>
+
+                </div>
+
+                <button class="btn-adicionar">
+
+                    <i class="bi bi-cart-plus"></i>
+
+                    Adicionar
+
+                </button>
+
+            </div>
+
+            <!-- Produto -->
+
+            <div class="produto">
+
+                <img src="imagens/agua20l.png">
+
+                <h3>Água mineral 20L</h3>
+
+                <p class="preco">
+                    R$ 18,00
+                </p>
+
+                <div class="quantidade">
+
+                    <button>-</button>
+
+                    <span>1</span>
+
+                    <button>+</button>
+
+                </div>
+
+                <button class="btn-adicionar">
+
+                    <i class="bi bi-cart-plus"></i>
+
+                    Adicionar
+
+                </button>
+
+            </div>
+
+            <!-- Produto -->
+
+            <div class="produto">
+
+                <img src="imagens/regulador.png">
+
+                <h3>Regulador</h3>
+
+                <p class="preco">
+                    R$ 35,00
+                </p>
+
+                <div class="quantidade">
+
+                    <button>-</button>
+
+                    <span>1</span>
+
+                    <button>+</button>
+
+                </div>
+
+                <button class="btn-adicionar">
+
+                    <i class="bi bi-cart-plus"></i>
+
+                    Adicionar
+
+                </button>
+
+            </div>
+
+            <!-- Produto -->
+
+            <div class="produto">
+
+                <img src="imagens/mangueira.png">
+
+                <h3>Mangueira</h3>
+
+                <p class="preco">
+                    R$ 25,00
+                </p>
+
+                <div class="quantidade">
+
+                    <button>-</button>
+
+                    <span>1</span>
+
+                    <button>+</button>
+
+                </div>
+
+                <button class="btn-adicionar">
+
+                    <i class="bi bi-cart-plus"></i>
+
+                    Adicionar
+
+                </button>
+
+            </div>
+
+        </div>
+
+    </div>
 
     </section>
 
