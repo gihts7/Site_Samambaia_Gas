@@ -619,8 +619,13 @@
                     </div>
 
                     <div class="info-item">
-                        <i class="bi bi-shield-check"></i>
-                        <span>Revenda autorizada</span>
+                        <i class="bi bi-envelope-fill"></i>
+                        
+                        <a href="mailto:divino.samambaiagas@gmail.com" class="link-email">
+
+                            divino.samambaiagas@gmail.com
+
+                        </a>
                     </div>
 
                 </div>

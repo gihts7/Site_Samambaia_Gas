@@ -605,3 +605,25 @@ body{
     margin-right:6px;
 
 }
+
+.link-email{
+
+    font-size:19px;
+
+    color:#666;
+
+    line-height:1.8;
+
+    margin-bottom:20px;
+
+    text-decoration: none;
+
+}
+
+.link-email:hover{
+
+    color:#ff6b1d;
+
+    text-decoration:underline;
+
+}
