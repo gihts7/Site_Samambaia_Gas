@@ -156,7 +156,7 @@
 
         <a href="#produtos" class="btn-conhecer">
 
-            Conheça nossos produtos
+            Faça seu pedido
 
         </a>
 
@@ -211,7 +211,7 @@
 
     <div class="container">
 
-        <h2>Nossos Produtos</h2>
+        <h2>Faça seu pedido</h2>
 
         <p class="subtitulo-produtos">
             Visualize e adicione os produtos ao seu pedido.
@@ -231,7 +231,114 @@
                 Entre em contato
             </a>
         </div>
-        
+
+        <!-- Seleção do tipo de entrega -->
+        <section class="tipo-entrega">
+        <h3>Como deseja receber seu pedido?</h3>
+
+        <p class="texto-entrega">
+            Escolha uma opção antes de selecionar os produtos.
+        </p>
+
+        <div class="opcoes-entrega">
+
+            <label class="card-entrega">
+
+                <input
+                    type="radio"
+                    name="tipoEntrega"
+                    value="entrega">
+
+                <i class="bi bi-truck"></i>
+
+                <h4>Entrega</h4>
+
+                <span>Receba seu pedido em casa.</span>
+
+            </label>
+
+            <label class="card-entrega">
+
+                <input
+                    type="radio"
+                    name="tipoEntrega"
+                    value="retirada"
+                    checked>
+
+                <i class="bi bi-shop"></i>
+
+                <h4>Retirada</h4>
+
+                <span>Retire diretamente na loja.</span>
+
+            </label>
+
+        </div>
+
+    </section>
+            
+        <div id="enderecoEntrega" class="endereco-entrega">
+
+        <h3>Endereço para entrega</h3>
+
+        <div class="row">
+
+            <div class="col-md-8 mb-3">
+
+                <label>Rua</label>
+
+                <input
+                    class="form-control"
+                    type="text"
+                    placeholder="Digite sua rua" required>
+
+            </div>
+
+            <div class="col-md-4 mb-3">
+
+                <label>Número</label>
+
+                <input
+                    class="form-control"
+                    type="text"
+                    placeholder="Número" required>
+
+            </div>
+
+        </div>
+
+        <div class="row">
+
+            <div class="col-md-6 mb-3">
+
+                <label>Bairro</label>
+
+                <input
+                    class="form-control"
+                    type="text"
+                    placeholder="Digite seu bairro" required>
+
+            </div>
+
+            <div class="col-md-6 mb-3">
+
+                <label>Cidade</label>
+
+                <select class="form-select">
+
+                    <option>Santo Antônio da Patrulha</option>
+
+                    <option>Caraá</option>
+
+                </select>
+
+            </div>
+
+        </div>
+
+        <p>*Entregas no interior sujeito a mudanças de valor e disponibilidade de entrega</p> 
+
+    </div>
 
         <!-- Categorias -->
 
@@ -282,11 +389,11 @@
 
                 <div class="quantidade">
 
-                    <button>-</button>
+                    <button class="menos">-</button>
 
-                    <span>1</span>
+                    <span class="qtd">1</span>
 
-                    <button>+</button>
+                    <button class="mais">+</button>
 
                 </div>
 
@@ -314,11 +421,11 @@
 
                 <div class="quantidade">
 
-                    <button>-</button>
+                    <button class="menos">-</button>
 
-                    <span>1</span>
+                    <span class="qtd">1</span>
 
-                    <button>+</button>
+                    <button class="mais">+</button>
 
                 </div>
 
@@ -346,9 +453,9 @@
 
                 <div class="quantidade">
 
-                    <button>-</button>
+                    <button class="menos">-</button>
 
-                    <span>1</span>
+                    <span class="qtd">1</span>
 
                     <button>+</button>
 
@@ -378,9 +485,9 @@
 
                 <div class="quantidade">
 
-                    <button>-</button>
+                    <button class="menos">-</button>
 
-                    <span>1</span>
+                    <span class="qtd">1</span>
 
                     <button class="mais">+</button>
 
@@ -410,11 +517,11 @@
 
                 <div class="quantidade">
 
-                    <button>-</button>
+                    <button class="menos">-</button>
 
-                    <span>1</span>
+                    <span class="qtd">1</span>
 
-                    <button>+</button>
+                    <button class="mais">+</button>
 
                 </div>
 
@@ -442,11 +549,11 @@
 
                 <div class="quantidade">
 
-                    <button>-</button>
+                    <button class="menos">-</button>
 
-                    <span>1</span>
+                    <span class="qtd">1</span>
 
-                    <button>+</button>
+                    <button class="mais">+</button>
 
                 </div>
 
@@ -474,11 +581,11 @@
 
                 <div class="quantidade">
 
-                    <button>-</button>
+                    <button class="menos">-</button>
 
-                    <span>1</span>
+                    <span class="qtd">1</span>
 
-                    <button>+</button>
+                    <button class="mais">+</button>
 
                 </div>
 
@@ -506,11 +613,11 @@
 
                 <div class="quantidade">
 
-                    <button>-</button>
+                    <button class="menos">-</button>
 
-                    <span>1</span>
+                    <span class="qtd">1</span>
 
-                    <button>+</button>
+                    <button class="mais">+</button>
 
                 </div>
 
@@ -538,11 +645,11 @@
 
                 <div class="quantidade">
 
-                    <button>-</button>
+                    <button class="menos">-</button>
 
-                    <span>1</span>
+                    <span class="qtd">1</span>
 
-                    <button>+</button>
+                    <button class="mais">+</button>
 
                 </div>
 
@@ -570,11 +677,11 @@
 
                 <div class="quantidade">
 
-                    <button>-</button>
+                    <button class="menos">-</button>
 
-                    <span>1</span>
+                    <span class="qtd">1</span>
 
-                    <button>+</button>
+                    <button class="mais">+</button>
 
                 </div>
 
@@ -602,11 +709,11 @@
 
                 <div class="quantidade">
 
-                    <button>-</button>
+                    <button class="menos">-</button>
 
-                    <span>1</span>
+                    <span class="qtd">1</span>
 
-                    <button>+</button>
+                    <button class="mais">+</button>
 
                 </div>
 
@@ -634,11 +741,11 @@
 
                 <div class="quantidade">
 
-                    <button>-</button>
+                    <button class="menos">-</button>
 
-                    <span>1</span>
+                    <span class="qtd">1</span>
 
-                    <button>+</button>
+                    <button class="mais">+</button>
 
                 </div>
 
@@ -666,9 +773,9 @@
 
                 <div class="quantidade">
 
-                    <button>-</button>
+                    <button class="menos">-</button>
 
-                    <span>1</span>
+                    <span class="qtd">1</span>
 
                     <button class="mais">+</button>
 
@@ -687,6 +794,54 @@
         </div>
 
     </div>
+
+    <section id="resumoPedido" class="resumo-pedido">
+
+    <h2>Resumo do Pedido</h2>
+
+    <div id="listaProdutos">
+
+        <!-- produtos serão adicionados pelo JavaScript -->
+
+    </div>
+
+    <hr>
+
+    <label>Forma de pagamento</label>
+
+    <select id="pagamento" class="form-select">
+
+        <option value="">Selecione...</option>
+        <option>PIX</option>
+        <option>Dinheiro</option>
+        <option>Cartão de Débito</option>
+        <option>Cartão de Crédito</option>
+
+    </select>
+
+    <div id="enderecoResumo">
+
+    </div>
+
+    <div class="total">
+
+        <span>Total</span>
+
+        <strong id="valorTotal">
+            R$ 0,00
+        </strong>
+
+    </div>
+
+    <button class="btn-enviar">
+
+        <i class="bi bi-whatsapp"></i>
+
+        Enviar pedido
+
+    </button>
+
+    </section>
 
     </section>
 
@@ -720,9 +875,6 @@
                 oferecer a melhor experiência em cada entrega.
             </p>
 
-            <a href="#produtos" class="btn btn-laranja">
-                Faça seu pedido
-            </a>
 
         </div>
 
@@ -826,6 +978,8 @@
     </footer>
 
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/js/bootstrap.bundle.min.js"></script>
+
+<script src="js/principal.js"></script>
 
 </body>
 </html>
