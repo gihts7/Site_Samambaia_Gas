@@ -604,22 +604,46 @@
                         <span>Entrega rápida para Santo Antônio e Caraá. Conferir disponibilidade de entrega para interior e município Caraá</span>
                     </div>
 
+                    <div class="info-item">
+                        <i class="bi bi-clock-fill"></i>
+                        <span>Segunda à domigo das 7:00 às 22:00, incluindo feriados</span>
+                    </div>
+
                 </div>
 
                 <div class="col-md-6">
 
                     <div class="info-item">
                         <i class="bi bi-whatsapp"></i>
-                        <span>Pedidos e informações pelo WhatsApp (51)9422-6636 ou pelo telefone 3662-1451</span>
+
+                        <a href="https://wa.me/555194226636" class="link-email">
+
+                            Pedidos e informações pelo WhatsApp (51)9422-6636
+
+                        </a>
                     </div>
 
                     <div class="info-item">
-                        <i class="bi bi-clock-fill"></i>
-                        <span>Segunda à domigo das 7:00 às 22:00, incluindo feriados</span>
+                        <i class="bi bi-telephone"></i>
+
+                        <a href="tel:+553662-1451" class="link-email">
+                        Pedidos e informações pelo telefone/celular 3662-1451
+                        </a>
+
                     </div>
 
                     <div class="info-item">
-                        <i class="bi bi-envelope-fill"></i>
+                        <i class="bi bi-instagram"></i>
+                        
+                        <a href="https://www.instagram.com/samambaia_gas?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw==" class="link-email">
+
+                            @samambaia_gas
+
+                        </a>
+                    </div>
+
+                    <div class="info-item">
+                        <i class="bi bi-envelope"></i>
                         
                         <a href="mailto:divino.samambaiagas@gmail.com" class="link-email">
 
