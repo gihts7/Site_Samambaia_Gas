@@ -214,8 +214,24 @@
         <h2>Nossos Produtos</h2>
 
         <p class="subtitulo-produtos">
-            Escolha uma categoria e adicione os produtos ao seu pedido.
+            Visualize e adicione os produtos ao seu pedido.
         </p>
+
+        <p class="obs-produtos">
+            OBS: Selecione a opção gás de cozinha se você já tiver um casco. Se não tiver,
+            adicione o gás de cozinha e o casco vazio ao seu pedido. Em caso de dúvidas,
+            entre em contato pelo WhatsApp. <br>
+
+            Para realizar um pedido utilizando o programa gás do povo, entre em contato com um vendedor pelo whattsapp para mais informações
+        </p>
+
+        <div class="whatsapp-contato">
+            <a href="https://wa.me/555194226636" target="_blank">
+                <i class="bi bi-whatsapp"></i>
+                Entre em contato
+            </a>
+        </div>
+        
 
         <!-- Categorias -->
 
@@ -241,6 +257,11 @@
                 Acessórios
             </button>
 
+            <button class="categoria">
+                <i class="bi bi-tools"></i>
+                Cascos
+            </button>
+
         </div>
 
         <!-- Produtos -->
@@ -253,7 +274,7 @@
 
                 <img src="imagens/p5.png">
 
-                <h3>Botijão P5</h3>
+                <h3>Gás de cozinha P5</h3>
 
                 <p class="preco">
                     R$ 110,00
@@ -285,7 +306,7 @@
 
                 <img src="imagens/p13.png">
 
-                <h3>Botijão P13</h3>
+                <h3>Gás de cozinha P13</h3>
 
                 <p class="preco">
                     R$ 110,00
@@ -317,7 +338,7 @@
 
                 <img src="imagens/p20.png">
 
-                <h3>Botijão P20</h3>
+                <h3>Gás de cozinha P20</h3>
 
                 <p class="preco">
                     R$ 200,00
@@ -349,7 +370,7 @@
 
                 <img src="imagens/p45.png">
 
-                <h3>Botijão P45</h3>
+                <h3>Gás de cozinha P45</h3>
 
                 <p class="preco">
                     R$ 420,00
@@ -535,6 +556,134 @@
 
             </div>
 
+            <!-- Produto -->
+
+            <div class="produto">
+
+                <img src="imagens/p5.png">
+
+                <h3>Casco vazio P5</h3>
+
+                <p class="preco">
+                    R$ 110,00
+                </p>
+
+                <div class="quantidade">
+
+                    <button>-</button>
+
+                    <span>1</span>
+
+                    <button>+</button>
+
+                </div>
+
+                <button class="btn-adicionar">
+
+                    <i class="bi bi-cart-plus"></i>
+
+                    Adicionar
+
+                </button>
+
+            </div>
+
+            <!-- Produto -->
+
+            <div class="produto">
+
+                <img src="imagens/p13.png">
+
+                <h3>Casco vazio P13</h3>
+
+                <p class="preco">
+                    R$ 110,00
+                </p>
+
+                <div class="quantidade">
+
+                    <button>-</button>
+
+                    <span>1</span>
+
+                    <button>+</button>
+
+                </div>
+
+                <button class="btn-adicionar">
+
+                    <i class="bi bi-cart-plus"></i>
+
+                    Adicionar
+
+                </button>
+
+            </div>
+
+            <!-- Produto -->
+
+            <div class="produto">
+
+                <img src="imagens/p20.png">
+
+                <h3>Casco vazio P20</h3>
+
+                <p class="preco">
+                    R$ 200,00
+                </p>
+
+                <div class="quantidade">
+
+                    <button>-</button>
+
+                    <span>1</span>
+
+                    <button>+</button>
+
+                </div>
+
+                <button class="btn-adicionar">
+
+                    <i class="bi bi-cart-plus"></i>
+
+                    Adicionar
+
+                </button>
+
+            </div>
+
+            <!-- Produto -->
+
+            <div class="produto">
+
+                <img src="imagens/p45.png">
+
+                <h3>Casco vazio P45</h3>
+
+                <p class="preco">
+                    R$ 420,00
+                </p>
+
+                <div class="quantidade">
+
+                    <button>-</button>
+
+                    <span>1</span>
+
+                    <button class="mais">+</button>
+
+                </div>
+
+                <button class="btn-adicionar">
+
+                    <i class="bi bi-cart-plus"></i>
+
+                    Adicionar
+
+                </button>
+
+            </div>
+
         </div>
 
     </div>
@@ -609,6 +758,11 @@
                         <span>Segunda à domigo das 7:00 às 22:00, incluindo feriados</span>
                     </div>
 
+                    <div class="info-item">
+                        <i class="bi bi-credit-card"></i>
+                        <span>Aceitamos como forma de pagamento: Gás do povo, pix, dinheiro, cartões de débito e crédito em até x sem juros</span>
+                    </div>
+
                 </div>
 
                 <div class="col-md-6">
@@ -667,7 +821,7 @@
     <!-- Rodapé com infos -->
     <footer>
 
-        <p>d</p>
+        © 2026 Samambaia Gás. Todos os direitos reservados.
 
     </footer>
 
