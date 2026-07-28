@@ -67,11 +67,11 @@
 
                 </ul>
 
-                <a href="login.php" class="btn btn-login-menu">
+                <a href="minhaConta.php" class="btn btn-login-menu">
 
                     <i class="bi bi-person-circle"></i>
 
-                    Entrar
+                    Minha conta
 
                 </a>
 
@@ -220,7 +220,7 @@
         <p class="obs-produtos">
             OBS: Selecione a opção gás de cozinha se você já tiver um casco. Se não tiver,
             adicione o gás de cozinha e o casco vazio ao seu pedido. Em caso de dúvidas,
-            entre em contato pelo WhatsApp. <br>
+            entre em contato pelo WhatsApp. <br> <br>
 
             Para realizar um pedido utilizando o programa gás do povo, entre em contato com um vendedor pelo whattsapp para mais informações
         </p>
@@ -835,7 +835,13 @@
 
         </div>
 
-        <div class="card-atendimento">
+    </div>
+
+    </section>
+
+    <section id="contato" class="contato">
+
+    <div class="card-atendimento">
 
             <h3>Informações sobre nosso atendimento</h3>
 
@@ -920,8 +926,6 @@
             </div>
 
         </div>
-
-    </div>
 
     </section>
 
