@@ -287,7 +287,7 @@
 
                 <label>Rua</label>
 
-                <input
+                <input id="rua"
                     class="form-control"
                     type="text"
                     placeholder="Digite sua rua" required>
@@ -298,7 +298,7 @@
 
                 <label>Número</label>
 
-                <input
+                <input id="numero"
                     class="form-control"
                     type="text"
                     placeholder="Número" required>
@@ -313,7 +313,7 @@
 
                 <label>Bairro</label>
 
-                <input
+                <input id="bairro"
                     class="form-control"
                     type="text"
                     placeholder="Digite seu bairro" required>
@@ -324,7 +324,7 @@
 
                 <label>Cidade</label>
 
-                <select class="form-select">
+                <select class="form-select" id="cidade">
 
                     <option>Santo Antônio da Patrulha</option>
 
@@ -375,418 +375,353 @@
 
         <div class="cards-produtos">
 
-            <!-- Produto -->
-
-            <div class="produto">
+            <!-- Gás P5 -->
+            <div class="produto"
+                data-nome="Gás de cozinha P5"
+                data-retirada="110"
+                data-entrega="110">
 
                 <img src="imagens/p5.png">
 
                 <h3>Gás de cozinha P5</h3>
 
                 <p class="preco">
-                    R$ 110,00
+                    R$ <span class="valor-produto">110,00</span>
                 </p>
 
                 <div class="quantidade">
-
                     <button class="menos">-</button>
-
                     <span class="qtd">1</span>
-
                     <button class="mais">+</button>
-
                 </div>
 
                 <button class="btn-adicionar">
-
                     <i class="bi bi-cart-plus"></i>
-
                     Adicionar
-
                 </button>
 
             </div>
 
-            <!-- Produto -->
-
-            <div class="produto">
+            <!-- Gás P13 -->
+            <div class="produto"
+                data-nome="Gás de cozinha P13"
+                data-retirada="110"
+                data-entrega="110">
 
                 <img src="imagens/p13.png">
 
                 <h3>Gás de cozinha P13</h3>
 
                 <p class="preco">
-                    R$ 110,00
+                    R$ <span class="valor-produto">110,00</span>
                 </p>
 
                 <div class="quantidade">
-
                     <button class="menos">-</button>
-
                     <span class="qtd">1</span>
-
                     <button class="mais">+</button>
-
                 </div>
 
                 <button class="btn-adicionar">
-
                     <i class="bi bi-cart-plus"></i>
-
                     Adicionar
-
                 </button>
 
             </div>
 
-            <!-- Produto -->
-
-            <div class="produto">
+            <!-- Gás P20 -->
+            <div class="produto"
+                data-nome="Gás de cozinha P20"
+                data-retirada="200"
+                data-entrega="200">
 
                 <img src="imagens/p20.png">
 
                 <h3>Gás de cozinha P20</h3>
 
                 <p class="preco">
-                    R$ 200,00
+                    R$ <span class="valor-produto">200,00</span>
                 </p>
 
                 <div class="quantidade">
-
                     <button class="menos">-</button>
-
                     <span class="qtd">1</span>
-
-                    <button>+</button>
-
+                    <button class="mais">+</button>
                 </div>
 
                 <button class="btn-adicionar">
-
                     <i class="bi bi-cart-plus"></i>
-
                     Adicionar
-
                 </button>
 
             </div>
 
-            <!-- Produto -->
-
-            <div class="produto">
+            <!-- Gás P45 -->
+            <div class="produto"
+                data-nome="Gás de cozinha P45"
+                data-retirada="420"
+                data-entrega="420">
 
                 <img src="imagens/p45.png">
 
                 <h3>Gás de cozinha P45</h3>
 
                 <p class="preco">
-                    R$ 420,00
+                    R$ <span class="valor-produto">420,00</span>
                 </p>
 
                 <div class="quantidade">
-
                     <button class="menos">-</button>
-
                     <span class="qtd">1</span>
-
                     <button class="mais">+</button>
-
                 </div>
 
                 <button class="btn-adicionar">
-
                     <i class="bi bi-cart-plus"></i>
-
                     Adicionar
-
                 </button>
 
             </div>
 
-            <!-- Produto -->
-
-            <div class="produto">
+            <!-- Água 500ml -->
+            <div class="produto"
+                data-nome="Água mineral 500ml"
+                data-retirada="5"
+                data-entrega="5">
 
                 <img src="imagens/500ml.png">
 
                 <h3>Água mineral 500ml</h3>
 
                 <p class="preco">
-                    R$ 5,00
+                    R$ <span class="valor-produto">5,00</span>
                 </p>
 
                 <div class="quantidade">
-
                     <button class="menos">-</button>
-
                     <span class="qtd">1</span>
-
                     <button class="mais">+</button>
-
                 </div>
 
                 <button class="btn-adicionar">
-
                     <i class="bi bi-cart-plus"></i>
-
                     Adicionar
-
                 </button>
 
             </div>
 
-            <!-- Produto -->
-
-            <div class="produto">
+            <!-- Água com gás -->
+            <div class="produto"
+                data-nome="Água mineral com gás 500ml"
+                data-retirada="5"
+                data-entrega="5">
 
                 <img src="imagens/500mlgas.png">
 
                 <h3>Água mineral com gás 500ml</h3>
 
                 <p class="preco">
-                    R$ 5,00
+                    R$ <span class="valor-produto">5,00</span>
                 </p>
 
                 <div class="quantidade">
-
                     <button class="menos">-</button>
-
                     <span class="qtd">1</span>
-
                     <button class="mais">+</button>
-
                 </div>
 
                 <button class="btn-adicionar">
-
                     <i class="bi bi-cart-plus"></i>
-
                     Adicionar
-
                 </button>
 
             </div>
 
-            <!-- Produto -->
-
-            <div class="produto">
+            <!-- Água 20L -->
+            <div class="produto"
+                data-nome="Água mineral 20L"
+                data-retirada="18"
+                data-entrega="18">
 
                 <img src="imagens/agua20l.png">
 
                 <h3>Água mineral 20L</h3>
 
                 <p class="preco">
-                    R$ 18,00
+                    R$ <span class="valor-produto">18,00</span>
                 </p>
 
                 <div class="quantidade">
-
                     <button class="menos">-</button>
-
                     <span class="qtd">1</span>
-
                     <button class="mais">+</button>
-
                 </div>
 
                 <button class="btn-adicionar">
-
                     <i class="bi bi-cart-plus"></i>
-
                     Adicionar
-
                 </button>
 
             </div>
 
-            <!-- Produto -->
-
-            <div class="produto">
+            <!-- Regulador -->
+            <div class="produto"
+                data-nome="Regulador"
+                data-retirada="35"
+                data-entrega="35">
 
                 <img src="imagens/regulador.png">
 
                 <h3>Regulador</h3>
 
                 <p class="preco">
-                    R$ 35,00
+                    R$ <span class="valor-produto">35,00</span>
                 </p>
 
                 <div class="quantidade">
-
                     <button class="menos">-</button>
-
                     <span class="qtd">1</span>
-
                     <button class="mais">+</button>
-
                 </div>
 
                 <button class="btn-adicionar">
-
                     <i class="bi bi-cart-plus"></i>
-
                     Adicionar
-
                 </button>
 
             </div>
 
-            <!-- Produto -->
-
-            <div class="produto">
+            <!-- Mangueira -->
+            <div class="produto"
+                data-nome="Mangueira"
+                data-retirada="25"
+                data-entrega="25">
 
                 <img src="imagens/mangueira.png">
 
                 <h3>Mangueira</h3>
 
                 <p class="preco">
-                    R$ 25,00
+                    R$ <span class="valor-produto">25,00</span>
                 </p>
 
                 <div class="quantidade">
-
                     <button class="menos">-</button>
-
                     <span class="qtd">1</span>
-
                     <button class="mais">+</button>
-
                 </div>
 
                 <button class="btn-adicionar">
-
                     <i class="bi bi-cart-plus"></i>
-
                     Adicionar
-
                 </button>
 
             </div>
 
-            <!-- Produto -->
-
-            <div class="produto">
+            <!-- Casco P5 -->
+            <div class="produto"
+                data-nome="Casco vazio P5"
+                data-retirada="110"
+                data-entrega="110">
 
                 <img src="imagens/p5.png">
 
                 <h3>Casco vazio P5</h3>
 
                 <p class="preco">
-                    R$ 110,00
+                    R$ <span class="valor-produto">110,00</span>
                 </p>
 
                 <div class="quantidade">
-
                     <button class="menos">-</button>
-
                     <span class="qtd">1</span>
-
                     <button class="mais">+</button>
-
                 </div>
 
                 <button class="btn-adicionar">
-
                     <i class="bi bi-cart-plus"></i>
-
                     Adicionar
-
                 </button>
 
             </div>
 
-            <!-- Produto -->
-
-            <div class="produto">
+            <!-- Casco P13 -->
+            <div class="produto"
+                data-nome="Casco vazio P13"
+                data-retirada="110"
+                data-entrega="110">
 
                 <img src="imagens/p13.png">
 
                 <h3>Casco vazio P13</h3>
 
                 <p class="preco">
-                    R$ 110,00
+                    R$ <span class="valor-produto">110,00</span>
                 </p>
 
                 <div class="quantidade">
-
                     <button class="menos">-</button>
-
                     <span class="qtd">1</span>
-
                     <button class="mais">+</button>
-
                 </div>
 
                 <button class="btn-adicionar">
-
                     <i class="bi bi-cart-plus"></i>
-
                     Adicionar
-
                 </button>
 
             </div>
 
-            <!-- Produto -->
-
-            <div class="produto">
+            <!-- Casco P20 -->
+            <div class="produto"
+                data-nome="Casco vazio P20"
+                data-retirada="200"
+                data-entrega="200">
 
                 <img src="imagens/p20.png">
 
                 <h3>Casco vazio P20</h3>
 
                 <p class="preco">
-                    R$ 200,00
+                    R$ <span class="valor-produto">200,00</span>
                 </p>
 
                 <div class="quantidade">
-
                     <button class="menos">-</button>
-
                     <span class="qtd">1</span>
-
                     <button class="mais">+</button>
-
                 </div>
 
                 <button class="btn-adicionar">
-
                     <i class="bi bi-cart-plus"></i>
-
                     Adicionar
-
                 </button>
 
             </div>
 
-            <!-- Produto -->
-
-            <div class="produto">
+            <!-- Casco P45 -->
+            <div class="produto"
+                data-nome="Casco vazio P45"
+                data-retirada="420"
+                data-entrega="470">
 
                 <img src="imagens/p45.png">
 
                 <h3>Casco vazio P45</h3>
 
                 <p class="preco">
-                    R$ 420,00
+                    R$ <span class="valor-produto">420,00</span>
                 </p>
 
                 <div class="quantidade">
-
                     <button class="menos">-</button>
-
                     <span class="qtd">1</span>
-
                     <button class="mais">+</button>
-
                 </div>
 
                 <button class="btn-adicionar">
-
                     <i class="bi bi-cart-plus"></i>
-
                     Adicionar
-
                 </button>
 
             </div>
@@ -799,17 +734,39 @@
 
     <h2>Resumo do Pedido</h2>
 
+    <div id="infoEntregaResumo" class="info-entrega-resumo" style="display:none;">
+
+        <h5>
+
+            <i class="bi bi-geo-alt-fill"></i>
+
+            Endereço de entrega
+
+        </h5>
+
+        <p id="textoEndereco"></p>
+
+        <hr>
+
+    </div>
+
+    <h5>
+        <i class="bi bi-basket-fill"></i>
+        Produtos do seu pedido
+    </h5>
+
     <div id="listaProdutos">
-
-        <!-- produtos serão adicionados pelo JavaScript -->
-
+        <!-- produtos adicionados pelo JavaScript -->
     </div>
 
     <hr>
 
-    <label>Forma de pagamento</label>
+    <h5>
+        <i class="bi bi-credit-card-fill"></i>
+        Forma de pagamento
+    </h5>
 
-    <select id="pagamento" class="form-select">
+    <select id="pagamento" class="form-select" required>
 
         <option value="">Selecione...</option>
         <option>PIX</option>
@@ -968,7 +925,65 @@
 
     </section>
 
+    <!-- Modal de confirmação -->
+    <div class="modal fade" id="modalTrocaEntrega" tabindex="-1">
 
+        <div class="modal-dialog modal-dialog-centered">
+
+            <div class="modal-content">
+
+                <div class="modal-header">
+
+                    <h5 class="modal-title">
+
+                        <i class="bi bi-exclamation-triangle-fill"></i>
+                        Alterar tipo de entrega
+
+                    </h5>
+
+                </div>
+
+                <div class="modal-body">
+
+                    Você já adicionou produtos ao pedido.
+
+                    <br><br>
+
+                    Ao alterar o tipo de entrega, todos os produtos serão removidos.
+
+                    <br><br>
+
+                    Deseja continuar?
+
+                </div>
+
+                <div class="modal-footer">
+
+                    <button
+                        type="button"
+                        class="btn btn-cancelar"
+                        data-bs-dismiss="modal">
+
+                        Cancelar
+
+                    </button>
+
+                    <button
+                        type="button"
+                        id="confirmarTroca"
+                        class="btn btn-confirmar">
+
+                        Continuar
+
+                    </button>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
 
     <!-- Rodapé com infos -->
     <footer>
@@ -976,6 +991,7 @@
         © 2026 Samambaia Gás. Todos os direitos reservados.
 
     </footer>
+
 
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/js/bootstrap.bundle.min.js"></script>
 
