@@ -307,3 +307,74 @@ document.getElementById("numero").addEventListener("input", atualizarEnderecoRes
 document.getElementById("bairro").addEventListener("input", atualizarEnderecoResumo);
 
 document.getElementById("cidade").addEventListener("change", atualizarEnderecoResumo);
+
+
+document.getElementById("btnEnviar").addEventListener("click", function () {
+
+    //Número de telefone para onde vai a mensagem do pedido
+    const telefone = "5551989212294";
+
+    const tipoEntrega =
+        document.querySelector('input[name="tipoEntrega"]:checked').value;
+
+    const pagamento =
+        document.getElementById("formaPagamento").value;
+
+    let mensagem = "*Novo Pedido*%0A%0A";
+
+    mensagem += "👤 Cliente: João da Silva%0A%0A";
+
+    mensagem += "📦 Produtos:%0A";
+
+    carrinho.forEach(function(produto){
+
+        mensagem +=
+            `• ${produto.quantidade}x ${produto.nome} - R$ ${(produto.preco * produto.quantidade).toFixed(2).replace(".", ",")}%0A`;
+
+    });
+
+    mensagem += "%0A";
+
+    mensagem +=
+        "💰 Total: " +
+        document.getElementById("valorTotal").textContent +
+        "%0A%0A";
+
+    mensagem += "🚚 Tipo de entrega: ";
+
+    mensagem += tipoEntrega == "entrega"
+        ? "Entrega"
+        : "Retirada";
+
+    mensagem += "%0A";
+
+    if(tipoEntrega == "entrega"){
+
+        mensagem += "%0A📍 Endereço:%0A";
+
+        mensagem +=
+            document.getElementById("rua").value + ", ";
+
+        mensagem +=
+            document.getElementById("numero").value + "%0A";
+
+        mensagem +=
+            document.getElementById("bairro").value + "%0A";
+
+        mensagem +=
+            document.getElementById("cidade").value + "%0A";
+
+    }
+
+    mensagem += "%0A";
+
+    mensagem +=
+        "💳 Forma de pagamento: " +
+        pagamento;
+
+    window.open(
+        "https://wa.me/" + telefone + "?text=" + mensagem,
+        "_blank"
+    );
+
+});

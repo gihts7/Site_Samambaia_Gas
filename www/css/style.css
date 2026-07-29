@@ -267,3 +267,64 @@ footer{
 
     z-index:0;
 }
+
+.perfil{
+
+    text-align:center;
+}
+
+.perfil i{
+
+    font-size:80px;
+    color:#ff5a00;
+
+}
+
+h5{
+
+    color:#ffc400;
+    font-weight:bold;
+    margin-top:20px;
+
+}
+
+.form-control[readonly]{
+
+    background:#f7f7f7;
+    color:#555;
+    cursor:default;
+
+}
+
+.btn-sair{
+
+    background:#6c757d;
+    color:white;
+    border:none;
+
+}
+
+.btn-sair:hover{
+
+    background:#5a6268;
+
+}
+
+.btn-editar{
+
+    border:2px solid #ff5a00;
+    color:white;
+    background:#ff5a00;
+    font-weight:600;
+    border-radius:12px;
+    padding:12px;
+    transition:.3s;
+
+}
+
+.btn-editar:hover{
+
+    background:#ee6319;
+    color:white;
+
+}

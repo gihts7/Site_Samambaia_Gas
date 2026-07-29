@@ -661,13 +661,13 @@ body{
 .btn-adicionar{
 
     width:100%;
+    height:55px;
 
-    border:none;
+    background:white;
 
-    background:linear-gradient(90deg,#ff5a00,#ff7a1c);
-    color:white;
+    color:#ffb300;
 
-    height:50px;
+    border:2px solid #ffb300;
 
     border-radius:12px;
 
@@ -681,9 +681,19 @@ body{
 
 .btn-adicionar:hover{
 
-    background:#ff6b1d;
+    background:#ffb300;
+
+    color:white;
 
     transform:translateY(-2px);
+
+    box-shadow:0 6px 15px rgba(255,179,0,.35);
+
+}
+
+.btn-adicionar i{
+
+    margin-right:6px;
 
 }
 
@@ -1148,3 +1158,4 @@ html{
     color:white;
 
 }
+

@@ -766,7 +766,7 @@
         Forma de pagamento
     </h5>
 
-    <select id="pagamento" class="form-select" required>
+    <select id="formaPagamento" class="form-select" required>
 
         <option value="">Selecione...</option>
         <option>PIX</option>
@@ -790,7 +790,7 @@
 
     </div>
 
-    <button class="btn-enviar">
+    <button id="btnEnviar" class="btn-enviar">
 
         <i class="bi bi-whatsapp"></i>
 

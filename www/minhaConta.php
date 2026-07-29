@@ -32,6 +32,12 @@
 
             <img src="imagens/Logo_sem_fundo.png" class="logo" alt="Logo">
 
+            <div class="perfil">
+
+                <i class="bi bi-person-circle"></i>
+
+            </div>
+
             <h1>Minha Conta</h1>
 
             <p class="subtitulo">
@@ -218,7 +224,7 @@
 
             <div class="d-grid gap-3">
 
-                <a href="editarCadastro.php" class="btn btn-login">
+                <a href="editarCadastro.php" class="btn btn-editar">
 
                     <i class="bi bi-pencil-square"></i>
 
@@ -230,7 +236,7 @@
 
                     <i class="bi bi-box-arrow-right"></i>
 
-                    Sair
+                    Sair da sua conta
 
                 </a>
 
@@ -289,7 +295,7 @@
 
                 Tem certeza que deseja excluir sua conta?
                 <br><br>
-                Esta ação não poderá ser desfeita.
+                Todos os seus dados serão removidos permanentemente.
 
             </div>
 
