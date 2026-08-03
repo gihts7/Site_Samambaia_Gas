@@ -30,7 +30,7 @@
 
         <form method="POST" action="minhaConta.php">
 
-            <img src="Imagens/Logo_sem_fundo.png" alt="Logo" class="logo">
+            <img src="imagens/logo_sem_fundo.png" alt="Logo" class="logo">
 
             <h1>Editar Cadastro</h1>
 

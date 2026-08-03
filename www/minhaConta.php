@@ -30,7 +30,7 @@
 
         <form>
 
-            <img src="imagens/Logo_sem_fundo.png" class="logo" alt="Logo">
+            <img src="imagens/logo_sem_fundo.png" class="logo" alt="Logo">
 
             <div class="perfil">
 
@@ -232,7 +232,7 @@
 
                 </a>
 
-                <a href="index.php" class="btn btn-secondary">
+                <a href="sairConta.php" class="btn btn-secondary"> 
 
                     <i class="bi bi-box-arrow-right"></i>
 
@@ -309,7 +309,7 @@
 
                 </button>
 
-                <a href="index.php" class="btn btn-danger">
+                <a href="excluirConta.php" class="btn btn-danger">
 
                     Excluir
 

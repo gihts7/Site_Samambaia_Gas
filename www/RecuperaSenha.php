@@ -28,9 +28,9 @@
 
     <div class="login-box">
 
-    <form method="POST" action="telaPrincipal.php">
+    <form method="POST" action="index.php">
 
-        <img src="Imagens/Logo_sem_fundo.png" alt="Logo" class="logo">
+        <img src="imagens/logo_sem_fundo.png" alt="Logo" class="logo">
 
         <h1>Recuperar senha</h1>
 

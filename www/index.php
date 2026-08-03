@@ -31,7 +31,7 @@
 
             <a class="navbar-brand" href="#inicio">
 
-                <img src="Imagens/Logo_sem_fundo.png" class="logo-menu">
+                <img src="imagens/logo_sem_fundo.png" class="logo-menu">
 
             </a>
 
