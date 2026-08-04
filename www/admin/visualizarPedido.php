@@ -1,0 +1,290 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>Visualizar Pedido</title>
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css">
+
+    <link rel="stylesheet" href="../css/admin.css">
+
+</head>
+
+<body>
+
+<nav class="navbar navbar-expand-lg navbar-admin">
+
+    <div class="container">
+
+        <a class="navbar-brand" href="painelAdmin.php">
+
+            <img src="../imagens/logo_sem_fundo.png" class="logo-menu">
+
+        </a>
+
+        <div class="collapse navbar-collapse justify-content-end">
+
+            <ul class="navbar-nav">
+
+                <li class="nav-item">
+
+                    <a href="pedidos.php" class="nav-link">
+
+                        <i class="bi bi-arrow-left"></i>
+
+                        Voltar
+
+                    </a>
+
+                </li>
+
+            </ul>
+
+        </div>
+
+    </div>
+
+</nav>
+
+<div class="container py-4">
+
+    <h2 class="mb-4 fw-bold">
+
+        Pedido #001
+
+    </h2>
+
+    <div class="row g-4">
+
+        <!-- Cliente -->
+
+        <div class="col-md-6">
+
+            <div class="card shadow-sm h-100">
+
+                <div class="card-header card-header-pedido">
+
+                    <strong>
+
+                        <i class="bi bi-person-fill"></i>
+
+                        Cliente
+
+                    </strong>
+
+                </div>
+
+                <div class="card-body">
+
+                    <p class="mb-2">
+
+                        <strong>João da Silva</strong>
+
+                    </p>
+
+                    <p class="text-muted mb-0">
+
+                        <i class="bi bi-telephone-fill"></i>
+
+                        (51) 99999-9999
+
+                    </p>
+
+                </div>
+
+            </div>
+
+        </div>
+
+        <!-- Pagamento -->
+
+        <div class="col-md-6">
+
+            <div class="card shadow-sm h-100">
+
+                <div class="card-header card-header-pedido">
+
+                    <strong>
+
+                        <i class="bi bi-credit-card-fill"></i>
+
+                        Pagamento
+
+                    </strong>
+
+                </div>
+
+                <div class="card-body">
+
+                    <span class="badge bg-success fs-6">
+
+                        PIX
+
+                    </span>
+
+                </div>
+
+            </div>
+
+        </div>
+
+        <!-- Endereço -->
+
+        <div class="col-12">
+
+            <div class="card shadow-sm">
+
+                <div class="card-header card-header-pedido">
+
+                    <strong>
+
+                        <i class="bi bi-geo-alt-fill"></i>
+
+                        Endereço
+
+                    </strong>
+
+                </div>
+
+                <div class="card-body">
+
+                    Rua Exemplo, 123
+
+                    <br>
+
+                    Centro - Santo Antônio da Patrulha
+
+                </div>
+
+            </div>
+
+        </div>
+
+        <!-- Produtos -->
+
+        <div class="col-12">
+
+            <div class="card shadow-sm">
+
+                <div class="card-header card-header-pedido">
+
+                    <strong>
+
+                        <i class="bi bi-box-seam"></i>
+
+                        Produtos
+
+                    </strong>
+
+                </div>
+
+                <div class="card-body p-0">
+
+                    <table class="table table-hover align-middle mb-0">
+
+                        <thead>
+
+                            <tr>
+
+                                <th>Produto</th>
+
+                                <th class="text-center">Qtd.</th>
+
+                                <th class="text-end">Subtotal</th>
+
+                            </tr>
+
+                        </thead>
+
+                        <tbody>
+
+                            <tr>
+
+                                <td>GLP P13</td>
+
+                                <td class="text-center">2x</td>
+
+                                <td class="text-end">
+
+                                    R$220,00
+
+                                </td>
+
+                            </tr>
+
+                            <tr>
+
+                                <td>Água Mineral 20L</td>
+
+                                <td class="text-center">1x</td>
+
+                                <td class="text-end">
+
+                                    R$18,00
+
+                                </td>
+
+                            </tr>
+
+                        </tbody>
+
+                    </table>
+
+                </div>
+
+            </div>
+
+        </div>
+
+        <!-- Total -->
+
+        <div class="col-12">
+
+            <div class="card shadow-sm">
+
+                <div class="card-body d-flex justify-content-between align-items-center">
+
+                    <h4 class="mb-0">
+
+                        Total do Pedido
+
+                    </h4>
+
+                    <h3 class="mb-0 total-pedido">
+                        R$238,00
+                    </h3>
+                    
+                </div>
+
+            </div>
+
+        </div>
+
+        <!-- Botão -->
+
+        <div class="col-12 text-end">
+
+            <a href="pedidos.php" class="btn btn-secondary">
+
+                <i class="bi bi-arrow-left"></i>
+
+                Voltar
+
+            </a>
+
+        </div>
+
+    </div>
+
+</div>
+
+</body>
+
+</html>

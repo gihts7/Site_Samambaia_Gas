@@ -252,6 +252,22 @@
 
                 </button>
 
+                <a href="admin/painelAdmin.php" class="btn btn-secondary"> 
+
+                    <i class="bi bi-box-arrow-right"></i>
+
+                    Painel administrativo (apenas para vizualização)
+
+                </a>
+
+                <a href="login.php" class="btn btn-secondary"> 
+
+                    <i class="bi bi-box-arrow-right"></i>
+
+                    Tela de login (apenas para vizualização)
+
+                </a>
+
             </div>
 
         </form>
