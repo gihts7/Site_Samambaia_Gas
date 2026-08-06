@@ -169,7 +169,7 @@
 
             <div class="row">
 
-                <div class="col-md-6">
+                <div class="col-md-5">
 
                     <label>Bairro</label>
 
@@ -182,14 +182,15 @@
                         <input
                             class="form-control"
                             type="text"
-                            name="bairro" required
+                            name="bairro"
+                            required
                             placeholder="Digite seu bairro">
 
                     </div>
 
                 </div>
 
-                <div class="col-md-6">
+                <div class="col-md-7">
 
                     <label>Cidade</label>
 
@@ -199,21 +200,16 @@
                             <i class="bi bi-buildings-fill"></i>
                         </span>
 
-                        <select class="form-control" name="cidade" required>
+                        <input
+                            class="form-control"
+                            type="text"
+                            value="Santo Antônio da Patrulha"
+                            readonly>
 
-                            <option value="" selected disabled>
-                                Selecione uma cidade
-                            </option>
-
-                            <option value="Santo Antônio da Patrulha">
-                                Santo Antônio da Patrulha
-                            </option>
-
-                            <option value="Caraá">
-                                Caraá
-                            </option>
-
-                        </select>
+                        <input
+                            type="hidden"
+                            name="cidade"
+                            value="Santo Antônio da Patrulha">
 
                     </div>
 

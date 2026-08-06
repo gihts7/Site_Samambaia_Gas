@@ -31,15 +31,23 @@
 
         </a>
 
-        <div>
+        <div class="collapse navbar-collapse justify-content-end">
 
-            <a href="painelAdmin.php" class="btn btn-outline-light">
+            <ul class="navbar-nav">
 
-                <i class="bi bi-arrow-left"></i>
+                <li class="nav-item">
 
-                Voltar
+                    <a href="painelAdmin.php" class="nav-link">
 
-            </a>
+                        <i class="bi bi-arrow-left"></i>
+
+                        Voltar ao painel
+
+                    </a>
+
+                </li>
+
+            </ul>
 
         </div>
 

@@ -44,53 +44,17 @@
 
         </button>
 
-        <div class="collapse navbar-collapse" id="menu">
+        <div class="collapse navbar-collapse justify-content-end">
 
-            <ul class="navbar-nav ms-auto align-items-center">
-
-                <li class="nav-item">
-
-                    <a class="nav-link" href="painelAdmin.php">
-
-                        <i class="bi bi-speedometer2"></i>
-
-                        Painel
-
-                    </a>
-
-                </li>
+            <ul class="navbar-nav">
 
                 <li class="nav-item">
 
-                    <a class="nav-link" href="gerenciarProdutos.php">
+                    <a href="painelAdmin.php" class="nav-link">
 
-                        <i class="bi bi-box-seam"></i>
+                        <i class="bi bi-arrow-left"></i>
 
-                        Produtos
-
-                    </a>
-
-                </li>
-
-                <li class="nav-item">
-
-                    <a class="nav-link active" href="gerenciarUsuarios.php">
-
-                        <i class="bi bi-people-fill"></i>
-
-                        Usuários
-
-                    </a>
-
-                </li>
-
-                <li class="nav-item">
-
-                    <a class="nav-link" href="../index.php">
-
-                        <i class="bi bi-box-arrow-right"></i>
-
-                        Sair
+                        Voltar ao painel
 
                     </a>
 
@@ -152,8 +116,7 @@
 
                         <a
                             href="visualizarUsuario.php"
-                            class="btn btn-primary btn-sm"
-                            title="Visualizar">
+                            class="btn btn-warning">
 
                             <i class="bi bi-eye-fill"></i>
 
@@ -190,7 +153,7 @@
 
                         <a
                             href="visualizarUsuario.php"
-                            class="btn btn-primary btn-sm">
+                            class="btn btn-warning">
 
                             <i class="bi bi-eye-fill"></i>
 

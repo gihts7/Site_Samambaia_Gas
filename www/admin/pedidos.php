@@ -19,35 +19,35 @@
 
 <nav class="navbar navbar-expand-lg navbar-admin">
 
-<div class="container">
+    <div class="container">
 
-<a class="navbar-brand" href="painelAdmin.php">
+    <a class="navbar-brand" href="painelAdmin.php">
 
-<img src="../imagens/logo_sem_fundo.png" class="logo-menu">
+    <img src="../imagens/logo_sem_fundo.png" class="logo-menu">
 
-</a>
+    </a>
 
-<div class="collapse navbar-collapse justify-content-end">
+    <div class="collapse navbar-collapse justify-content-end">
 
-<ul class="navbar-nav">
+    <ul class="navbar-nav">
 
-<li class="nav-item">
+    <li class="nav-item">
 
-<a href="painelAdmin.php" class="nav-link">
+    <a href="painelAdmin.php" class="nav-link">
 
-<i class="bi bi-arrow-left"></i>
+    <i class="bi bi-arrow-left"></i>
 
-Voltar ao painel
+    Voltar ao painel
 
-</a>
+    </a>
 
-</li>
+    </li>
 
-</ul>
+    </ul>
 
-</div>
+    </div>
 
-</div>
+    </div>
 
 </nav>
 

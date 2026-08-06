@@ -149,8 +149,8 @@
         <p>
 
             A Samambaia Gás atua na venda de gás de cozinha e água mineral,
-            oferecendo atendimento rápido, segurança e qualidade para
-            Santo Antônio da Patrulha e Caraá.
+            oferecendo atendimento rápido, segurança e qualidade para área urbana e rural de
+            Santo Antônio da Patrulha.
 
         </p>
 
@@ -195,7 +195,7 @@
             <h4>Atendimento local</h4>
 
             <p>
-                Atendemos Santo Antônio da Patrulha e Caraá com rapidez e compromisso.
+                Atendemos toda a cidade de Santo Antônio da Patrulha rapidez e compromisso.
             </p>
 
         </div>
@@ -324,13 +324,11 @@
 
                 <label>Cidade</label>
 
-                <select class="form-select" id="cidade">
-
-                    <option>Santo Antônio da Patrulha</option>
-
-                    <option>Caraá</option>
-
-                </select>
+                <input
+                    type="text"
+                    class="form-control"
+                    value="Santo Antônio da Patrulha"
+                    readonly>
 
             </div>
 
@@ -591,15 +589,15 @@
 
             </div>
 
-            <!-- Mangueira -->
+            <!-- Kit Mangueira -->
             <div class="produto"
-                data-nome="Mangueira"
+                data-nome="KitMangueira"
                 data-retirada="25"
                 data-entrega="25">
 
-                <img src="imagens/mangueira.png">
+                <img src="imagens/kitMangueira.png">
 
-                <h3>Mangueira</h3>
+                <h3>Kit regulador + Mangueira</h3>
 
                 <p class="preco">
                     R$ <span class="valor-produto">25,00</span>
@@ -823,7 +821,7 @@
                 A <strong>Samambaia Gás</strong> atua na revenda de GLP, água
                 mineral e acessórios, oferecendo atendimento rápido,
                 produtos de qualidade e preços justos para Santo Antônio
-                da Patrulha e Caraá.
+                da Patrulha.
             </p>
 
             <p>
@@ -865,7 +863,7 @@
 
                     <div class="info-item">
                         <i class="bi bi-truck"></i>
-                        <span>Entrega rápida para Santo Antônio e Caraá. Conferir disponibilidade de entrega para interior e município Caraá</span>
+                        <span>Entrega rápida para Santo Antônio. Conferir disponibilidade de entrega para interior e município Caraá</span>
                     </div>
 
                     <div class="info-item">
