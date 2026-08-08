@@ -55,7 +55,7 @@
                 <input
                     class="form-control"
                     type="text"
-                    name="nome" required
+                    name="nome"
                     placeholder="Digite seu nome completo">
 
             </div>
@@ -73,7 +73,7 @@
                 <input
                     class="form-control"
                     type="email"
-                    name="email" required
+                    name="email" 
                     placeholder="Digite seu email">
 
             </div>
@@ -95,7 +95,7 @@
                         <input
                             class="form-control"
                             type="date"
-                            name="dataNascimento" required>  
+                            name="dataNascimento" >  
 
                     </div>
 
@@ -114,7 +114,7 @@
                         <input
                             class="form-control"
                             type="tel"
-                            name="telefone" required
+                            name="telefone"
                             placeholder="(51) 99999-9999">
 
                     </div>
@@ -140,7 +140,7 @@
                         <input
                             class="form-control"
                             type="text"
-                            name="rua" required
+                            name="rua"
                             placeholder="Digite sua rua">
 
                     </div>
@@ -160,7 +160,7 @@
                         <input
                             class="form-control"
                             type="number"
-                            name="numero" required
+                            name="numero"
                             placeholder="123">
 
                     </div>
@@ -187,7 +187,6 @@
                             class="form-control"
                             type="text"
                             name="bairro"
-                            required
                             placeholder="Digite seu bairro">
 
                     </div>
@@ -236,7 +235,7 @@
                     id="senha"
                     class="form-control"
                     type="password"
-                    name="senha" required
+                    name="senha"
                     placeholder="Digite sua senha">
 
                 <span class="input-group-text olho">
@@ -259,7 +258,7 @@
                     id="confirmarSenha"
                     class="form-control"
                     type="password"
-                    name="confirmarSenha" required
+                    name="confirmarSenha"
                     placeholder="Digite novamente sua senha">
 
                 <span class="input-group-text olho">

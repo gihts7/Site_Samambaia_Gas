@@ -54,7 +54,7 @@
             <input
                 class="form-control"
                 type="email"
-                name="email" required
+                name="email"
                 placeholder="Digite seu email">
 
         </div>
@@ -73,7 +73,7 @@
                 id="senha"
                 class="form-control"
                 type="password"
-                name="senha" required
+                name="senha"
                 placeholder="Digite sua senha">
 
             <span class="input-group-text olho">
