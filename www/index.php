@@ -229,7 +229,7 @@
         </p>
 
         <div class="whatsapp-contato">
-            <a href="https://wa.me/555194226636" target="_blank">
+            <a href="https://wa.me/5551989212294" target="_blank">
                 <i class="bi bi-whatsapp"></i>
                 Entre em contato
             </a>
