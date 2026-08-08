@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>Editar Conta - Admin</title>
+
+    <!-- Ícone -->
+    <link rel="icon" type="image/png" href="../imagens/iconeLogo.png">
+
+    <!-- Bootstrap -->
+    <link
+        href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css"
+        rel="stylesheet">
+
+    <!-- Bootstrap Icons -->
+    <link
+        rel="stylesheet"
+        href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css">
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="../css/style.css">
+
+</head>
+
+<body>
+
+<div class="fundo">
+
+    <!-- Fundos decorativos -->
+
+    <img
+        src="../imagens/bg-top.svg"
+        class="bg-top"
+        alt="">
+
+    <img
+        src="../imagens/bg-bottom.svg"
+        class="bg-bottom"
+        alt="">
+
+
+    <!-- ============================= -->
+    <!-- CARD -->
+    <!-- ============================= -->
+
+    <div class="login-box">
+
+        <form>
+
+            <!-- Logo -->
+
+            <img
+                src="../imagens/logo_sem_fundo.png"
+                class="logo"
+                alt="Logo Samambaia Gás">
+
+
+            <!-- Ícone de perfil -->
+
+            <div class="perfil">
+
+                <i class="bi bi-person-circle"></i>
+
+            </div>
+
+
+            <!-- Título -->
+
+            <h1>Editar Conta</h1>
+
+            <p class="subtitulo">
+
+                Altere os dados da sua conta administrativa.
+
+            </p>
+
+
+            <hr>
+
+
+            <!-- ============================= -->
+            <!-- USUÁRIO -->
+            <!-- ============================= -->
+
+            <label>Usuário</label>
+
+            <div class="input-group mb-3">
+
+                <span class="input-group-text">
+
+                    <i class="bi bi-person-fill"></i>
+
+                </span>
+
+                <input
+                    class="form-control"
+                    type="text"
+                    name="usuario"
+                    value="Admin"
+                    required>
+
+            </div>
+
+
+            <!-- ============================= -->
+            <!-- NOVA SENHA -->
+            <!-- ============================= -->
+
+            <label>Nova senha</label>
+
+            <div class="input-group mb-3">
+
+                <span class="input-group-text">
+
+                    <i class="bi bi-lock-fill"></i>
+
+                </span>
+
+                <input
+                    class="form-control"
+                    type="password"
+                    name="senha"
+                    placeholder="Digite uma nova senha">
+
+                <span class="input-group-text olho">
+
+                    <i class="bi bi-eye-fill"></i>
+
+                </span>
+
+            </div>
+
+
+            <!-- ============================= -->
+            <!-- CONFIRMAR SENHA -->
+            <!-- ============================= -->
+
+            <label>Confirmar nova senha</label>
+
+            <div class="input-group mb-4">
+
+                <span class="input-group-text">
+
+                    <i class="bi bi-lock-fill"></i>
+
+                </span>
+
+                <input
+                    class="form-control"
+                    type="password"
+                    name="confirmarSenha"
+                    placeholder="Digite a senha novamente">
+
+                <span class="input-group-text olho">
+
+                    <i class="bi bi-eye-fill"></i>
+
+                </span>
+
+            </div>
+
+
+            <!-- ============================= -->
+            <!-- BOTÕES -->
+            <!-- ============================= -->
+
+            <div class="d-grid gap-3">
+
+                <!-- Salvar -->
+
+                <button
+                    type="button"
+                    class="btn btn-editar">
+
+                    <i class="bi bi-check-lg"></i>
+
+                    Salvar Alterações
+
+                </button>
+
+
+                <!-- Cancelar -->
+
+                <a
+                    href="minhaContaAdmin.php"
+                    class="btn btn-sair">
+
+                    <i class="bi bi-arrow-left"></i>
+
+                    Cancelar
+
+                </a>
+
+            </div>
+
+        </form>
+
+    </div>
+
+
+    <!-- ============================= -->
+    <!-- RODAPÉ -->
+    <!-- ============================= -->
+
+    <footer>
+
+        © 2026 Samambaia Gás. Todos os direitos reservados.
+
+    </footer>
+
+</div>
+
+
+<!-- Bootstrap JavaScript -->
+
+<script
+    src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/js/bootstrap.bundle.min.js">
+</script>
+
+<!-- Seu JavaScript -->
+
+<script src="../js/script.js"></script>
+
+</body>
+
+</html>

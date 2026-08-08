@@ -20,135 +20,138 @@
 
 <body>
 
-<nav class="navbar navbar-expand-lg navbar-admin">
-
-    <div class="container">
+<div class="container">
 
     <a class="navbar-brand" href="painelAdmin.php">
 
-    <img src="../imagens/logo_sem_fundo.png" class="logo-menu">
+        <img src="../imagens/logo_sem_fundo.png" class="logo-menu">
 
     </a>
 
     <div class="collapse navbar-collapse justify-content-end">
 
-    <ul class="navbar-nav">
+        <ul class="navbar-nav">
 
-    <li class="nav-item">
+            <li class="nav-item">
 
-    <a href="painelAdmin.php" class="nav-link">
+                <a href="painelAdmin.php" class="nav-link">
 
-    <i class="bi bi-arrow-left"></i>
+                    <i class="bi bi-arrow-left"></i>
 
-    Voltar ao painel
+                    Voltar ao painel
 
-    </a>
+                </a>
 
-    </li>
+            </li>
 
-    </ul>
-
-    </div>
+        </ul>
 
     </div>
+
+</div>
 
 </nav>
 
+Claro. Novamente, não alterei absolutamente nada no código — apenas organizei a indentação e os espaços.
+
 <div class="container">
 
-<div class="cabecalho-produtos">
+    <div class="cabecalho-produtos">
 
-<div>
+        <div>
 
-<h2>Pedidos Recebidos</h2>
+            <h2>Pedidos Recebidos</h2>
 
-<p>Visualize os pedidos enviados pelo site.</p>
+            <p>Visualize os pedidos enviados pelo site.</p>
 
-</div>
+        </div>
 
-</div>
+    </div>
 
-<div class="table-responsive">
 
-<table class="table align-middle text-center">
+    <div class="table-responsive">
 
-<thead>
+        <table class="table align-middle text-center">
 
-<tr>
+            <thead>
 
-<th>#</th>
+                <tr>
 
-<th>Cliente</th>
+                    <th>#</th>
 
-<th>Entrega</th>
+                    <th>Cliente</th>
 
-<th>Pagamento</th>
+                    <th>Entrega</th>
 
-<th>Total</th>
+                    <th>Pagamento</th>
 
-<th>Ações</th>
+                    <th>Total</th>
 
-</tr>
+                    <th>Ações</th>
 
-</thead>
+                </tr>
 
-<tbody>
+            </thead>
 
-<tr>
 
-<td>001</td>
+            <tbody>
 
-<td>João da Silva</td>
+                <tr>
 
-<td>Entrega</td>
+                    <td>001</td>
 
-<td>PIX</td>
+                    <td>João da Silva</td>
 
-<td>R$ 220,00</td>
+                    <td>Entrega</td>
 
-<td>
+                    <td>PIX</td>
 
-<a href="visualizarPedido.php"
-class="btn btn-warning">
+                    <td>R$ 220,00</td>
 
-<i class="bi bi-eye-fill"></i>
+                    <td>
 
-</a>
+                        <a href="visualizarPedido.php"
+                           class="btn btn-warning">
 
-</td>
+                            <i class="bi bi-eye-fill"></i>
 
-</tr>
+                        </a>
 
-<tr>
+                    </td>
 
-<td>002</td>
+                </tr>
 
-<td>Maria Oliveira</td>
 
-<td>Retirada</td>
+                <tr>
 
-<td>Cartão</td>
+                    <td>002</td>
 
-<td>R$ 110,00</td>
+                    <td>Maria Oliveira</td>
 
-<td>
+                    <td>Retirada</td>
 
-<a href="visualizarPedido.php"
-class="btn btn-warning">
+                    <td>Cartão</td>
 
-<i class="bi bi-eye-fill"></i>
+                    <td>R$ 110,00</td>
 
-</a>
+                    <td>
 
-</td>
+                        <a href="visualizarPedido.php"
+                           class="btn btn-warning">
 
-</tr>
+                            <i class="bi bi-eye-fill"></i>
 
-</tbody>
+                        </a>
 
-</table>
+                    </td>
 
-</div>
+                </tr>
+
+            </tbody>
+
+        </table>
+
+    </div>
 
 </div>
 

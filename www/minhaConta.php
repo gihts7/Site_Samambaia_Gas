@@ -235,13 +235,17 @@
 
                 </a>
 
-                <a href="sairConta.php" class="btn btn-secondary"> 
+                <button
+                    type="button"
+                    class="btn btn-secondary"
+                    data-bs-toggle="modal"
+                    data-bs-target="#modalSair">
 
                     <i class="bi bi-box-arrow-right"></i>
 
                     Sair da sua conta
 
-                </a>
+                </button>
 
                 <button
                     type="button"
@@ -331,6 +335,63 @@
                 <a href="excluirConta.php" class="btn btn-danger">
 
                     Excluir
+
+                </a>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
+
+<!-- Modal Sair -->
+
+<div class="modal fade" id="modalSair" tabindex="-1">
+
+    <div class="modal-dialog modal-dialog-centered">
+
+        <div class="modal-content">
+
+            <div class="modal-header">
+
+                <h5 class="modal-title">
+
+                    Sair da Conta
+
+                </h5>
+
+                <button
+                    type="button"
+                    class="btn-close"
+                    data-bs-dismiss="modal">
+
+                </button>
+
+            </div>
+
+            <div class="modal-body">
+
+                Tem certeza que deseja sair da sua conta?
+
+            </div>
+
+            <div class="modal-footer">
+
+                <button
+                    class="btn btn-secondary"
+                    data-bs-dismiss="modal">
+
+                    Cancelar
+
+                </button>
+
+                <a
+                    href="sairConta.php"
+                    class="btn btn-danger">
+
+                    Sair
 
                 </a>
 

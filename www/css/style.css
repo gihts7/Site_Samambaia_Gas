@@ -328,3 +328,23 @@ h5{
     color:white;
 
 }
+
+.titulo-secao{
+
+    color:#ffc400;
+
+    font-weight:bold;
+
+    font-size:22px;
+
+    margin-top:20px;
+
+    margin-bottom:20px;
+
+}
+
+.titulo-secao i{
+
+    margin-right:8px;
+
+}
