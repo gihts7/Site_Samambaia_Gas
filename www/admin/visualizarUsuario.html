@@ -30,7 +30,7 @@
 
     <div class="container">
 
-        <a class="navbar-brand" href="painelAdmin.php">
+        <a class="navbar-brand" href="painelAdmin.html">
 
             <img src="../imagens/Logo_sem_fundo.png" class="logo-menu">
 
@@ -51,28 +51,28 @@
             <ul class="navbar-nav ms-auto">
 
                 <li class="nav-item">
-                    <a class="nav-link" href="painelAdmin.php">
+                    <a class="nav-link" href="painelAdmin.html">
                         <i class="bi bi-speedometer2"></i>
                         Painel
                     </a>
                 </li>
 
                 <li class="nav-item">
-                    <a class="nav-link" href="gerenciarProdutos.php">
+                    <a class="nav-link" href="gerenciarProdutos.html">
                         <i class="bi bi-box-seam"></i>
                         Produtos
                     </a>
                 </li>
 
                 <li class="nav-item">
-                    <a class="nav-link active" href="gerenciarUsuarios.php">
+                    <a class="nav-link active" href="gerenciarUsuarios.html">
                         <i class="bi bi-people-fill"></i>
                         Usuários
                     </a>
                 </li>
 
                 <li class="nav-item">
-                    <a class="nav-link" href="../index.php">
+                    <a class="nav-link" href="../index.html">
                         <i class="bi bi-box-arrow-right"></i>
                         Sair
                     </a>
@@ -219,7 +219,7 @@
         <div class="d-flex justify-content-end gap-3">
 
             <a
-                href="gerenciarUsuarios.php"
+                href="gerenciarUsuarios.html"
                 class="btn btn-secondary">
 
                 <i class="bi bi-arrow-left"></i>
@@ -245,9 +245,16 @@
 
 </div>
 
-<!-- Modal -->
+<!-- ============================= -->
+<!-- MODAL EXCLUIR USUÁRIO -->
+<!-- ============================= -->
 
-<div class="modal fade" id="modalExcluir" tabindex="-1">
+<div
+    class="modal fade"
+    id="modalExcluir"
+    tabindex="-1"
+    aria-labelledby="modalExcluirLabel"
+    aria-hidden="true">
 
     <div class="modal-dialog modal-dialog-centered">
 
@@ -255,15 +262,19 @@
 
             <div class="modal-header">
 
-                <h5 class="modal-title">
+                <h5
+                    class="modal-title"
+                    id="modalExcluirLabel">
 
                     Excluir Usuário
 
                 </h5>
 
                 <button
+                    type="button"
                     class="btn-close"
-                    data-bs-dismiss="modal">
+                    data-bs-dismiss="modal"
+                    aria-label="Fechar">
 
                 </button>
 
@@ -282,6 +293,7 @@
             <div class="modal-footer">
 
                 <button
+                    type="button"
                     class="btn btn-secondary"
                     data-bs-dismiss="modal">
 
@@ -290,7 +302,7 @@
                 </button>
 
                 <a
-                    href="gerenciarUsuarios.php"
+                    href="gerenciarUsuarios.html"
                     class="btn btn-danger">
 
                     Excluir

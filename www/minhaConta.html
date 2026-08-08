@@ -217,7 +217,7 @@
 
             <div class="d-grid gap-3">
 
-                <a href="editarCadastro.php" class="btn btn-editar">
+                <a href="editarCadastro.html" class="btn btn-editar">
 
                     <i class="bi bi-pencil-square"></i>
 
@@ -249,7 +249,7 @@
 
                 </button>
 
-                <a href="admin/painelAdmin.php" class="btn btn-secondary"> 
+                <a href="admin/painelAdmin.html" class="btn btn-secondary">
 
                     <i class="bi bi-box-arrow-right"></i>
 
@@ -257,7 +257,7 @@
 
                 </a>
 
-                <a href="login.php" class="btn btn-secondary"> 
+                <a href="login.html" class="btn btn-secondary">
 
                     <i class="bi bi-box-arrow-right"></i>
 
@@ -279,9 +279,16 @@
 
 </div>
 
-<!-- Modal -->
+<!-- ============================= -->
+<!-- MODAL EXCLUIR CONTA -->
+<!-- ============================= -->
 
-<div class="modal fade" id="modalExcluir" tabindex="-1">
+<div
+    class="modal fade"
+    id="modalExcluir"
+    tabindex="-1"
+    aria-labelledby="modalExcluirLabel"
+    aria-hidden="true">
 
     <div class="modal-dialog modal-dialog-centered">
 
@@ -289,7 +296,9 @@
 
             <div class="modal-header">
 
-                <h5 class="modal-title">
+                <h5
+                    class="modal-title"
+                    id="modalExcluirLabel">
 
                     Excluir Conta
 
@@ -298,7 +307,8 @@
                 <button
                     type="button"
                     class="btn-close"
-                    data-bs-dismiss="modal">
+                    data-bs-dismiss="modal"
+                    aria-label="Fechar">
 
                 </button>
 
@@ -307,7 +317,9 @@
             <div class="modal-body">
 
                 Tem certeza que deseja excluir sua conta?
+
                 <br><br>
+
                 Todos os seus dados serão removidos permanentemente.
 
             </div>
@@ -315,6 +327,7 @@
             <div class="modal-footer">
 
                 <button
+                    type="button"
                     class="btn btn-secondary"
                     data-bs-dismiss="modal">
 
@@ -322,7 +335,9 @@
 
                 </button>
 
-                <a href="index.php" class="btn btn-danger">
+                <a
+                    href="index.html"
+                    class="btn btn-danger">
 
                     Excluir
 
@@ -378,7 +393,7 @@
                 </button>
 
                 <a
-                    href="index.php"
+                    href="index.html"
                     class="btn btn-danger">
 
                     Sair
