@@ -20,39 +20,52 @@
 
 <body>
 
-<div class="container">
+<!-- NAVBAR -->
 
-    <a class="navbar-brand" href="painelAdmin.php">
+<nav class="navbar navbar-expand-lg navbar-admin">
 
-        <img src="../imagens/logo_sem_fundo.png" class="logo-menu">
+    <div class="container">
 
-    </a>
+        <a class="navbar-brand" href="painelAdmin.php">
 
-    <div class="collapse navbar-collapse justify-content-end">
+            <img src="../imagens/logo_sem_fundo.png" class="logo-menu">
 
-        <ul class="navbar-nav">
+            Samambaia Gás
 
-            <li class="nav-item">
+        </a>
 
-                <a href="painelAdmin.php" class="nav-link">
+        <button
+            class="navbar-toggler"
+            data-bs-toggle="collapse"
+            data-bs-target="#menu">
 
-                    <i class="bi bi-arrow-left"></i>
+            <span class="navbar-toggler-icon"></span>
 
-                    Voltar ao painel
+        </button>
 
-                </a>
+        <div class="collapse navbar-collapse justify-content-end">
 
-            </li>
+            <ul class="navbar-nav">
 
-        </ul>
+                <li class="nav-item">
+
+                    <a href="painelAdmin.php" class="nav-link">
+
+                        <i class="bi bi-arrow-left"></i>
+
+                        Voltar ao painel
+
+                    </a>
+
+                </li>
+
+            </ul>
+
+        </div>
 
     </div>
 
-</div>
-
 </nav>
-
-Claro. Novamente, não alterei absolutamente nada no código — apenas organizei a indentação e os espaços.
 
 <div class="container">
 

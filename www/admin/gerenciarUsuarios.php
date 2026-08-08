@@ -32,7 +32,7 @@
 
         <a class="navbar-brand" href="painelAdmin.php">
 
-            <img src="../imagens/Logo_sem_fundo.png" class="logo-menu">
+            <img src="../imagens/logo_sem_fundo.png" class="logo-menu">
 
             Samambaia Gás
 

@@ -49,11 +49,6 @@
 
             <hr>
 
-            <h5 class="mb-3">
-                <i class="bi bi-person-circle"></i>
-                Dados Pessoais
-            </h5>
-
             <label>Nome Completo</label>
 
             <div class="input-group mb-3">
@@ -131,11 +126,6 @@
             </div>
 
             <hr>
-
-            <h5 class="mb-3">
-                <i class="bi bi-geo-alt-fill"></i>
-                Endereço
-            </h5>
 
             <div class="row">
 
@@ -332,7 +322,7 @@
 
                 </button>
 
-                <a href="excluirConta.php" class="btn btn-danger">
+                <a href="index.php" class="btn btn-danger">
 
                     Excluir
 
@@ -388,7 +378,7 @@
                 </button>
 
                 <a
-                    href="sairConta.php"
+                    href="index.php"
                     class="btn btn-danger">
 
                     Sair

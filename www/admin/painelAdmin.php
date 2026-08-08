@@ -52,7 +52,7 @@
 
                         <i class="bi bi-person-circle"></i>
 
-                        Minha Conta
+                        Minha Conta Admin
 
                     </a>
 
@@ -60,17 +60,19 @@
 
                 <li class="nav-item">
 
-                    <a class="btn btn-sair"
-                       href="../index.php">
+                <button
+                    type="button"
+                    class="btn btn-sair"
+                    data-bs-toggle="modal"
+                    data-bs-target="#modalSair">
 
-                        <i class="bi bi-box-arrow-right"></i>
+                    <i class="bi bi-box-arrow-right"></i>
 
-                        Sair
+                    Sair da conta admin
 
-                    </a>
+                </button>
 
                 </li>
-
             </ul>
 
         </div>
@@ -172,24 +174,76 @@
 
         </div>
 
-        <div class="col-md-4">
+    </div>
 
-            <div class="card-admin">
+</div>
 
-                <i class="bi bi-house-door"></i>
+<!-- ============================= -->
+<!-- MODAL SAIR -->
+<!-- ============================= -->
 
-                <h3>Site</h3>
+<div
+    class="modal fade"
+    id="modalSair"
+    tabindex="-1"
+    aria-labelledby="modalSairLabel"
+    aria-hidden="true">
 
-                <p>
+    <div class="modal-dialog modal-dialog-centered">
 
-                    Retornar para a página principal.
+        <div class="modal-content">
 
-                </p>
 
-                <a href="../index.php"
-                   class="btn btn-admin">
+            <!-- Cabeçalho -->
 
-                    Abrir Site
+            <div class="modal-header">
+
+                <h5
+                    class="modal-title"
+                    id="modalSairLabel">
+
+                    Sair da Conta
+
+                </h5>
+
+                <button
+                    type="button"
+                    class="btn-close"
+                    data-bs-dismiss="modal"
+                    aria-label="Fechar">
+
+                </button>
+
+            </div>
+
+
+            <!-- Corpo -->
+
+            <div class="modal-body">
+
+                Tem certeza que deseja sair da conta admin?
+
+            </div>
+
+
+            <!-- Botões -->
+
+            <div class="modal-footer">
+
+                <button
+                    type="button"
+                    class="btn btn-secondary"
+                    data-bs-dismiss="modal">
+
+                    Cancelar
+
+                </button>
+
+                <a
+                    href="../index.php"
+                    class="btn btn-danger">
+
+                    Sair
 
                 </a>
 
@@ -200,6 +254,8 @@
     </div>
 
 </div>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/js/bootstrap.bundle.min.js"></script>
 
 </body>
 

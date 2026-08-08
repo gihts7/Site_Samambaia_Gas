@@ -86,15 +86,6 @@
             <!-- DADOS DA CONTA -->
             <!-- ============================= -->
 
-            <h5 class="titulo-secao">
-
-                <i class="bi bi-person-badge-fill"></i>
-
-                Dados da conta
-
-            </h5>
-
-
             <!-- Usuário -->
 
             <label>Usuário</label>

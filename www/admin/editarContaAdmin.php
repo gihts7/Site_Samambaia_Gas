@@ -172,15 +172,17 @@
 
                 <!-- Salvar -->
 
-                <button
-                    type="button"
-                    class="btn btn-editar">
+            <button
+                type="button"
+                class="btn btn-editar"
+                data-bs-toggle="modal"
+                data-bs-target="#modalSalvar">
 
-                    <i class="bi bi-check-lg"></i>
+                <i class="bi bi-check-lg"></i>
 
-                    Salvar Alterações
+                Salvar Alterações
 
-                </button>
+            </button>
 
 
                 <!-- Cancelar -->
@@ -221,7 +223,85 @@
     src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/js/bootstrap.bundle.min.js">
 </script>
 
-<!-- Seu JavaScript -->
+<!-- ============================= -->
+<!-- MODAL SALVAR ALTERAÇÕES -->
+<!-- ============================= -->
+
+<div
+    class="modal fade"
+    id="modalSalvar"
+    tabindex="-1"
+    aria-labelledby="modalSalvarLabel"
+    aria-hidden="true">
+
+    <div class="modal-dialog modal-dialog-centered">
+
+        <div class="modal-content">
+
+
+            <!-- Cabeçalho -->
+
+            <div class="modal-header">
+
+                <h5
+                    class="modal-title"
+                    id="modalSalvarLabel">
+
+                    Salvar Alterações
+
+                </h5>
+
+                <button
+                    type="button"
+                    class="btn-close"
+                    data-bs-dismiss="modal"
+                    aria-label="Fechar">
+
+                </button>
+
+            </div>
+
+
+            <!-- Corpo -->
+
+            <div class="modal-body">
+
+                Tem certeza que deseja salvar as alterações
+                da sua conta administrativa?
+
+            </div>
+
+
+            <!-- Botões -->
+
+            <div class="modal-footer">
+
+                <button
+                    type="button"
+                    class="btn btn-secondary"
+                    data-bs-dismiss="modal">
+
+                    Cancelar
+
+                </button>
+
+                <a
+                    href="minhaContaAdmin.php"
+                    class="btn btn-danger">
+
+                    Salvar
+
+                </a>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
+
+<!-- JavaScript -->
 
 <script src="../js/script.js"></script>
 
