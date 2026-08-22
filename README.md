@@ -4,9 +4,16 @@ Projeto Integrador desenvolvido para gerenciamento e realização de pedidos de 
 
 ## Entrega Front-End
 
-Na seguinte entrega estão todas as seguintes telas previstas no projeto:
+Para executar e vizualizar o projeto, é preciso baixar a pasta zipada do projeto, em: Code → Download ZIP
+Depois, extraia o arquivo .zip e abra o arquivo index,html.
+
+A pasta pode ser aberta também utilizando um editor de código, para executar o código, como o Visual Studio Code (VS Code).
+
 
 IMPORTANTE: Algumas telas não estão em seu fluxo normal, estão em caminhos por botão para vizualização apenas. Para que nesta entrega não precise ser feita duplicação de código que não serão utilizados ao decorrer do projeto
+
+
+Na seguinte entrega estão todas as seguintes telas previstas no projeto:
 
 ### Usúario
 * index.html
