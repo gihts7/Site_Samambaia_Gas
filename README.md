@@ -6,9 +6,9 @@ Projeto Integrador desenvolvido para gerenciamento e realização de pedidos de 
 
 Na seguinte entrega estão todas as seguintes telas previstas no projeto:
 
-IMPORTANTE: Algumas telas não estão em seu fluxo normal, estão em caminhos por botão para vizualização apenas. Para que nesta entrega não precise ser feita duplixação de código que não serão utilizados ao decorrer do projeto
+IMPORTANTE: Algumas telas não estão em seu fluxo normal, estão em caminhos por botão para vizualização apenas. Para que nesta entrega não precise ser feita duplicação de código que não serão utilizados ao decorrer do projeto
 
-Usúario
+### Usúario
 * index.html
 * cadastro.html
 * editarCadastro.html
@@ -16,7 +16,7 @@ Usúario
 * minhaConta.html
 * recuperaSenha.html
 
-Admin
+### Admin
 * painelAdmin.html
 * gerenciarProdutos.html
 * produtoFormulario.html
