@@ -119,8 +119,6 @@
 
                     <td>PIX</td>
 
-                    <td>R$ 220,00</td>
-
                     <td>
 
                         <a href="visualizarPedido.php"

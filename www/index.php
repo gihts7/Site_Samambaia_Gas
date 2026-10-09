@@ -337,7 +337,7 @@
 
         </div>
 
-        <p>*Entregas no interior sujeito a mudanças de valor e disponibilidade de entrega</p> 
+        <p>*Entregas no interior sujeitas à disponibilidade de entrega.</p> 
 
     </div>
 
@@ -378,17 +378,11 @@
 
             <!-- Gás P5 -->
             <div class="produto"
-                data-nome="Gás de cozinha P5"
-                data-retirada="110"
-                data-entrega="110">
+                data-nome="Gás de cozinha P5">
 
                 <img src="imagens/p5.png">
 
                 <h3>Gás de cozinha P5</h3>
-
-                <p class="preco">
-                    R$ <span class="valor-produto">110,00</span>
-                </p>
 
                 <div class="quantidade">
                     <button class="menos">-</button>
@@ -405,17 +399,11 @@
 
             <!-- Gás P13 -->
             <div class="produto"
-                data-nome="Gás de cozinha P13"
-                data-retirada="110"
-                data-entrega="110">
+                data-nome="Gás de cozinha P13">
 
                 <img src="imagens/p13.png">
 
                 <h3>Gás de cozinha P13</h3>
-
-                <p class="preco">
-                    R$ <span class="valor-produto">110,00</span>
-                </p>
 
                 <div class="quantidade">
                     <button class="menos">-</button>
@@ -432,17 +420,11 @@
 
             <!-- Gás P20 -->
             <div class="produto"
-                data-nome="Gás de cozinha P20"
-                data-retirada="200"
-                data-entrega="200">
+                data-nome="Gás de cozinha P20">
 
                 <img src="imagens/p20.png">
 
                 <h3>Gás de cozinha P20</h3>
-
-                <p class="preco">
-                    R$ <span class="valor-produto">200,00</span>
-                </p>
 
                 <div class="quantidade">
                     <button class="menos">-</button>
@@ -459,17 +441,11 @@
 
             <!-- Gás P45 -->
             <div class="produto"
-                data-nome="Gás de cozinha P45"
-                data-retirada="420"
-                data-entrega="420">
+                data-nome="Gás de cozinha P45">
 
                 <img src="imagens/p45.png">
 
                 <h3>Gás de cozinha P45</h3>
-
-                <p class="preco">
-                    R$ <span class="valor-produto">420,00</span>
-                </p>
 
                 <div class="quantidade">
                     <button class="menos">-</button>
@@ -486,17 +462,11 @@
 
             <!-- Água 500ml -->
             <div class="produto"
-                data-nome="Água mineral 500ml"
-                data-retirada="5"
-                data-entrega="5">
+                data-nome="Água mineral 500ml">
 
                 <img src="imagens/500ml.png">
 
                 <h3>Água mineral 500ml</h3>
-
-                <p class="preco">
-                    R$ <span class="valor-produto">5,00</span>
-                </p>
 
                 <div class="quantidade">
                     <button class="menos">-</button>
@@ -513,17 +483,11 @@
 
             <!-- Água com gás -->
             <div class="produto"
-                data-nome="Água mineral com gás 500ml"
-                data-retirada="5"
-                data-entrega="5">
+                data-nome="Água mineral com gás 500ml">
 
                 <img src="imagens/500mlgas.png">
 
                 <h3>Água mineral com gás 500ml</h3>
-
-                <p class="preco">
-                    R$ <span class="valor-produto">5,00</span>
-                </p>
 
                 <div class="quantidade">
                     <button class="menos">-</button>
@@ -540,17 +504,11 @@
 
             <!-- Água 20L -->
             <div class="produto"
-                data-nome="Água mineral 20L"
-                data-retirada="18"
-                data-entrega="18">
+                data-nome="Água mineral 20L">
 
                 <img src="imagens/agua20l.png">
 
                 <h3>Água mineral 20L</h3>
-
-                <p class="preco">
-                    R$ <span class="valor-produto">18,00</span>
-                </p>
 
                 <div class="quantidade">
                     <button class="menos">-</button>
@@ -567,17 +525,11 @@
 
             <!-- Regulador -->
             <div class="produto"
-                data-nome="Regulador"
-                data-retirada="35"
-                data-entrega="35">
+                data-nome="Regulador">
 
                 <img src="imagens/regulador.png">
 
                 <h3>Regulador</h3>
-
-                <p class="preco">
-                    R$ <span class="valor-produto">35,00</span>
-                </p>
 
                 <div class="quantidade">
                     <button class="menos">-</button>
@@ -594,17 +546,11 @@
 
             <!-- Kit Mangueira -->
             <div class="produto"
-                data-nome="KitMangueira"
-                data-retirada="25"
-                data-entrega="25">
+                data-nome="KitMangueira">
 
                 <img src="imagens/kitMangueira.png">
 
                 <h3>Kit regulador + Mangueira</h3>
-
-                <p class="preco">
-                    R$ <span class="valor-produto">25,00</span>
-                </p>
 
                 <div class="quantidade">
                     <button class="menos">-</button>
@@ -621,17 +567,11 @@
 
             <!-- Casco P5 -->
             <div class="produto"
-                data-nome="Casco vazio P5"
-                data-retirada="110"
-                data-entrega="110">
+                data-nome="Casco vazio P5">
 
                 <img src="imagens/p5.png">
 
                 <h3>Casco vazio P5</h3>
-
-                <p class="preco">
-                    R$ <span class="valor-produto">110,00</span>
-                </p>
 
                 <div class="quantidade">
                     <button class="menos">-</button>
@@ -648,17 +588,11 @@
 
             <!-- Casco P13 -->
             <div class="produto"
-                data-nome="Casco vazio P13"
-                data-retirada="110"
-                data-entrega="110">
+                data-nome="Casco vazio P13">
 
                 <img src="imagens/p13.png">
 
                 <h3>Casco vazio P13</h3>
-
-                <p class="preco">
-                    R$ <span class="valor-produto">110,00</span>
-                </p>
 
                 <div class="quantidade">
                     <button class="menos">-</button>
@@ -675,17 +609,11 @@
 
             <!-- Casco P20 -->
             <div class="produto"
-                data-nome="Casco vazio P20"
-                data-retirada="200"
-                data-entrega="200">
+                data-nome="Casco vazio P20">
 
                 <img src="imagens/p20.png">
 
                 <h3>Casco vazio P20</h3>
-
-                <p class="preco">
-                    R$ <span class="valor-produto">200,00</span>
-                </p>
 
                 <div class="quantidade">
                     <button class="menos">-</button>
@@ -702,17 +630,11 @@
 
             <!-- Casco P45 -->
             <div class="produto"
-                data-nome="Casco vazio P45"
-                data-retirada="420"
-                data-entrega="470">
+                data-nome="Casco vazio P45">
 
                 <img src="imagens/p45.png">
 
                 <h3>Casco vazio P45</h3>
-
-                <p class="preco">
-                    R$ <span class="valor-produto">420,00</span>
-                </p>
 
                 <div class="quantidade">
                     <button class="menos">-</button>
@@ -781,16 +703,6 @@
 
     </div>
 
-    <div class="total">
-
-        <span>Total</span>
-
-        <strong id="valorTotal">
-            R$ 0,00
-        </strong>
-
-    </div>
-
 <button
     type="button"
     class="btn-enviar"
@@ -827,7 +739,7 @@
             <p>
                 A <strong>Samambaia Gás</strong> atua na revenda de GLP, água
                 mineral e acessórios, oferecendo atendimento rápido,
-                produtos de qualidade e preços justos para Santo Antônio
+                produtos de qualidade e atendimento para Santo Antônio
                 da Patrulha.
             </p>
 

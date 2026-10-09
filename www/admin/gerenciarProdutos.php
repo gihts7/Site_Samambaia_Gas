@@ -94,10 +94,6 @@
 
                     <th>Categoria</th>
 
-                    <th>Retirada</th>
-
-                    <th>Entrega</th>
-
                     <th class="text-center">Ações</th>
 
                 </tr>
@@ -117,10 +113,6 @@
                     <td>Gás de cozinha P13</td>
 
                     <td>GLPs</td>
-
-                    <td>R$100,00</td>
-
-                    <td>R$110,00</td>
 
                     <td class="text-center">
 
@@ -154,10 +146,6 @@
                     <td>Água Mineral 20L</td>
 
                     <td>Água</td>
-
-                    <td>R$18,00</td>
-
-                    <td>R$20,00</td>
 
                     <td class="text-center">
 
