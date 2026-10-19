@@ -23,8 +23,6 @@ function atualizarResumo(){
 
     lista.innerHTML = "";
 
-    let total = 0;
-
     if(carrinho.length === 0){
 
         resumo.style.display = "none";
@@ -47,12 +45,6 @@ function atualizarResumo(){
 
                 <div>
 
-                    <strong>
-
-                        R$ ${(produto.preco * produto.quantidade).toFixed(2).replace(".", ",")}
-
-                    </strong>
-
                     <button class="btn-remover" data-nome="${produto.nome}">
 
                         <i class="bi bi-trash-fill"></i>
@@ -65,12 +57,7 @@ function atualizarResumo(){
 
         `;
 
-        total += produto.preco * produto.quantidade;
-
     });
-
-    document.getElementById("valorTotal").textContent =
-    "R$ " + total.toFixed(2).replace(".", ",");
 
     const botoesRemover = document.querySelectorAll(".btn-remover");
 
@@ -107,12 +94,6 @@ botoesAdicionar.forEach(function(botao){
 
         const quantidade = Number(card.querySelector(".qtd").textContent);
 
-        const tipoEntrega = document.querySelector('input[name="tipoEntrega"]:checked').value;
-
-        const preco = tipoEntrega === "entrega"
-            ? Number(card.dataset.entrega)
-            : Number(card.dataset.retirada);
-
         const produtoExistente = carrinho.find(function(produto){
 
                 return produto.nome === nome;
@@ -126,13 +107,8 @@ botoesAdicionar.forEach(function(botao){
             }else{
 
                 carrinho.push({
-
                     nome: nome,
-
-                    preco: preco,
-
                     quantidade: quantidade
-
                 });
 
             }
@@ -188,54 +164,36 @@ radios.forEach(function(radio){
 
         tipoEntregaAnterior = radio.value;
 
-        atualizarPrecos();
+        atualizarTipoEntrega();
 
     });
 
 });
 
-function atualizarPrecos(){
+function atualizarTipoEntrega() {
 
-    const tipoEntrega = document.querySelector('input[name="tipoEntrega"]:checked').value;
+    const tipoEntrega = document.querySelector(
+        'input[name="tipoEntrega"]:checked'
+    ).value;
 
-    cards.forEach(function(card){
-
+    cards.forEach(function(card) {
         card.classList.remove("ativo");
-
     });
 
     document.querySelector(`input[value="${tipoEntrega}"]`)
         .closest(".card-entrega")
         .classList.add("ativo");
 
-    if(tipoEntrega === "entrega"){
-
+    if (tipoEntrega === "entrega") {
         endereco.style.display = "block";
-
-    }else{
-
+    } else {
         endereco.style.display = "none";
-
     }
 
     atualizarEnderecoResumo();
-
-    const produtos = document.querySelectorAll(".produto");
-
-    produtos.forEach(function(produto){
-
-        const preco = tipoEntrega === "entrega"
-            ? Number(produto.dataset.entrega)
-            : Number(produto.dataset.retirada);
-
-        produto.querySelector(".valor-produto").textContent =
-            preco.toFixed(2).replace(".", ",");
-
-    });
-
 }
 
-atualizarPrecos();
+atualizarTipoEntrega();
 
 document.getElementById("confirmarTroca").addEventListener("click", function(){
 
@@ -248,7 +206,7 @@ document.getElementById("confirmarTroca").addEventListener("click", function(){
 
     tipoEntregaAnterior = radioSelecionado.value;
 
-    atualizarPrecos();
+    atualizarTipoEntrega();
    }
 
     modalTroca.hide();
@@ -295,7 +253,7 @@ document.getElementById("modalTrocaEntrega")
 
     document.querySelector(`input[value="${tipoEntregaAnterior}"]`).checked = true;
 
-    atualizarPrecos();
+    atualizarTipoEntrega();
     atualizarEnderecoResumo();
 
 });
