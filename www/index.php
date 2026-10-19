@@ -738,7 +738,7 @@
             <p>
                 A <strong>Samambaia Gás</strong> atua na revenda de GLP, água
                 mineral e acessórios, oferecendo atendimento rápido,
-                produtos de qualidade e preços justos para Santo Antônio
+                produtos de qualidade e atendimento para Santo Antônio
                 da Patrulha.
             </p>
 
