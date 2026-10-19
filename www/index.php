@@ -328,6 +328,7 @@
                 <label>Cidade</label>
 
                 <input
+                    id="cidade"
                     type="text"
                     class="form-control"
                     value="Santo Antônio da Patrulha"
@@ -703,17 +704,15 @@
 
     </div>
 
-<button
+    <button
     type="button"
-    class="btn-enviar"
-    data-bs-toggle="modal"
-    data-bs-target="#modalPedido">
+    id="btnEnviar"
+    class="btn-enviar">
 
     <i class="bi bi-whatsapp"></i>
-
-    Enviar pedido pelo WhatsApp
-
-</button>
+    Enviar pedido pelo WhatsApp <br> 
+    -Não esqueça de confirmar o envio da mensagem com o pedido montado-
+    </button>
 
     </section>
 
@@ -846,160 +845,12 @@
 
     </section>
 
-    <!-- Modal de confirmação -->
-    <div class="modal fade" id="modalTrocaEntrega" tabindex="-1">
-
-        <div class="modal-dialog modal-dialog-centered">
-
-            <div class="modal-content">
-
-                <div class="modal-header">
-
-                    <h5 class="modal-title">
-
-                        <i class="bi bi-exclamation-triangle-fill"></i>
-                        Alterar tipo de entrega
-
-                    </h5>
-
-                </div>
-
-                <div class="modal-body">
-
-                    Você já adicionou produtos ao pedido.
-
-                    <br><br>
-
-                    Ao alterar o tipo de entrega, todos os produtos serão removidos.
-
-                    <br><br>
-
-                    Deseja continuar?
-
-                </div>
-
-                <div class="modal-footer">
-
-                    <button
-                        type="button"
-                        class="btn btn-cancelar"
-                        data-bs-dismiss="modal">
-
-                        Cancelar
-
-                    </button>
-
-                    <button
-                        type="button"
-                        id="confirmarTroca"
-                        class="btn btn-confirmar">
-
-                        Continuar
-
-                    </button>
-
-                </div>
-
-            </div>
-
-        </div>
-
-    </div>
-
     <!-- Rodapé com infos -->
     <footer>
 
         © 2026 Samambaia Gás. Todos os direitos reservados.
 
     </footer>
-
-    <!-- ============================= -->
-    <!-- MODAL PEDIDO -->
-    <!-- ============================= -->
-
-    <div
-        class="modal fade"
-        id="modalPedido"
-        tabindex="-1"
-        aria-labelledby="modalPedidoLabel"
-        aria-hidden="true">
-
-        <div class="modal-dialog modal-dialog-centered">
-
-            <div class="modal-content">
-
-
-                <!-- Cabeçalho -->
-
-                <div class="modal-header">
-
-                    <h5
-                        class="modal-title"
-                        id="modalPedidoLabel">
-
-                        Pedido preparado!
-
-                    </h5>
-
-                    <button
-                        type="button"
-                        class="btn-close"
-                        data-bs-dismiss="modal"
-                        aria-label="Fechar">
-
-                    </button>
-
-                </div>
-
-
-                <!-- Corpo -->
-
-                <div class="modal-body text-center">
-
-                    <i
-                        class="bi bi-check-circle-fill"
-                        style="font-size:60px; color:#ff5a00;">
-
-                    </i>
-
-                    <p class="mt-3">
-
-                        Seu pedido foi preparado com sucesso!
-
-                    </p>
-
-                    <p>
-
-                        Ele será encaminhado para a
-                        <strong>Samambaia Gás</strong>
-                        pelo WhatsApp.
-
-                    </p>
-
-                </div>
-
-
-                <!-- Botão -->
-
-                <div class="modal-footer">
-
-                    <button
-                        type="button"
-                        class="btn btn-danger"
-                        data-bs-dismiss="modal">
-
-                        Fechar
-
-                    </button>
-
-                </div>
-
-            </div>
-
-        </div>
-
-    </div>
-
 
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/js/bootstrap.bundle.min.js"></script>
 

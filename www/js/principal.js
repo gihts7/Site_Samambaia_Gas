@@ -1,5 +1,3 @@
-let tipoEntregaAnterior = document.querySelector('input[name="tipoEntrega"]:checked').value;
-
 const radios = document.querySelectorAll('input[name="tipoEntrega"]');
 
 const endereco = document.getElementById("enderecoEntrega");
@@ -7,12 +5,6 @@ const endereco = document.getElementById("enderecoEntrega");
 const cards = document.querySelectorAll(".card-entrega");
 
 let carrinho = [];
-
-const modalTroca = new bootstrap.Modal(
-    document.getElementById("modalTrocaEntrega")
-);
-
-let radioSelecionado = null;
 
 // Resumo
 function atualizarResumo(){
@@ -146,23 +138,9 @@ produtos.forEach(function(produto){
 
 });
 
-radios.forEach(function(radio){
+radios.forEach(function(radio) {
 
-    radio.addEventListener("change", function(){
-
-        if(carrinho.length > 0){
-
-            radioSelecionado = radio;
-
-            modalTroca.show();
-
-            document.querySelector(`input[value="${tipoEntregaAnterior}"]`).checked = true;
-
-            return;
-
-        }
-
-        tipoEntregaAnterior = radio.value;
+    radio.addEventListener("change", function() {
 
         atualizarTipoEntrega();
 
@@ -194,24 +172,6 @@ function atualizarTipoEntrega() {
 }
 
 atualizarTipoEntrega();
-
-document.getElementById("confirmarTroca").addEventListener("click", function(){
-
-    carrinho = [];
-
-    atualizarResumo();
-
-    if(radioSelecionado){
-    radioSelecionado.checked = true;
-
-    tipoEntregaAnterior = radioSelecionado.value;
-
-    atualizarTipoEntrega();
-   }
-
-    modalTroca.hide();
-
-});
 
 function atualizarEnderecoResumo(){
 
@@ -248,16 +208,6 @@ function atualizarEnderecoResumo(){
 
 }
 
-document.getElementById("modalTrocaEntrega")
-.addEventListener("hidden.bs.modal", function(){
-
-    document.querySelector(`input[value="${tipoEntregaAnterior}"]`).checked = true;
-
-    atualizarTipoEntrega();
-    atualizarEnderecoResumo();
-
-});
-
 document.getElementById("rua").addEventListener("input", atualizarEnderecoResumo);
 
 document.getElementById("numero").addEventListener("input", atualizarEnderecoResumo);
@@ -267,68 +217,86 @@ document.getElementById("bairro").addEventListener("input", atualizarEnderecoRes
 document.getElementById("cidade").addEventListener("change", atualizarEnderecoResumo);
 
 
+
 document.getElementById("btnEnviar").addEventListener("click", function () {
 
-    //Número de telefone para onde vai a mensagem do pedido
     const telefone = "5551989212294";
 
-    const tipoEntrega =
-        document.querySelector('input[name="tipoEntrega"]:checked').value;
+    const tipoEntrega = document.querySelector(
+        'input[name="tipoEntrega"]:checked'
+    ).value;
 
-    const pagamento =
-        document.getElementById("formaPagamento").value;
+    const pagamento = document.getElementById("formaPagamento").value;
+
+    // Verifica se existem produtos no pedido
+    if (carrinho.length === 0) {
+        alert("Adicione pelo menos um produto ao pedido.");
+        return;
+    }
+
+    // Verifica se a forma de pagamento foi selecionada
+    if (pagamento === "") {
+        alert("Selecione a forma de pagamento.");
+        return;
+    }
+
+    // Verifica os campos do endereço somente para entrega
+    if (tipoEntrega === "entrega") {
+
+        const rua = document.getElementById("rua").value.trim();
+        const numero = document.getElementById("numero").value.trim();
+        const bairro = document.getElementById("bairro").value.trim();
+        const cidade = document.getElementById("cidade").value.trim();
+
+        if (!rua || !numero || !bairro || !cidade) {
+            alert("Preencha todos os campos do endereço de entrega.");
+            return;
+        }
+    }
 
     let mensagem = "*Novo Pedido*%0A%0A";
 
-    mensagem += "👤 Cliente: João da Silva%0A%0A";
-
     mensagem += "📦 Produtos:%0A";
 
-    carrinho.forEach(function(produto){
+    carrinho.forEach(function (produto) {
 
         mensagem +=
-            `• ${produto.quantidade}x ${produto.nome} - R$ ${(produto.preco * produto.quantidade).toFixed(2).replace(".", ",")}%0A`;
+            `• ${produto.quantidade}x ${produto.nome}%0A`;
 
     });
 
     mensagem += "%0A";
 
-    mensagem +=
-        "💰 Total: " +
-        document.getElementById("valorTotal").textContent +
-        "%0A%0A";
-
     mensagem += "🚚 Tipo de entrega: ";
 
-    mensagem += tipoEntrega == "entrega"
+    mensagem += tipoEntrega === "entrega"
         ? "Entrega"
         : "Retirada";
 
     mensagem += "%0A";
 
-    if(tipoEntrega == "entrega"){
+    if (tipoEntrega === "entrega") {
 
         mensagem += "%0A📍 Endereço:%0A";
 
         mensagem +=
-            document.getElementById("rua").value + ", ";
+            encodeURIComponent(document.getElementById("rua").value.trim()) + ", ";
 
         mensagem +=
-            document.getElementById("numero").value + "%0A";
+            encodeURIComponent(document.getElementById("numero").value.trim()) + "%0A";
 
         mensagem +=
-            document.getElementById("bairro").value + "%0A";
+            encodeURIComponent(document.getElementById("bairro").value.trim()) + "%0A";
 
         mensagem +=
-            document.getElementById("cidade").value + "%0A";
-
+            encodeURIComponent(document.getElementById("cidade").value.trim()) + "%0A";
     }
 
     mensagem += "%0A";
 
     mensagem +=
         "💳 Forma de pagamento: " +
-        pagamento;
+        encodeURIComponent(pagamento);
 
     window.open(
         "https://wa.me/" + telefone + "?text=" + mensagem,
