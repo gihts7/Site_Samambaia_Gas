@@ -256,7 +256,7 @@ document.getElementById("btnEnviar").addEventListener("click", function () {
 
     let mensagem = "*Novo Pedido*%0A%0A";
 
-    mensagem += "📦 Produtos:%0A";
+    mensagem += "-Produtos:%0A";
 
     carrinho.forEach(function (produto) {
 
@@ -267,7 +267,7 @@ document.getElementById("btnEnviar").addEventListener("click", function () {
 
     mensagem += "%0A";
 
-    mensagem += "🚚 Tipo de entrega: ";
+    mensagem += "-Tipo de entrega: ";
 
     mensagem += tipoEntrega === "entrega"
         ? "Entrega"
@@ -277,7 +277,7 @@ document.getElementById("btnEnviar").addEventListener("click", function () {
 
     if (tipoEntrega === "entrega") {
 
-        mensagem += "%0A📍 Endereço:%0A";
+        mensagem += "%0A-Endereço:%0A";
 
         mensagem +=
             encodeURIComponent(document.getElementById("rua").value.trim()) + ", ";
@@ -295,7 +295,7 @@ document.getElementById("btnEnviar").addEventListener("click", function () {
     mensagem += "%0A";
 
     mensagem +=
-        "💳 Forma de pagamento: " +
+        "-Forma de pagamento: " +
         encodeURIComponent(pagamento);
 
     window.open(

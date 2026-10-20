@@ -250,7 +250,8 @@
                 <input
                     type="radio"
                     name="tipoEntrega"
-                    value="entrega">
+                    value="entrega"
+                    checked>
 
                 <i class="bi bi-truck"></i>
 
@@ -265,8 +266,7 @@
                 <input
                     type="radio"
                     name="tipoEntrega"
-                    value="retirada"
-                    checked>
+                    value="retirada">
 
                 <i class="bi bi-shop"></i>
 
@@ -338,7 +338,7 @@
 
         </div>
 
-        <p>*Entregas no interior, conferir disponibilidade de entrega</p> 
+        <p>*Entregas no interior, conferir disponibilidade de entrega.</p> 
 
     </div>
 
@@ -710,8 +710,7 @@
     class="btn-enviar">
 
     <i class="bi bi-whatsapp"></i>
-    Enviar pedido pelo WhatsApp <br> 
-    -Não esqueça de confirmar o envio da mensagem com o pedido montado-
+    Enviar pedido pelo WhatsApp
     </button>
 
     </section>
