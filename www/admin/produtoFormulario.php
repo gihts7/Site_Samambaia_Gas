@@ -160,60 +160,6 @@
 
             </div>
 
-            <div class="row mt-3">
-
-                <div class="col-md-6">
-
-                    <label class="form-label">
-
-                        Preço Retirada
-
-                    </label>
-
-                    <div class="input-group">
-
-                        <span class="input-group-text">
-
-                            R$
-
-                        </span>
-
-                        <input
-                            type="number"
-                            step="0.01"
-                            class="form-control">
-
-                    </div>
-
-                </div>
-
-                <div class="col-md-6">
-
-                    <label class="form-label">
-
-                        Preço Entrega
-
-                    </label>
-
-                    <div class="input-group">
-
-                        <span class="input-group-text">
-
-                            R$
-
-                        </span>
-
-                        <input
-                            type="number"
-                            step="0.01"
-                            class="form-control">
-
-                    </div>
-
-                </div>
-
-            </div>
-
             <div class="mt-3">
 
                 <label class="form-label">

@@ -200,8 +200,6 @@
 
                                 <th class="text-center">Qtd.</th>
 
-                                <th class="text-end">Subtotal</th>
-
                             </tr>
 
                         </thead>
@@ -214,12 +212,6 @@
 
                                 <td class="text-center">2x</td>
 
-                                <td class="text-end">
-
-                                    R$220,00
-
-                                </td>
-
                             </tr>
 
                             <tr>
@@ -228,42 +220,12 @@
 
                                 <td class="text-center">1x</td>
 
-                                <td class="text-end">
-
-                                    R$18,00
-
-                                </td>
-
                             </tr>
 
                         </tbody>
 
                     </table>
 
-                </div>
-
-            </div>
-
-        </div>
-
-        <!-- Total -->
-
-        <div class="col-12">
-
-            <div class="card shadow-sm">
-
-                <div class="card-body d-flex justify-content-between align-items-center">
-
-                    <h4 class="mb-0">
-
-                        Total do Pedido
-
-                    </h4>
-
-                    <h3 class="mb-0 total-pedido">
-                        R$238,00
-                    </h3>
-                    
                 </div>
 
             </div>

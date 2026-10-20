@@ -98,8 +98,6 @@
 
                     <th>Pagamento</th>
 
-                    <th>Total</th>
-
                     <th>Ações</th>
 
                 </tr>
@@ -142,8 +140,6 @@
                     <td>Retirada</td>
 
                     <td>Cartão</td>
-
-                    <td>R$ 110,00</td>
 
                     <td>
 
