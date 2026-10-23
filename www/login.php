@@ -54,7 +54,7 @@
             <input
                 class="form-control"
                 type="email"
-                name="email"
+                name="email" required
                 placeholder="Digite seu email">
 
         </div>
@@ -73,7 +73,7 @@
                 id="senha"
                 class="form-control"
                 type="password"
-                name="senha"
+                name="senha" required
                 placeholder="Digite sua senha">
 
             <span class="input-group-text olho">
@@ -87,7 +87,7 @@
         <input
             class="btn btn-login w-100"
             type="submit"
-            name="enviar"
+            name="enviar" 
             value="Entrar">
 
         <div class="divisor">
