@@ -140,43 +140,6 @@
 
             </tr>
 
-            <tr>
-
-                <td>Maria Oliveira</td>
-
-                <td>maria@email.com</td>
-
-                <td>(51) 98888-8888</td>
-
-                <td>Caraá</td>
-
-                <td>
-
-                    <div class="acoes">
-
-                        <a
-                            href="visualizarUsuario.php"
-                            class="btn btn-warning">
-
-                            <i class="bi bi-eye-fill"></i>
-
-                        </a>
-
-                        <button
-                            class="btn btn-danger btn-sm"
-                            data-bs-toggle="modal"
-                            data-bs-target="#modalExcluir">
-
-                            <i class="bi bi-trash-fill"></i>
-
-                        </button>
-
-                    </div>
-
-                </td>
-
-            </tr>
-
         </tbody>
 
     </table>

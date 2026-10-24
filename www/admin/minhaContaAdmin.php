@@ -101,7 +101,7 @@
                 <input
                     class="form-control"
                     type="text"
-                    value="Admin"
+
                     readonly>
 
             </div>
@@ -122,7 +122,7 @@
                 <input
                     class="form-control"
                     type="password"
-                    value="123"
+
                     readonly>
 
             </div>

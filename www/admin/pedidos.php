@@ -130,30 +130,6 @@
 
                 </tr>
 
-
-                <tr>
-
-                    <td>002</td>
-
-                    <td>Maria Oliveira</td>
-
-                    <td>Retirada</td>
-
-                    <td>Cartão</td>
-
-                    <td>
-
-                        <a href="visualizarPedido.php"
-                           class="btn btn-warning">
-
-                            <i class="bi bi-eye-fill"></i>
-
-                        </a>
-
-                    </td>
-
-                </tr>
-
             </tbody>
 
         </table>

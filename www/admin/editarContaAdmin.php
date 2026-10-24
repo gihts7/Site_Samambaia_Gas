@@ -100,7 +100,7 @@
                     class="form-control"
                     type="text"
                     name="usuario"
-                    value="Admin"
+
                     required>
 
             </div>

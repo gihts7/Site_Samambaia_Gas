@@ -60,7 +60,7 @@
                 <input
                     class="form-control"
                     type="text"
-                    value="João da Silva"
+
                     readonly>
 
             </div>
@@ -76,7 +76,7 @@
                 <input
                     class="form-control"
                     type="email"
-                    value="joao@email.com"
+
                     readonly>
 
             </div>
@@ -96,7 +96,7 @@
                         <input
                             class="form-control"
                             type="text"
-                            value="(51) 99999-9999"
+
                             readonly>
 
                     </div>
@@ -116,7 +116,7 @@
                         <input
                             class="form-control"
                             type="text"
-                            value="01/01/2000"
+
                             readonly>
 
                     </div>
@@ -142,7 +142,7 @@
                         <input
                             class="form-control"
                             type="text"
-                            value="Rua Exemplo"
+
                             readonly>
 
                     </div>
@@ -162,7 +162,7 @@
                         <input
                             class="form-control"
                             type="text"
-                            value="123"
+
                             readonly>
 
                     </div>
@@ -186,7 +186,7 @@
                         <input
                             class="form-control"
                             type="text"
-                            value="Centro"
+
                             readonly>
 
                     </div>
@@ -206,7 +206,7 @@
                         <input
                             class="form-control"
                             type="text"
-                            value="Santo Antônio da Patrulha"
+
                             readonly>
 
                     </div>
@@ -248,22 +248,6 @@
                     Excluir Conta
 
                 </button>
-
-                <a href="admin/painelAdmin.php" class="btn btn-secondary"> 
-
-                    <i class="bi bi-box-arrow-right"></i>
-
-                    Painel administrativo (apenas para vizualização)
-
-                </a>
-
-                <a href="login.php" class="btn btn-secondary"> 
-
-                    <i class="bi bi-box-arrow-right"></i>
-
-                    Tela de login (apenas para vizualização)
-
-                </a>
 
             </div>
 

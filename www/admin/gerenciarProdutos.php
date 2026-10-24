@@ -135,41 +135,6 @@
 
                 </tr>
 
-                <tr>
-
-                    <td>
-
-                        <img src="../imagens/agua20l.png" class="img-produto">
-
-                    </td>
-
-                    <td>Água Mineral 20L</td>
-
-                    <td>Água</td>
-
-                    <td class="text-center">
-
-                        <div class="acoes">
-
-                            <a href="produtoFormulario.php" class="btn btn-warning">
-                                <i class="bi bi-pencil-fill"></i>
-                            </a>
-
-                            <button
-                                class="btn btn-danger"
-                                data-bs-toggle="modal"
-                                data-bs-target="#modalExcluir">
-
-                                <i class="bi bi-trash-fill"></i>
-
-                            </button>
-
-                        </div>
-
-                    </td>
-
-                </tr>
-
             </tbody>
 
         </table>
