@@ -1,3 +1,60 @@
+<?php
+
+session_start();
+
+require_once("includes/conecta.php");
+
+$erro = "";
+
+if (isset($_POST["enviar"])) {
+
+    $email = trim($_POST["email"]);
+    $senha = $_POST["senha"];
+
+    $sql = "SELECT id, nome, email, senha_hash, tipo
+            FROM usuarios
+            WHERE email = ?";
+
+    $stmt = mysqli_prepare($conn, $sql);
+
+    mysqli_stmt_bind_param($stmt, "s", $email);
+
+    mysqli_stmt_execute($stmt);
+
+    $resultado = mysqli_stmt_get_result($stmt);
+
+    if (mysqli_num_rows($resultado) > 0) {
+
+        $usuario = mysqli_fetch_assoc($resultado);
+
+        if (password_verify($senha, $usuario["senha_hash"])) {
+
+            session_regenerate_id(true);
+
+            $_SESSION["id_usuario"] = $usuario["id"];
+            $_SESSION["nome"] = $usuario["nome"];
+            $_SESSION["tipo"] = $usuario["tipo"];
+
+            if ($usuario["tipo"] === "admin") {
+                header("Location: admin/painelAdmin.php");
+                exit;
+            } else {
+                header("Location: index.php");
+                exit;
+            }
+
+        } else {
+            $erro = "E-mail ou senha incorretos.";
+        }
+
+    } else {
+        $erro = "E-mail ou senha incorretos.";
+    }
+
+    mysqli_stmt_close($stmt);
+}
+?>
+
 <!DOCTYPE html>
 <html lang="pt-br">
 
@@ -31,11 +88,19 @@
 
     <div class="login-box">
 
-    <form method="POST" action="index.php">
+    <form method="POST" action="login.php">
 
         <img src="imagens/logo_sem_fundo.png" alt="Logo" class="logo">
 
         <h1>Login</h1>
+
+        <?php if ($erro != ""): ?>
+
+            <div class="alert alert-danger">
+                <?= $erro ?>
+            </div>
+
+        <?php endif; ?>
 
         <p class="subtitulo">
             Acesse sua conta para ter acesso completo ao site

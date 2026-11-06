@@ -1,3 +1,87 @@
+<?php
+
+require_once("includes/conecta.php");
+
+$erro = "";
+$sucesso = "";
+
+if (isset($_POST["enviar"])) {
+
+    $nome = trim($_POST["nome"]);
+    $email = trim($_POST["email"]);
+    $dataNascimento = $_POST["dataNascimento"];
+    $telefone = trim($_POST["telefone"]);
+    $rua = trim($_POST["rua"]);
+    $numero = trim($_POST["numero"]);
+    $bairro = trim($_POST["bairro"]);
+    $cidade = trim($_POST["cidade"]);
+    $senha = $_POST["senha"];
+    $confirmarSenha = $_POST["confirmarSenha"];
+
+    if ($senha !== $confirmarSenha) {
+
+        $erro = "As senhas não coincidem.";
+
+    } else {
+
+        // Verifica se o email já está cadastrado
+        $sql = "SELECT id FROM usuarios WHERE email = ?";
+
+        $stmt = mysqli_prepare($conn, $sql);
+
+        mysqli_stmt_bind_param($stmt, "s", $email);
+
+        mysqli_stmt_execute($stmt);
+
+        $resultado = mysqli_stmt_get_result($stmt);
+
+        if (mysqli_num_rows($resultado) > 0) {
+
+            $erro = "Este e-mail já está cadastrado.";
+
+        } else {
+
+            // Criptografa a senha
+            $senhaHash = password_hash($senha, PASSWORD_DEFAULT);
+
+            // Cadastra o usuário
+            $sql = "INSERT INTO usuarios
+                    (nome, email, data_nascimento, telefone,
+                     rua, numero, bairro, cidade, senha_hash, tipo)
+                    VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, 'cliente')";
+
+            $stmt = mysqli_prepare($conn, $sql);
+
+            mysqli_stmt_bind_param(
+                $stmt,
+                "sssssssss",
+                $nome,
+                $email,
+                $dataNascimento,
+                $telefone,
+                $rua,
+                $numero,
+                $bairro,
+                $cidade,
+                $senhaHash
+            );
+
+            if (mysqli_stmt_execute($stmt)) {
+
+                $sucesso = "Cadastro realizado com sucesso! Você já pode fazer login.";
+
+            } else {
+
+                $erro = "Não foi possível realizar o cadastro.";
+
+            }
+        }
+
+        mysqli_stmt_close($stmt);
+    }
+}
+?>
+
 <!DOCTYPE html>
 <html lang="pt-br">
 
@@ -31,11 +115,28 @@
 
     <div class="login-box">
 
-        <form method="POST" action="index.php">
+        <form method="POST" action="cadastro.php">
 
             <img src="imagens/logo_sem_fundo.png" alt="Logo" class="logo">
 
             <h1>Cadastro</h1>
+
+            <?php if ($erro != ""): ?>
+
+                <div class="alert alert-danger">
+                    <?= htmlspecialchars($erro) ?>
+                </div>
+
+            <?php endif; ?>
+
+            <?php if ($sucesso != ""): ?>
+
+                <div class="alert alert-success">
+                    <?= htmlspecialchars($sucesso) ?>
+                    <a href="login.php">Entrar</a>
+                </div>
+
+            <?php endif; ?>
 
             <p class="subtitulo">
                 Crie uma conta para ter acesso completo ao site <br>
