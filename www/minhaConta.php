@@ -1,3 +1,32 @@
+<?php
+
+require_once("includes/verificaLogin.php");
+exigeLogin();
+
+require_once("includes/conecta.php");
+
+$idUsuario = $_SESSION["id_usuario"];
+
+$sql = "SELECT * FROM usuarios WHERE id = ?";
+
+$stmt = mysqli_prepare($conn, $sql);
+
+mysqli_stmt_bind_param($stmt, "i", $idUsuario);
+
+mysqli_stmt_execute($stmt);
+
+$resultado = mysqli_stmt_get_result($stmt);
+
+$usuario = mysqli_fetch_assoc($resultado);
+
+if (!$usuario) {
+    die("Usuário não encontrado.");
+}
+
+mysqli_stmt_close($stmt);
+
+?>
+
 <!DOCTYPE html>
 <html lang="pt-br">
 
@@ -60,6 +89,7 @@
                 <input
                     class="form-control"
                     type="text"
+                    value="<?= htmlspecialchars($usuario['nome']) ?>"
 
                     readonly>
 
@@ -76,6 +106,7 @@
                 <input
                     class="form-control"
                     type="email"
+                    value="<?= htmlspecialchars($usuario['email']) ?>"
 
                     readonly>
 
@@ -96,7 +127,7 @@
                         <input
                             class="form-control"
                             type="text"
-
+                            value="<?= htmlspecialchars($usuario['telefone']) ?>"
                             readonly>
 
                     </div>
@@ -116,7 +147,7 @@
                         <input
                             class="form-control"
                             type="text"
-
+                            value="<?= date('d/m/Y', strtotime($usuario['data_nascimento'])) ?>"
                             readonly>
 
                     </div>
@@ -142,6 +173,7 @@
                         <input
                             class="form-control"
                             type="text"
+                            value="<?= htmlspecialchars($usuario['rua']) ?>"
 
                             readonly>
 
@@ -162,6 +194,7 @@
                         <input
                             class="form-control"
                             type="text"
+                            value="<?= htmlspecialchars($usuario['numero']) ?>"
 
                             readonly>
 
@@ -186,6 +219,7 @@
                         <input
                             class="form-control"
                             type="text"
+                            value="<?= htmlspecialchars($usuario['bairro']) ?>"
 
                             readonly>
 
@@ -206,6 +240,7 @@
                         <input
                             class="form-control"
                             type="text"
+                            value="<?= htmlspecialchars($usuario['cidade']) ?>"
 
                             readonly>
 
