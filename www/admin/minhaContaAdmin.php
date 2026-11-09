@@ -244,7 +244,7 @@
                 </button>
 
                 <a
-                    href="../index.php"
+                    href="../includes/logout.php"
                     class="btn btn-danger">
 
                     Sair
