@@ -295,6 +295,18 @@ mysqli_stmt_close($stmt);
 
                 </button>
 
+                 <div class="links">
+
+                    <a href="index.php">
+
+                        <i class="bi bi-box-arrow-in-right"></i>
+
+                        Voltar
+
+                    </a>
+
+                </div>
+
             </div>
 
         </form>
