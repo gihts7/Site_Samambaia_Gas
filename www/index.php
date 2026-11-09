@@ -214,7 +214,7 @@
 
     <div class="container">
 
-        <h2>Faça seu pedido</h2>
+        <h2>Monte seu pedido</h2>
 
         <p class="subtitulo-produtos">
             Visualize e adicione os produtos ao seu pedido.
