@@ -1,3 +1,8 @@
+<?php
+require_once("../includes/verificaLogin.php");
+exigeAdmin();
+?>
+
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>

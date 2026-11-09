@@ -1,3 +1,74 @@
+<?php
+
+session_start();
+
+require_once("includes/conecta.php");
+require_once("includes/funcoes.php");
+
+$erro = "";
+$sucesso = "";
+$email = "";
+
+if (isset($_POST["enviar"])) {
+
+    $email = trim($_POST["email"]);
+    $dataNascimento = $_POST["dataNascimento"];
+    $novaSenha = $_POST["novaSenha"];
+    $confirmaNovaSenha = $_POST["confirmaNovaSenha"];
+
+    // Estas duas checagens não dependem do usuário existir,
+    // então podem ter mensagens próprias sem revelar nada
+    if ($novaSenha !== $confirmaNovaSenha) {
+
+        $erro = "As senhas não coincidem.";
+
+    } elseif (strlen($novaSenha) < 6) {
+
+        $erro = "A nova senha deve ter pelo menos 6 caracteres.";
+
+    } else {
+
+        // Só clientes: a senha do admin NÃO pode ser redefinida só com
+        // e-mail + data de nascimento
+        $sql = "SELECT id FROM usuarios
+                WHERE email = ? AND data_nascimento = ? AND tipo = 'cliente'";
+
+        $stmt = mysqli_prepare($conn, $sql);
+        mysqli_stmt_bind_param($stmt, "ss", $email, $dataNascimento);
+        mysqli_stmt_execute($stmt);
+
+        $usuario = mysqli_fetch_assoc(mysqli_stmt_get_result($stmt));
+
+        mysqli_stmt_close($stmt);
+
+        if (!$usuario) {
+
+            // Mesma mensagem para e-mail inexistente OU data errada
+            $erro = "Não foi possível redefinir a senha. Verifique os dados informados.";
+
+        } else {
+
+            $senhaHash = password_hash($novaSenha, PASSWORD_DEFAULT);
+
+            $sql = "UPDATE usuarios SET senha_hash = ? WHERE id = ?";
+
+            $stmt = mysqli_prepare($conn, $sql);
+            mysqli_stmt_bind_param($stmt, "si", $senhaHash, $usuario["id"]);
+
+            if (mysqli_stmt_execute($stmt)) {
+                $sucesso = "Senha atualizada com sucesso! Você já pode entrar.";
+                $email = "";
+            } else {
+                $erro = "Não foi possível redefinir a senha. Tente novamente.";
+            }
+
+            mysqli_stmt_close($stmt);
+        }
+    }
+}
+
+?>
+
 <!DOCTYPE html>
 <html lang="pt-br">
 
@@ -31,7 +102,7 @@
 
     <div class="login-box">
 
-    <form method="POST" action="index.php">
+    <form method="POST" action="recuperaSenha.php">
 
         <img src="imagens/logo_sem_fundo.png" alt="Logo" class="logo">
 
@@ -40,6 +111,17 @@
         <p class="subtitulo">
             Informe seu e-mail e sua data de nascimento para criar uma nova senha
         </p>
+
+        <?php if ($erro != ""): ?>
+            <div class="alert alert-danger"><?= v($erro) ?></div>
+        <?php endif; ?>
+
+        <?php if ($sucesso != ""): ?>
+            <div class="alert alert-success">
+                <?= v($sucesso) ?>
+                <a href="login.php" class="alert-link">Ir para o login</a>
+            </div>
+        <?php endif; ?>
 
         <label>Email</label>
 
@@ -55,6 +137,7 @@
                 class="form-control"
                 type="email"
                 name="email" required
+                value="<?= v($email) ?>"
                 placeholder="Digite seu email">
 
         </div>
@@ -88,7 +171,7 @@
                 id="senha"
                 class="form-control"
                 type="password"
-                name="novaSenha" required
+                name="novaSenha" required autocomplete="new-password"
                 placeholder="Digite sua nova senha">
 
             <span class="input-group-text olho">
@@ -110,10 +193,10 @@
             </span>
 
             <input
-                id="senha"
+                id="confirmaSenha"
                 class="form-control"
                 type="password"
-                name="confirmaNovaSenha" required
+                name="confirmaNovaSenha" required autocomplete="new-password"
                 placeholder="Confirma sua nova senha">
 
             <span class="input-group-text olho">

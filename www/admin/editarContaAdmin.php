@@ -1,3 +1,108 @@
+<?php
+
+require_once("../includes/verificaLogin.php");
+exigeAdmin();
+
+require_once("../includes/conecta.php");
+require_once("../includes/funcoes.php");
+
+$idUsuario = $_SESSION["id_usuario"];
+$erro = "";
+
+// Dados atuais (confere também que continua sendo admin)
+$sql = "SELECT email FROM usuarios WHERE id = ? AND tipo = 'admin'";
+
+$stmt = mysqli_prepare($conn, $sql);
+mysqli_stmt_bind_param($stmt, "i", $idUsuario);
+mysqli_stmt_execute($stmt);
+
+$admin = mysqli_fetch_assoc(mysqli_stmt_get_result($stmt));
+
+mysqli_stmt_close($stmt);
+
+if (!$admin) {
+    header("Location: ../includes/logout.php");
+    exit;
+}
+
+if ($_SERVER["REQUEST_METHOD"] === "POST") {
+
+    $admin["email"] = trim($_POST["usuario"]);
+
+    $senha = $_POST["senha"];
+    $confirmarSenha = $_POST["confirmarSenha"];
+
+    if (!filter_var($admin["email"], FILTER_VALIDATE_EMAIL)) {
+
+        $erro = "Digite um e-mail válido.";
+
+    } elseif ($senha !== $confirmarSenha) {
+
+        $erro = "As senhas não coincidem.";
+
+    } elseif ($senha !== "" && strlen($senha) < 6) {
+
+        $erro = "A nova senha deve ter pelo menos 6 caracteres.";
+
+    } else {
+
+        // O e-mail já pertence a OUTRA conta?
+        $sql = "SELECT id FROM usuarios WHERE email = ? AND id <> ?";
+
+        $stmt = mysqli_prepare($conn, $sql);
+        mysqli_stmt_bind_param($stmt, "si", $admin["email"], $idUsuario);
+        mysqli_stmt_execute($stmt);
+
+        $emailEmUso = mysqli_num_rows(mysqli_stmt_get_result($stmt)) > 0;
+
+        mysqli_stmt_close($stmt);
+
+        if ($emailEmUso) {
+
+            $erro = "Este e-mail já está sendo usado por outra conta.";
+
+        } else {
+
+            if ($senha !== "") {
+
+                $senhaHash = password_hash($senha, PASSWORD_DEFAULT);
+
+                $sql = "UPDATE usuarios SET email = ?, senha_hash = ?
+                        WHERE id = ? AND tipo = 'admin'";
+
+                $stmt = mysqli_prepare($conn, $sql);
+                mysqli_stmt_bind_param($stmt, "ssi", $admin["email"], $senhaHash, $idUsuario);
+
+            } else {
+
+                $sql = "UPDATE usuarios SET email = ?
+                        WHERE id = ? AND tipo = 'admin'";
+
+                $stmt = mysqli_prepare($conn, $sql);
+                mysqli_stmt_bind_param($stmt, "si", $admin["email"], $idUsuario);
+            }
+
+            if (mysqli_stmt_execute($stmt)) {
+
+                mysqli_stmt_close($stmt);
+
+                $_SESSION["sucesso"] = "Conta atualizada com sucesso!";
+
+                header("Location: minhaContaAdmin.php");
+                exit;
+
+            } else {
+
+                $erro = "Não foi possível salvar as alterações.";
+            }
+
+            mysqli_stmt_close($stmt);
+        }
+    }
+}
+
+?>
+
 <!DOCTYPE html>
 <html lang="pt-br">
 
@@ -49,7 +154,7 @@
 
     <div class="login-box">
 
-        <form>
+        <form method="POST" action="editarContaAdmin.php" id="formEditarAdmin">
 
             <!-- Logo -->
 
@@ -75,8 +180,15 @@
             <p class="subtitulo">
 
                 Altere os dados da sua conta administrativa.
-
             </p>
+
+            <?php if ($erro != ""): ?>
+
+                <div class="alert alert-danger">
+                    <?= v($erro) ?>
+                </div>
+
+            <?php endif; ?>
 
 
             <hr>
@@ -86,7 +198,7 @@
             <!-- USUÁRIO -->
             <!-- ============================= -->
 
-            <label>Usuário</label>
+            <label>Usuário (e-mail de login)</label>
 
             <div class="input-group mb-3">
 
@@ -98,9 +210,9 @@
 
                 <input
                     class="form-control"
-                    type="text"
+                    type="email"
                     name="usuario"
-
+                    value="<?= v($admin['email']) ?>"
                     required>
 
             </div>
@@ -124,7 +236,8 @@
                     class="form-control"
                     type="password"
                     name="senha"
-                    placeholder="Digite uma nova senha">
+                    autocomplete="new-password"
+                    placeholder="Nova senha (deixe em branco para manter)">
 
                 <span class="input-group-text olho">
 
@@ -153,6 +266,7 @@
                     class="form-control"
                     type="password"
                     name="confirmarSenha"
+                    autocomplete="new-password"
                     placeholder="Digite a senha novamente">
 
                 <span class="input-group-text olho">
@@ -285,13 +399,12 @@
 
                 </button>
 
-                <a
-                    href="minhaContaAdmin.php"
+                <button
+                    type="submit"
+                    form="formEditarAdmin"
                     class="btn btn-danger">
-
                     Salvar
-
-                </a>
+                </button>
 
             </div>
 
@@ -304,6 +417,15 @@
 <!-- JavaScript -->
 
 <script src="../js/script.js"></script>
+
+<script>
+// Se o navegador barrar o envio (ex.: e-mail inválido), fecha o modal
+// para a pessoa ver o campo com problema
+document.getElementById("formEditarAdmin").addEventListener("invalid", function () {
+    const modal = bootstrap.Modal.getInstance(document.getElementById("modalSalvar"));
+    if (modal) modal.hide();
+}, true);
+</script>
 
 </body>
 

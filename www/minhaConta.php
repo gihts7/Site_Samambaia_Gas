@@ -4,6 +4,7 @@ require_once("includes/verificaLogin.php");
 exigeLogin();
 
 require_once("includes/conecta.php");
+require_once("includes/funcoes.php");
 
 $idUsuario = $_SESSION["id_usuario"];
 
@@ -76,6 +77,16 @@ mysqli_stmt_close($stmt);
                 Visualize suas informações cadastrais.
             </p>
 
+            <?php if (isset($_SESSION["sucesso"])): ?>
+
+                <div class="alert alert-success">
+                    <?= v($_SESSION["sucesso"]) ?>
+                </div>
+
+                <?php unset($_SESSION["sucesso"]); ?>
+
+            <?php endif; ?>
+
             <hr>
 
             <label>Nome Completo</label>
@@ -89,7 +100,7 @@ mysqli_stmt_close($stmt);
                 <input
                     class="form-control"
                     type="text"
-                    value="<?= htmlspecialchars($usuario['nome']) ?>"
+                    value="<?= v($usuario['nome']) ?>"
 
                     readonly>
 
@@ -106,7 +117,7 @@ mysqli_stmt_close($stmt);
                 <input
                     class="form-control"
                     type="email"
-                    value="<?= htmlspecialchars($usuario['email']) ?>"
+                    value="<?= v($usuario['email']) ?>"
 
                     readonly>
 
@@ -127,7 +138,7 @@ mysqli_stmt_close($stmt);
                         <input
                             class="form-control"
                             type="text"
-                            value="<?= htmlspecialchars($usuario['telefone']) ?>"
+                            value="<?= v($usuario['telefone']) ?>"
                             readonly>
 
                     </div>
@@ -147,7 +158,7 @@ mysqli_stmt_close($stmt);
                         <input
                             class="form-control"
                             type="text"
-                            value="<?= date('d/m/Y', strtotime($usuario['data_nascimento'])) ?>"
+                            value="<?= $usuario['data_nascimento'] ? date('d/m/Y', strtotime($usuario['data_nascimento'])) : '' ?>"
                             readonly>
 
                     </div>
@@ -173,7 +184,7 @@ mysqli_stmt_close($stmt);
                         <input
                             class="form-control"
                             type="text"
-                            value="<?= htmlspecialchars($usuario['rua']) ?>"
+                            value="<?= v($usuario['rua']) ?>"
 
                             readonly>
 
@@ -194,7 +205,7 @@ mysqli_stmt_close($stmt);
                         <input
                             class="form-control"
                             type="text"
-                            value="<?= htmlspecialchars($usuario['numero']) ?>"
+                            value="<?= v($usuario['numero']) ?>"
 
                             readonly>
 
@@ -219,7 +230,7 @@ mysqli_stmt_close($stmt);
                         <input
                             class="form-control"
                             type="text"
-                            value="<?= htmlspecialchars($usuario['bairro']) ?>"
+                            value="<?= v($usuario['bairro']) ?>"
 
                             readonly>
 
@@ -240,7 +251,7 @@ mysqli_stmt_close($stmt);
                         <input
                             class="form-control"
                             type="text"
-                            value="<?= htmlspecialchars($usuario['cidade']) ?>"
+                            value="<?= v($usuario['cidade']) ?>"
 
                             readonly>
 
@@ -341,11 +352,11 @@ mysqli_stmt_close($stmt);
 
                 </button>
 
-                <a href="index.php" class="btn btn-danger">
-
-                    Excluir
-
-                </a>
+                <form method="POST" action="excluirConta.php" class="d-inline">
+                    <button type="submit" class="btn btn-danger">
+                        Excluir
+                    </button>
+                </form>
 
             </div>
 

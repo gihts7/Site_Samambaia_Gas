@@ -1,3 +1,31 @@
+<?php
+
+require_once("../includes/verificaLogin.php");
+exigeAdmin();
+
+require_once("../includes/conecta.php");
+require_once("../includes/funcoes.php");
+
+$idUsuario = $_SESSION["id_usuario"];
+
+// Confere no banco que a conta ainda existe e continua sendo admin
+$sql = "SELECT email FROM usuarios WHERE id = ? AND tipo = 'admin'";
+
+$stmt = mysqli_prepare($conn, $sql);
+mysqli_stmt_bind_param($stmt, "i", $idUsuario);
+mysqli_stmt_execute($stmt);
+
+$admin = mysqli_fetch_assoc(mysqli_stmt_get_result($stmt));
+
+mysqli_stmt_close($stmt);
+
+if (!$admin) {
+    header("Location: ../includes/logout.php");
+    exit;
+}
+
+?>
+
 <!DOCTYPE html>
 <html lang="pt-br">
 
@@ -75,8 +103,17 @@
             <p class="subtitulo">
 
                 Visualize suas informações administrativas.
-
             </p>
+
+            <?php if (isset($_SESSION["sucesso"])): ?>
+
+                <div class="alert alert-success">
+                    <?= v($_SESSION["sucesso"]) ?>
+                </div>
+
+                <?php unset($_SESSION["sucesso"]); ?>
+
+            <?php endif; ?>
 
 
             <hr>
@@ -88,7 +125,7 @@
 
             <!-- Usuário -->
 
-            <label>Usuário</label>
+            <label>Usuário (e-mail de login)</label>
 
             <div class="input-group mb-3">
 
@@ -101,7 +138,7 @@
                 <input
                     class="form-control"
                     type="text"
-
+                    value="<?= v($admin['email']) ?>"
                     readonly>
 
             </div>
@@ -122,7 +159,7 @@
                 <input
                     class="form-control"
                     type="password"
-
+                    value="********"
                     readonly>
 
             </div>
