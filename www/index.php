@@ -1,3 +1,8 @@
+<?php
+session_start();
+
+?>
+
 <!DOCTYPE html>
 <html lang="pt-br">
 
@@ -70,13 +75,40 @@
 
                 </ul>
 
-                <a href="minhaConta.php" class="btn btn-login-menu">
+                <?php if (!isset($_SESSION["id_usuario"])): ?>
 
-                    <i class="bi bi-person-circle"></i>
+                    <!-- Visitante -->
+                    <a href="login.php" class="btn btn-login-menu">
 
-                    Minha conta
+                        <i class="bi bi-box-arrow-in-right"></i>
 
-                </a>
+                        Entrar
+
+                    </a>
+
+                <?php elseif ($_SESSION["tipo"] === "admin"): ?>
+
+                    <!-- Administrador -->
+                    <a href="admin/painelAdmin.php" class="btn btn-login-menu">
+
+                        <i class="bi bi-person-gear"></i>
+
+                        Área Administrativa
+
+                    </a>
+
+                <?php else: ?>
+
+                    <!-- Cliente -->
+                    <a href="minhaConta.php" class="btn btn-login-menu">
+
+                        <i class="bi bi-person-circle"></i>
+
+                        Minha conta
+
+                    </a>
+
+                <?php endif; ?>
 
             </div>
 
