@@ -171,9 +171,7 @@ if (!$admin) {
 
             <div class="d-grid gap-3">
 
-
                 <!-- Editar cadastro -->
-
                 <a
                     href="editarContaAdmin.php"
                     class="btn btn-editar">
@@ -184,9 +182,7 @@ if (!$admin) {
 
                 </a>
 
-
                 <!-- Sair -->
-
                 <button
                     type="button"
                     class="btn btn-sair"
@@ -198,6 +194,18 @@ if (!$admin) {
                     Sair da conta admin
 
                 </button>
+
+                <div class="links">
+
+                    <a href="painelAdmin.php">
+
+                        <i class="bi bi-box-arrow-in-right"></i>
+
+                        Voltar
+
+                    </a>
+
+                </div>
 
             </div>
 

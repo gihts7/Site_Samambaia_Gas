@@ -65,19 +65,18 @@ exigeAdmin();
 
                 <li class="nav-item">
 
-                <button
-                    type="button"
-                    class="btn btn-sair"
-                    data-bs-toggle="modal"
-                    data-bs-target="#modalSair">
+                    <a class="nav-link"
+                       href="../index.php">
 
-                    <i class="bi bi-box-arrow-right"></i>
+                        <i class="bi bi-box-arrow-right"></i>
 
-                    Sair da conta admin
+                        Vizualizar página principal do site
 
-                </button>
+                    </a>
 
                 </li>
+
+
             </ul>
 
         </div>

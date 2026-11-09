@@ -295,7 +295,7 @@ mysqli_stmt_close($stmt);
 
                 </button>
 
-                 <div class="links">
+                <div class="links">
 
                     <a href="index.php">
 

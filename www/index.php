@@ -812,7 +812,7 @@ session_start();
 
                     <div class="info-item">
                         <i class="bi bi-truck"></i>
-                        <span>Entrega rápida para Santo Antônio. Conferir disponibilidade de entrega para interior e município Caraá</span>
+                        <span>Entrega rápida para Santo Antônio. Conferir disponibilidade de entrega para interior.</span>
                     </div>
 
                     <div class="info-item">
