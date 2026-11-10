@@ -1,6 +1,30 @@
 <?php
 require_once("../includes/verificaLogin.php");
 exigeAdmin();
+
+require_once("../includes/conecta.php");
+require_once("../includes/funcoes.php");
+
+$id = (int) ($_GET["id"] ?? 0);
+
+$sql = "SELECT id, nome, email, data_nascimento, telefone, rua, numero, bairro, cidade
+        FROM usuarios
+        WHERE id = ? AND tipo = 'cliente'";
+
+$stmt = mysqli_prepare($conn, $sql);
+mysqli_stmt_bind_param($stmt, "i", $id);
+mysqli_stmt_execute($stmt);
+
+$usuario = mysqli_fetch_assoc(mysqli_stmt_get_result($stmt));
+
+mysqli_stmt_close($stmt);
+
+if (!$usuario) {
+    $_SESSION["erro"] = "Usuário não encontrado.";
+    header("Location: gerenciarUsuarios.php");
+    exit;
+}
+
 ?>
 
 <!DOCTYPE html>
@@ -77,7 +101,7 @@ exigeAdmin();
                 </li>
 
                 <li class="nav-item">
-                    <a class="nav-link" href="../index.php">
+                    <a class="nav-link" href="../includes/logout.php">
                         <i class="bi bi-box-arrow-right"></i>
                         Sair
                     </a>
@@ -123,14 +147,14 @@ exigeAdmin();
 
         <input
             class="form-control mb-3"
-            value="João da Silva"
+            value="<?= v($usuario['nome']) ?>"
             readonly>
 
         <label>Email</label>
 
         <input
             class="form-control mb-3"
-            value="joao@email.com"
+            value="<?= v($usuario['email']) ?>"
             readonly>
 
         <div class="row">
@@ -141,7 +165,7 @@ exigeAdmin();
 
                 <input
                     class="form-control mb-3"
-                    value="(51) 99999-9999"
+                    value="<?= v($usuario['telefone']) ?>"
                     readonly>
 
             </div>
@@ -152,7 +176,7 @@ exigeAdmin();
 
                 <input
                     class="form-control mb-3"
-                    value="01/01/2000"
+                    value="<?= $usuario['data_nascimento'] ? date('d/m/Y', strtotime($usuario['data_nascimento'])) : '' ?>"
                     readonly>
 
             </div>
@@ -177,7 +201,7 @@ exigeAdmin();
 
                 <input
                     class="form-control mb-3"
-                    value="Rua Exemplo"
+                    value="<?= v($usuario['rua']) ?>"
                     readonly>
 
             </div>
@@ -188,7 +212,7 @@ exigeAdmin();
 
                 <input
                     class="form-control mb-3"
-                    value="123"
+                    value="<?= v($usuario['numero']) ?>"
                     readonly>
 
             </div>
@@ -203,7 +227,7 @@ exigeAdmin();
 
                 <input
                     class="form-control mb-3"
-                    value="Centro"
+                    value="<?= v($usuario['bairro']) ?>"
                     readonly>
 
             </div>
@@ -214,7 +238,7 @@ exigeAdmin();
 
                 <input
                     class="form-control mb-4"
-                    value="Santo Antônio da Patrulha"
+                    value="<?= v($usuario['cidade']) ?>"
                     readonly>
 
             </div>
@@ -294,13 +318,12 @@ exigeAdmin();
 
                 </button>
 
-                <a
-                    href="gerenciarUsuarios.php"
-                    class="btn btn-danger">
-
-                    Excluir
-
-                </a>
+                <form method="POST" action="excluirUsuario.php" class="d-inline">
+                    <input type="hidden" name="id" value="<?= (int) $usuario["id"] ?>">
+                    <button type="submit" class="btn btn-danger">
+                        Excluir
+                    </button>
+                </form>
 
             </div>
 

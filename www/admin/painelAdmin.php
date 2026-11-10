@@ -1,6 +1,18 @@
 <?php
 require_once("../includes/verificaLogin.php");
 exigeAdmin();
+
+require_once("../includes/conecta.php");
+require_once("../includes/funcoes.php");
+
+// Totais exibidos nos cards
+$sql = "SELECT
+            (SELECT COUNT(*) FROM produtos) AS produtos,
+            (SELECT COUNT(*) FROM usuarios WHERE tipo = 'cliente') AS usuarios,
+            (SELECT COUNT(*) FROM pedidos) AS pedidos";
+
+$totais = mysqli_fetch_assoc(mysqli_query($conn, $sql));
+
 ?>
 
 <!DOCTYPE html>
@@ -97,7 +109,7 @@ exigeAdmin();
 
     <p class="subtitulo-admin">
 
-        Bem-vindo, Administrador.
+        Bem-vindo, <?= v($_SESSION["nome"]) ?>.
 
     </p>
 
@@ -114,6 +126,7 @@ exigeAdmin();
                 <p>
 
                     Cadastre, edite ou exclua produtos.
+                    <br><strong><?= (int) $totais["produtos"] ?> cadastrado(s)</strong>
 
                 </p>
 
@@ -139,6 +152,7 @@ exigeAdmin();
                 <p>
 
                     Visualize ou exclua os usuários cadastrados.
+                    <br><strong><?= (int) $totais["usuarios"] ?> cadastrado(s)</strong>
 
                 </p>
 
@@ -164,6 +178,7 @@ exigeAdmin();
                 <p>
 
                     Visualize os pedidos recebidos.
+                    <br><strong><?= (int) $totais["pedidos"] ?> recebido(s)</strong>
 
                 </p>
 
@@ -244,9 +259,8 @@ exigeAdmin();
                 </button>
 
                 <a
-                    href="../index.php"
+                    href="../includes/logout.php"
                     class="btn btn-danger">
-
                     Sair
 
                 </a>
