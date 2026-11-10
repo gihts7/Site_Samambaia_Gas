@@ -1,6 +1,31 @@
 <?php
 session_start();
 
+require_once("includes/conecta.php");
+require_once("includes/funcoes.php");
+
+$categorias = mysqli_fetch_all(
+    mysqli_query($conn, "SELECT id, nome FROM categorias ORDER BY id"),
+    MYSQLI_ASSOC
+);
+
+// Só produtos ativos, na ordem em que foram cadastrados
+$produtos = mysqli_fetch_all(
+    mysqli_query($conn, "SELECT id, nome, imagem, categoria_id
+                         FROM produtos
+                         WHERE ativo = 1
+                         ORDER BY categoria_id, id"),
+    MYSQLI_ASSOC
+);
+
+// Ícone de cada categoria (as novas usam um ícone padrão)
+$icones = [
+    "GLPs"       => "bi-fire",
+    "Água"       => "bi-droplet-fill",
+    "Acessórios" => "bi-tools",
+    "Cascos"     => "bi-tools",
+];
+
 ?>
 
 <!DOCTYPE html>
@@ -374,34 +399,23 @@ session_start();
 
     </div>
 
-        <!-- Categorias -->
+                <!-- Categorias -->
 
         <div class="categorias">
 
-            <button class="categoria ativa">
+            <button class="categoria ativa" data-categoria="todos">
                 <i class="bi bi-grid-fill"></i>
                 Todos
             </button>
 
-            <button class="categoria">
-                <i class="bi bi-fire"></i>
-                GLPs
-            </button>
+            <?php foreach ($categorias as $c): ?>
 
-            <button class="categoria">
-                <i class="bi bi-droplet-fill"></i>
-                Água
-            </button>
+                <button class="categoria" data-categoria="<?= (int) $c["id"] ?>">
+                    <i class="bi <?= $icones[$c["nome"]] ?? "bi-tag-fill" ?>"></i>
+                    <?= v($c["nome"]) ?>
+                </button>
 
-            <button class="categoria">
-                <i class="bi bi-tools"></i>
-                Acessórios
-            </button>
-
-            <button class="categoria">
-                <i class="bi bi-tools"></i>
-                Cascos
-            </button>
+            <?php endforeach; ?>
 
         </div>
 
@@ -409,13 +423,19 @@ session_start();
 
         <div class="cards-produtos">
 
-            <!-- Gás P5 -->
+            <?php if (count($produtos) === 0): ?>
+                <p>Nenhum produto disponível no momento.</p>
+            <?php endif; ?>
+
+            <?php foreach ($produtos as $p): ?>
+
             <div class="produto"
-                data-nome="Gás de cozinha P5">
+                data-nome="<?= v($p["nome"]) ?>"
+                data-categoria="<?= (int) $p["categoria_id"] ?>">
 
-                <img src="imagens/p5.png">
+                <img src="<?= v($p["imagem"]) ?>" alt="<?= v($p["nome"]) ?>">
 
-                <h3>Gás de cozinha P5</h3>
+                <h3><?= v($p["nome"]) ?></h3>
 
                 <div class="quantidade">
                     <button class="menos">-</button>
@@ -430,257 +450,7 @@ session_start();
 
             </div>
 
-            <!-- Gás P13 -->
-            <div class="produto"
-                data-nome="Gás de cozinha P13">
-
-                <img src="imagens/p13.png">
-
-                <h3>Gás de cozinha P13</h3>
-
-                <div class="quantidade">
-                    <button class="menos">-</button>
-                    <span class="qtd">1</span>
-                    <button class="mais">+</button>
-                </div>
-
-                <button class="btn-adicionar">
-                    <i class="bi bi-cart-plus"></i>
-                    Adicionar
-                </button>
-
-            </div>
-
-            <!-- Gás P20 -->
-            <div class="produto"
-                data-nome="Gás de cozinha P20">
-
-                <img src="imagens/p20.png">
-
-                <h3>Gás de cozinha P20</h3>
-
-                <div class="quantidade">
-                    <button class="menos">-</button>
-                    <span class="qtd">1</span>
-                    <button class="mais">+</button>
-                </div>
-
-                <button class="btn-adicionar">
-                    <i class="bi bi-cart-plus"></i>
-                    Adicionar
-                </button>
-
-            </div>
-
-            <!-- Gás P45 -->
-            <div class="produto"
-                data-nome="Gás de cozinha P45">
-
-                <img src="imagens/p45.png">
-
-                <h3>Gás de cozinha P45</h3>
-
-                <div class="quantidade">
-                    <button class="menos">-</button>
-                    <span class="qtd">1</span>
-                    <button class="mais">+</button>
-                </div>
-
-                <button class="btn-adicionar">
-                    <i class="bi bi-cart-plus"></i>
-                    Adicionar
-                </button>
-
-            </div>
-
-            <!-- Água 500ml -->
-            <div class="produto"
-                data-nome="Água mineral 500ml">
-
-                <img src="imagens/500ml.png">
-
-                <h3>Água mineral 500ml</h3>
-
-                <div class="quantidade">
-                    <button class="menos">-</button>
-                    <span class="qtd">1</span>
-                    <button class="mais">+</button>
-                </div>
-
-                <button class="btn-adicionar">
-                    <i class="bi bi-cart-plus"></i>
-                    Adicionar
-                </button>
-
-            </div>
-
-            <!-- Água com gás -->
-            <div class="produto"
-                data-nome="Água mineral com gás 500ml">
-
-                <img src="imagens/500mlgas.png">
-
-                <h3>Água mineral com gás 500ml</h3>
-
-                <div class="quantidade">
-                    <button class="menos">-</button>
-                    <span class="qtd">1</span>
-                    <button class="mais">+</button>
-                </div>
-
-                <button class="btn-adicionar">
-                    <i class="bi bi-cart-plus"></i>
-                    Adicionar
-                </button>
-
-            </div>
-
-            <!-- Água 20L -->
-            <div class="produto"
-                data-nome="Água mineral 20L">
-
-                <img src="imagens/agua20l.png">
-
-                <h3>Água mineral 20L</h3>
-
-                <div class="quantidade">
-                    <button class="menos">-</button>
-                    <span class="qtd">1</span>
-                    <button class="mais">+</button>
-                </div>
-
-                <button class="btn-adicionar">
-                    <i class="bi bi-cart-plus"></i>
-                    Adicionar
-                </button>
-
-            </div>
-
-            <!-- Regulador -->
-            <div class="produto"
-                data-nome="Regulador">
-
-                <img src="imagens/regulador.png">
-
-                <h3>Regulador</h3>
-
-                <div class="quantidade">
-                    <button class="menos">-</button>
-                    <span class="qtd">1</span>
-                    <button class="mais">+</button>
-                </div>
-
-                <button class="btn-adicionar">
-                    <i class="bi bi-cart-plus"></i>
-                    Adicionar
-                </button>
-
-            </div>
-
-            <!-- Kit Mangueira -->
-            <div class="produto"
-                data-nome="KitMangueira">
-
-                <img src="imagens/kitMangueira.png">
-
-                <h3>Kit regulador + Mangueira</h3>
-
-                <div class="quantidade">
-                    <button class="menos">-</button>
-                    <span class="qtd">1</span>
-                    <button class="mais">+</button>
-                </div>
-
-                <button class="btn-adicionar">
-                    <i class="bi bi-cart-plus"></i>
-                    Adicionar
-                </button>
-
-            </div>
-
-            <!-- Casco P5 -->
-            <div class="produto"
-                data-nome="Casco vazio P5">
-
-                <img src="imagens/p5.png">
-
-                <h3>Casco vazio P5</h3>
-
-                <div class="quantidade">
-                    <button class="menos">-</button>
-                    <span class="qtd">1</span>
-                    <button class="mais">+</button>
-                </div>
-
-                <button class="btn-adicionar">
-                    <i class="bi bi-cart-plus"></i>
-                    Adicionar
-                </button>
-
-            </div>
-
-            <!-- Casco P13 -->
-            <div class="produto"
-                data-nome="Casco vazio P13">
-
-                <img src="imagens/p13.png">
-
-                <h3>Casco vazio P13</h3>
-
-                <div class="quantidade">
-                    <button class="menos">-</button>
-                    <span class="qtd">1</span>
-                    <button class="mais">+</button>
-                </div>
-
-                <button class="btn-adicionar">
-                    <i class="bi bi-cart-plus"></i>
-                    Adicionar
-                </button>
-
-            </div>
-
-            <!-- Casco P20 -->
-            <div class="produto"
-                data-nome="Casco vazio P20">
-
-                <img src="imagens/p20.png">
-
-                <h3>Casco vazio P20</h3>
-
-                <div class="quantidade">
-                    <button class="menos">-</button>
-                    <span class="qtd">1</span>
-                    <button class="mais">+</button>
-                </div>
-
-                <button class="btn-adicionar">
-                    <i class="bi bi-cart-plus"></i>
-                    Adicionar
-                </button>
-
-            </div>
-
-            <!-- Casco P45 -->
-            <div class="produto"
-                data-nome="Casco vazio P45">
-
-                <img src="imagens/p45.png">
-
-                <h3>Casco vazio P45</h3>
-
-                <div class="quantidade">
-                    <button class="menos">-</button>
-                    <span class="qtd">1</span>
-                    <button class="mais">+</button>
-                </div>
-
-                <button class="btn-adicionar">
-                    <i class="bi bi-cart-plus"></i>
-                    Adicionar
-                </button>
-
-            </div>
+            <?php endforeach; ?>
 
         </div>
 

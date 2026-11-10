@@ -1,6 +1,17 @@
 <?php
 require_once("../includes/verificaLogin.php");
 exigeAdmin();
+
+require_once("../includes/conecta.php");
+require_once("../includes/funcoes.php");
+
+$sql = "SELECT p.id, p.nome, p.imagem, p.ativo, c.nome AS categoria
+        FROM produtos p
+        JOIN categorias c ON c.id = p.categoria_id
+        ORDER BY c.nome, p.nome";
+
+$produtos = mysqli_query($conn, $sql);
+
 ?>
 
 <!DOCTYPE html>
@@ -85,8 +96,17 @@ exigeAdmin();
 
     </div>
 
-    <div class="card-admin">
+    <?php if (isset($_SESSION["sucesso"])): ?>
+        <div class="alert alert-success"><?= v($_SESSION["sucesso"]) ?></div>
+        <?php unset($_SESSION["sucesso"]); ?>
+    <?php endif; ?>
 
+    <?php if (isset($_SESSION["erro"])): ?>
+        <div class="alert alert-danger"><?= v($_SESSION["erro"]) ?></div>
+        <?php unset($_SESSION["erro"]); ?>
+    <?php endif; ?>
+
+    <div class="card-admin">
         <table class="table table-hover align-middle">
 
             <thead>
@@ -98,6 +118,7 @@ exigeAdmin();
                     <th>Produto</th>
 
                     <th>Categoria</th>
+                    <th>Status</th>
 
                     <th class="text-center">Ações</th>
 
@@ -107,38 +128,48 @@ exigeAdmin();
 
             <tbody>
 
+                <?php if (mysqli_num_rows($produtos) === 0): ?>
+                    <tr>
+                        <td colspan="5" class="text-center">
+                            Nenhum produto cadastrado.
+                        </td>
+                    </tr>
+                <?php endif; ?>
+
+                <?php while ($p = mysqli_fetch_assoc($produtos)): ?>
+
                 <tr>
-
                     <td>
-
-                        <img src="../imagens/p13.png" class="img-produto">
-
+                        <?php if ($p["imagem"]): ?>
+                            <img src="../<?= v($p["imagem"]) ?>" class="img-produto">
+                        <?php endif; ?>
                     </td>
-
-                    <td>Gás de cozinha P13</td>
-
-                    <td>GLPs</td>
-
+                    <td><?= v($p["nome"]) ?></td>
+                    <td><?= v($p["categoria"]) ?></td>
+                    <td>
+                        <?php if ($p["ativo"]): ?>
+                            <span class="badge text-bg-success">Ativo</span>
+                        <?php else: ?>
+                            <span class="badge text-bg-secondary">Inativo</span>
+                        <?php endif; ?>
+                    </td>
                     <td class="text-center">
-
-                        <a href="produtoFormulario.php" class="btn btn-warning btn-sm">
-
+                        <a href="produtoFormulario.php?id=<?= (int) $p["id"] ?>" class="btn btn-warning btn-sm">
                             <i class="bi bi-pencil-fill"></i>
-
                         </a>
-
                         <button
+                            type="button"
                             class="btn btn-danger btn-sm"
                             data-bs-toggle="modal"
-                            data-bs-target="#modalExcluirProduto">
-
+                            data-bs-target="#modalExcluirProduto"
+                            data-id="<?= (int) $p["id"] ?>"
+                            data-nome="<?= v($p["nome"]) ?>">
                             <i class="bi bi-trash-fill"></i>
-
                         </button>
-
                     </td>
-
                 </tr>
+
+                <?php endwhile; ?>
 
             </tbody>
 
@@ -176,7 +207,7 @@ exigeAdmin();
 
             <div class="modal-body">
 
-                Tem certeza que deseja excluir este produto?
+                Tem certeza que deseja excluir o produto <strong id="nomeExcluir"></strong>?
 
                 <br><br>
 
@@ -194,11 +225,12 @@ exigeAdmin();
 
                 </button>
 
-                <button class="btn btn-danger">
-
-                    Excluir
-
-                </button>
+                <form method="POST" action="excluirProduto.php" class="d-inline">
+                    <input type="hidden" name="id" id="idExcluir">
+                    <button type="submit" class="btn btn-danger">
+                        Excluir
+                    </button>
+                </form>
 
             </div>
 
@@ -209,6 +241,15 @@ exigeAdmin();
 </div>
 
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/js/bootstrap.bundle.min.js"></script>
+
+<script>
+// Passa o id e o nome do produto clicado para o modal de exclusão
+document.getElementById("modalExcluirProduto").addEventListener("show.bs.modal", function (e) {
+    const botao = e.relatedTarget;
+    document.getElementById("idExcluir").value = botao.dataset.id;
+    document.getElementById("nomeExcluir").textContent = botao.dataset.nome;
+});
+</script>
 
 </body>
 

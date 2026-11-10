@@ -304,3 +304,24 @@ document.getElementById("btnEnviar").addEventListener("click", function () {
     );
 
 });
+
+// ===== Filtro por categoria =====
+const botoesCategoria = document.querySelectorAll(".categoria");
+
+botoesCategoria.forEach(function (botao) {
+
+    botao.addEventListener("click", function () {
+
+        botoesCategoria.forEach(b => b.classList.remove("ativa"));
+        botao.classList.add("ativa");
+
+        const categoria = botao.dataset.categoria;
+
+        document.querySelectorAll(".produto").forEach(function (card) {
+
+            const mostrar = categoria === "todos" || card.dataset.categoria === categoria;
+
+            card.style.display = mostrar ? "" : "none";
+        });
+    });
+});
