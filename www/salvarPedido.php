@@ -18,6 +18,28 @@ if ($_SERVER["REQUEST_METHOD"] !== "POST") {
     responde(false, ["erro" => "Método inválido."], 405);
 }
 
+// ===== Só usuários logados podem fazer pedido =====
+
+if (!isset($_SESSION["id_usuario"])) {
+    responde(false, ["erro" => "Faça login para finalizar o pedido."], 401);
+}
+
+$usuarioId = (int) $_SESSION["id_usuario"];
+
+// A conta pode ter sido excluída enquanto a sessão ainda estava aberta
+$stmt = mysqli_prepare($conn, "SELECT id FROM usuarios WHERE id = ?");
+mysqli_stmt_bind_param($stmt, "i", $usuarioId);
+mysqli_stmt_execute($stmt);
+
+$contaExiste = mysqli_num_rows(mysqli_stmt_get_result($stmt)) > 0;
+
+mysqli_stmt_close($stmt);
+
+if (!$contaExiste) {
+    session_destroy();
+    responde(false, ["erro" => "Sua sessão expirou. Entre novamente."], 401);
+}
+
 // O JS envia JSON
 $dados = json_decode(file_get_contents("php://input"), true);
 
@@ -64,9 +86,6 @@ if ($tipoEntrega === "entrega") {
         responde(false, ["erro" => "Algum campo do endereço está muito longo."], 400);
     }
 }
-
-// Quem fez o pedido (NULL se não estiver logado)
-$usuarioId = $_SESSION["id_usuario"] ?? null;
 
 // ===== Grava tudo ou nada (transação) =====
 

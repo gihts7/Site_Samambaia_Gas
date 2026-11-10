@@ -1,6 +1,18 @@
 <?php
 require_once("../includes/verificaLogin.php");
 exigeAdmin();
+
+require_once("../includes/conecta.php");
+require_once("../includes/funcoes.php");
+
+// LEFT JOIN: se a conta do cliente foi excluída, usuario_id fica NULL
+$sql = "SELECT p.id, p.tipo_entrega, p.forma_pagamento, p.criado_em, u.nome AS cliente
+        FROM pedidos p
+        LEFT JOIN usuarios u ON u.id = p.usuario_id
+        ORDER BY p.id DESC";
+
+$pedidos = mysqli_query($conn, $sql);
+
 ?>
 
 <!DOCTYPE html>
@@ -81,10 +93,13 @@ exigeAdmin();
             <h2>Pedidos Recebidos</h2>
 
             <p>Visualize os pedidos enviados pelo site.</p>
-
         </div>
-
     </div>
+
+    <?php if (isset($_SESSION["erro"])): ?>
+        <div class="alert alert-danger"><?= v($_SESSION["erro"]) ?></div>
+        <?php unset($_SESSION["erro"]); ?>
+    <?php endif; ?>
 
 
     <div class="table-responsive">
@@ -96,6 +111,7 @@ exigeAdmin();
                 <tr>
 
                     <th>#</th>
+                    <th>Data</th>
 
                     <th>Cliente</th>
 
@@ -112,28 +128,29 @@ exigeAdmin();
 
             <tbody>
 
+                <?php if (mysqli_num_rows($pedidos) === 0): ?>
+                    <tr>
+                        <td colspan="6">Nenhum pedido recebido ainda.</td>
+                    </tr>
+                <?php endif; ?>
+
+                <?php while ($p = mysqli_fetch_assoc($pedidos)): ?>
+
                 <tr>
-
-                    <td>001</td>
-
-                    <td>João da Silva</td>
-
-                    <td>Entrega</td>
-
-                    <td>PIX</td>
-
+                    <td><?= str_pad($p["id"], 3, "0", STR_PAD_LEFT) ?></td>
+                    <td><?= v(dataBr($p["criado_em"])) ?></td>
+                    <td><?= $p["cliente"] ? v($p["cliente"]) : "Conta excluída" ?></td>
+                    <td><?= $p["tipo_entrega"] === "entrega" ? "Entrega" : "Retirada" ?></td>
+                    <td><?= v($p["forma_pagamento"]) ?></td>
                     <td>
-
-                        <a href="visualizarPedido.php"
+                        <a href="visualizarPedido.php?id=<?= (int) $p["id"] ?>"
                            class="btn btn-warning">
-
                             <i class="bi bi-eye-fill"></i>
-
                         </a>
-
                     </td>
-
                 </tr>
+
+                <?php endwhile; ?>
 
             </tbody>
 

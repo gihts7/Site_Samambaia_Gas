@@ -506,6 +506,13 @@ $icones = [
 
     </div>
 
+    <?php if (!isset($_SESSION["id_usuario"])): ?>
+        <div class="alert alert-warning">
+            Para finalizar o pedido, <a href="login.php" class="alert-link">entre na sua conta</a>
+            ou <a href="cadastro.php" class="alert-link">cadastre-se</a>.
+        </div>
+    <?php endif; ?>
+
     <button
     type="button"
     id="btnEnviar"

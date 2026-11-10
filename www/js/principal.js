@@ -218,7 +218,9 @@ document.getElementById("cidade").addEventListener("change", atualizarEnderecoRe
 
 
 
-document.getElementById("btnEnviar").addEventListener("click", function () {
+document.getElementById("btnEnviar").addEventListener("click", async function () {
+
+    const botao = this;
 
     const telefone = "5551989212294";
 
@@ -227,6 +229,11 @@ document.getElementById("btnEnviar").addEventListener("click", function () {
     ).value;
 
     const pagamento = document.getElementById("formaPagamento").value;
+
+    const rua = document.getElementById("rua").value.trim();
+    const numero = document.getElementById("numero").value.trim();
+    const bairro = document.getElementById("bairro").value.trim();
+    const cidade = document.getElementById("cidade").value.trim();
 
     // Verifica se existem produtos no pedido
     if (carrinho.length === 0) {
@@ -243,66 +250,136 @@ document.getElementById("btnEnviar").addEventListener("click", function () {
     // Verifica os campos do endereço somente para entrega
     if (tipoEntrega === "entrega") {
 
-        const rua = document.getElementById("rua").value.trim();
-        const numero = document.getElementById("numero").value.trim();
-        const bairro = document.getElementById("bairro").value.trim();
-        const cidade = document.getElementById("cidade").value.trim();
-
         if (!rua || !numero || !bairro || !cidade) {
             alert("Preencha todos os campos do endereço de entrega.");
             return;
         }
     }
 
-    let mensagem = "*Novo Pedido*%0A%0A";
+    // Abre a aba do WhatsApp JÁ AQUI (dentro do clique), senão o navegador
+    // bloqueia o pop-up por causa do fetch que vem a seguir
+    const janela = window.open("", "_blank");
+
+    botao.disabled = true;
+
+    // ===== 1) Registra o pedido no banco =====
+    let pedidoId = null;
+
+    try {
+
+        const resposta = await fetch("salvarPedido.php", {
+            method: "POST",
+            headers: { "Content-Type": "application/json" },
+            body: JSON.stringify({
+                tipoEntrega: tipoEntrega,
+                pagamento: pagamento,
+                rua: rua,
+                numero: numero,
+                bairro: bairro,
+                cidade: cidade,
+                itens: carrinho.map(function (p) {
+                    return { nome: p.nome, quantidade: p.quantidade };
+                })
+            })
+        });
+
+        const resultado = await resposta.json();
+
+        // 401 = não está logado (ou a sessão expirou)
+        if (resposta.status === 401) {
+
+            if (janela) janela.close();
+            botao.disabled = false;
+
+            if (confirm(
+                "Para finalizar o pedido você precisa entrar na sua conta.\n\n" +
+                "Ir para a tela de login agora?"
+            )) {
+                window.location.href = "login.php";
+            }
+
+            return;
+        }
+
+        // 400 = o servidor recusou o pedido (ex.: produto indisponível)
+        if (resposta.status === 400) {
+            alert(resultado.erro || "Pedido inválido.");
+            if (janela) janela.close();
+            botao.disabled = false;
+            return;
+        }
+
+        if (resposta.ok && resultado.ok === true) {
+            pedidoId = resultado.id;
+        }
+
+    } catch (erro) {
+        pedidoId = null;
+    }
+
+    // Se não conseguiu registrar, deixa o cliente decidir
+    if (pedidoId === null) {
+
+        const continuar = confirm(
+            "Não foi possível registrar o pedido no sistema.\n\n" +
+            "Deseja enviar mesmo assim pelo WhatsApp?"
+        );
+
+        if (!continuar) {
+            if (janela) janela.close();
+            botao.disabled = false;
+            return;
+        }
+    }
+
+    // ===== 2) Monta a mensagem do WhatsApp =====
+    // encodeURIComponent é necessário: o "#" quebraria a URL do WhatsApp
+    let mensagem = pedidoId !== null
+        ? encodeURIComponent("*Novo Pedido #" + pedidoId + "*") + "%0A%0A"
+        : "*Novo%20Pedido*%0A%0A";
 
     mensagem += "-Produtos:%0A";
 
     carrinho.forEach(function (produto) {
-
         mensagem +=
-            `• ${produto.quantidade}x ${produto.nome}%0A`;
-
+            encodeURIComponent("• " + produto.quantidade + "x " + produto.nome) + "%0A";
     });
 
     mensagem += "%0A";
 
     mensagem += "-Tipo de entrega: ";
-
-    mensagem += tipoEntrega === "entrega"
-        ? "Entrega"
-        : "Retirada";
-
+    mensagem += tipoEntrega === "entrega" ? "Entrega" : "Retirada";
     mensagem += "%0A";
 
     if (tipoEntrega === "entrega") {
 
         mensagem += "%0A-Endereço:%0A";
-
-        mensagem +=
-            encodeURIComponent(document.getElementById("rua").value.trim()) + ", ";
-
-        mensagem +=
-            encodeURIComponent(document.getElementById("numero").value.trim()) + "%0A";
-
-        mensagem +=
-            encodeURIComponent(document.getElementById("bairro").value.trim()) + "%0A";
-
-        mensagem +=
-            encodeURIComponent(document.getElementById("cidade").value.trim()) + "%0A";
+        mensagem += encodeURIComponent(rua) + ", ";
+        mensagem += encodeURIComponent(numero) + "%0A";
+        mensagem += encodeURIComponent(bairro) + "%0A";
+        mensagem += encodeURIComponent(cidade) + "%0A";
     }
 
     mensagem += "%0A";
 
-    mensagem +=
-        "-Forma de pagamento: " +
-        encodeURIComponent(pagamento);
+    mensagem += "-Forma de pagamento: " + encodeURIComponent(pagamento);
 
-    window.open(
-        "https://wa.me/" + telefone + "?text=" + mensagem,
-        "_blank"
-    );
+    const url = "https://wa.me/" + telefone + "?text=" + mensagem;
 
+    if (janela) {
+        janela.location.href = url;
+    } else {
+        // Pop-up bloqueado: abre na mesma aba
+        window.location.href = url;
+    }
+
+    // Pedido enviado: limpa o carrinho (evita enviar o mesmo pedido duas vezes)
+    if (pedidoId !== null) {
+        carrinho = [];
+        atualizarResumo();
+    }
+
+    botao.disabled = false;
 });
 
 // ===== Filtro por categoria =====

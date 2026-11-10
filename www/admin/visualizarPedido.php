@@ -1,6 +1,42 @@
 <?php
 require_once("../includes/verificaLogin.php");
 exigeAdmin();
+
+require_once("../includes/conecta.php");
+require_once("../includes/funcoes.php");
+
+$id = (int) ($_GET["id"] ?? 0);
+
+$sql = "SELECT p.id, p.tipo_entrega, p.forma_pagamento, p.rua, p.numero, p.bairro,
+               p.cidade, p.criado_em,
+               u.nome AS cliente_nome, u.telefone AS cliente_telefone
+        FROM pedidos p
+        LEFT JOIN usuarios u ON u.id = p.usuario_id
+        WHERE p.id = ?";
+
+$stmt = mysqli_prepare($conn, $sql);
+mysqli_stmt_bind_param($stmt, "i", $id);
+mysqli_stmt_execute($stmt);
+
+$pedido = mysqli_fetch_assoc(mysqli_stmt_get_result($stmt));
+
+mysqli_stmt_close($stmt);
+
+if (!$pedido) {
+    $_SESSION["erro"] = "Pedido não encontrado.";
+    header("Location: pedidos.php");
+    exit;
+}
+
+// Itens do pedido
+$stmt = mysqli_prepare($conn, "SELECT produto_nome, quantidade FROM pedido_itens WHERE pedido_id = ? ORDER BY id");
+mysqli_stmt_bind_param($stmt, "i", $id);
+mysqli_stmt_execute($stmt);
+
+$itens = mysqli_fetch_all(mysqli_stmt_get_result($stmt), MYSQLI_ASSOC);
+
+mysqli_stmt_close($stmt);
+
 ?>
 
 <!DOCTYPE html>
@@ -65,9 +101,12 @@ exigeAdmin();
 
     <h2 class="mb-4 fw-bold">
 
-        Pedido #001
-
+        Pedido #<?= str_pad($pedido["id"], 3, "0", STR_PAD_LEFT) ?>
     </h2>
+
+    <p class="text-muted">
+        Recebido em <?= v(dataBr($pedido["criado_em"])) ?>
+    </p>
 
     <div class="row g-4">
 
@@ -93,17 +132,20 @@ exigeAdmin();
 
                     <p class="mb-2">
 
-                        <strong>João da Silva</strong>
+                        <strong><?= $pedido["cliente_nome"] ? v($pedido["cliente_nome"]) : "Conta excluída" ?></strong>
 
                     </p>
 
+                    <?php if ($pedido["cliente_telefone"]): ?>
                     <p class="text-muted mb-0">
-
                         <i class="bi bi-telephone-fill"></i>
-
-                        (51) 99999-9999
-
+                        <?= v($pedido["cliente_telefone"]) ?>
                     </p>
+                    <?php elseif (!$pedido["cliente_nome"]): ?>
+                    <p class="text-muted mb-0">
+                        Esta conta foi excluída pelo cliente depois do pedido.
+                    </p>
+                    <?php endif; ?>
 
                 </div>
 
@@ -133,7 +175,7 @@ exigeAdmin();
 
                     <span class="badge bg-success fs-6">
 
-                        PIX
+                        <?= v($pedido["forma_pagamento"]) ?>
 
                     </span>
 
@@ -163,11 +205,13 @@ exigeAdmin();
 
                 <div class="card-body">
 
-                    Rua Exemplo, 123
-
+                    <?php if ($pedido["tipo_entrega"] === "entrega"): ?>
+                    <?= v($pedido["rua"]) ?>, <?= v($pedido["numero"]) ?>
                     <br>
-
-                    Centro - Santo Antônio da Patrulha
+                    <?= v($pedido["bairro"]) ?> - <?= v($pedido["cidade"]) ?>
+                    <?php else: ?>
+                    <strong>Retirada na loja</strong> (sem endereço de entrega)
+                    <?php endif; ?>
 
                 </div>
 
@@ -210,23 +254,12 @@ exigeAdmin();
                         </thead>
 
                         <tbody>
-
+                            <?php foreach ($itens as $item): ?>
                             <tr>
-
-                                <td>GLP P13</td>
-
-                                <td class="text-center">2x</td>
-
+                                <td><?= v($item["produto_nome"]) ?></td>
+                                <td class="text-center"><?= (int) $item["quantidade"] ?>x</td>
                             </tr>
-
-                            <tr>
-
-                                <td>Água Mineral 20L</td>
-
-                                <td class="text-center">1x</td>
-
-                            </tr>
-
+                            <?php endforeach; ?>
                         </tbody>
 
                     </table>
