@@ -26,6 +26,27 @@ $icones = [
     "Cascos"     => "bi bi-trash2",
 ];
 
+
+$enderecoCadastro = null;
+
+if (isset($_SESSION["id_usuario"])) {
+
+    $idUsuario = $_SESSION["id_usuario"];
+
+    $sql = "SELECT rua, numero, bairro, cidade
+            FROM usuarios
+            WHERE id = ?";
+
+    $stmt = mysqli_prepare($conn, $sql);
+    mysqli_stmt_bind_param($stmt, "i", $idUsuario);
+    mysqli_stmt_execute($stmt);
+
+    $resultado = mysqli_stmt_get_result($stmt);
+    $enderecoCadastro = mysqli_fetch_assoc($resultado);
+
+    mysqli_stmt_close($stmt);
+}
+
 ?>
 
 <!DOCTYPE html>
@@ -341,6 +362,21 @@ $icones = [
 
         <h3>Endereço para entrega</h3>
 
+        <?php if ($enderecoCadastro): ?>
+
+            <button
+                type="button"
+                id="usarEnderecoCadastro"
+                class="btn btn-outline-secondary mb-3"
+                style="border-color: #d6d6d6; color: #555; background-color: #fff;">
+
+                <i class="bi bi-geo-alt-fill"></i>
+                Usar endereço cadastrado na sua conta
+
+            </button>
+
+        <?php endif; ?>
+
         <div class="row">
 
             <div class="col-md-8 mb-3">
@@ -388,7 +424,7 @@ $icones = [
                     id="cidade"
                     type="text"
                     class="form-control"
-                    value="Santo Antônio da Patrulha"
+                    value="<?= htmlspecialchars($enderecoCadastro['cidade'] ?? 'Santo Antônio da Patrulha') ?>"
                     readonly>
 
             </div>
@@ -662,7 +698,28 @@ $icones = [
 
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/js/bootstrap.bundle.min.js"></script>
 
-<script src="js/principal.js"></script>
+<script src="js/principal.js"> </script>
+
+    <script>
+        const botaoEndereco = document.getElementById("usarEnderecoCadastro");
+
+        if (botaoEndereco) {
+            botaoEndereco.addEventListener("click", function () {
+
+                document.getElementById("rua").value =
+                    <?= json_encode($enderecoCadastro['rua'] ?? '') ?>;
+
+                document.getElementById("numero").value =
+                    <?= json_encode($enderecoCadastro['numero'] ?? '') ?>;
+
+                document.getElementById("bairro").value =
+                    <?= json_encode($enderecoCadastro['bairro'] ?? '') ?>;
+
+                document.getElementById("cidade").value =
+                    <?= json_encode($enderecoCadastro['cidade'] ?? '') ?>;
+            });
+        }
+    </script>
 
 </body>
 </html>
