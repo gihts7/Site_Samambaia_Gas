@@ -23,7 +23,7 @@ $icones = [
     "GLPs"       => "bi-fire",
     "Água"       => "bi-droplet-fill",
     "Acessórios" => "bi-tools",
-    "Cascos"     => "bi-tools",
+    "Cascos"     => "bi bi-trash2",
 ];
 
 ?>
