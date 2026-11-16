@@ -4,7 +4,7 @@ Sistema web (Projeto Integrador) para uma revenda de gás de cozinha, água mine
 
 ## Tecnologias
 
-HTML5, CSS, Bootstrap, JavaScript, PHP, MySQL, Docker e phpMyAdmin.
+HTML, CSS, Bootstrap, JavaScript, PHP, MySQL, Docker e phpMyAdmin.
 
 ## Funcionalidades
 
