@@ -558,6 +558,18 @@ if (isset($_SESSION["id_usuario"])) {
     Enviar pedido pelo WhatsApp
     </button>
 
+    <div class="alert alert-light border mb-3">
+        <i class="bi bi-info-circle"></i>
+        <strong>Atenção!</strong>
+
+        Para que seu pedido seja recebido e registrado pela nossa equipe,
+        é necessário clicar em <strong>Enviar</strong> no WhatsApp e enviar
+        a mensagem pronta.
+
+        Apenas abrir a mensagem não confirma o pedido.
+        Aguarde nossa confirmação pelo WhatsApp.
+    </div>
+
     </section>
 
     </section>

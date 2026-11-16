@@ -333,37 +333,41 @@ document.getElementById("btnEnviar").addEventListener("click", async function ()
     }
 
     // ===== 2) Monta a mensagem do WhatsApp =====
-    // encodeURIComponent é necessário: o "#" quebraria a URL do WhatsApp
-    let mensagem = pedidoId !== null
-        ? encodeURIComponent("*Novo Pedido #" + pedidoId + "*") + "%0A%0A"
-        : "*Novo%20Pedido*%0A%0A";
 
-    mensagem += "-Produtos:%0A";
+    let linhasMensagem = [];
+
+    linhasMensagem.push(
+        pedidoId !== null ? "Novo Pedido #" + pedidoId : "Novo Pedido"
+    );
+
+    linhasMensagem.push("");
+    linhasMensagem.push("-Produtos:");
 
     carrinho.forEach(function (produto) {
-        mensagem +=
-            encodeURIComponent("• " + produto.quantidade + "x " + produto.nome) + "%0A";
+        linhasMensagem.push(
+            "* " + produto.quantidade + "x " + produto.nome
+        );
     });
 
-    mensagem += "%0A";
-
-    mensagem += "-Tipo de entrega: ";
-    mensagem += tipoEntrega === "entrega" ? "Entrega" : "Retirada";
-    mensagem += "%0A";
+    linhasMensagem.push("");
 
     if (tipoEntrega === "entrega") {
 
-        mensagem += "%0A-Endereço:%0A";
-        mensagem += encodeURIComponent(rua) + ", ";
-        mensagem += encodeURIComponent(numero) + "%0A";
-        mensagem += encodeURIComponent(bairro) + "%0A";
-        mensagem += encodeURIComponent(cidade) + "%0A";
+        linhasMensagem.push("-Endereço de entrega:");
+        linhasMensagem.push(rua + ", " + numero);
+        linhasMensagem.push(bairro);
+        linhasMensagem.push(cidade);
+
+    } else {
+
+        linhasMensagem.push("-Retirada na portaria");
     }
 
-    mensagem += "%0A";
+    linhasMensagem.push("");
+    linhasMensagem.push("-Forma de pagamento:");
+    linhasMensagem.push("* " + pagamento);
 
-    mensagem += "-Forma de pagamento: " + encodeURIComponent(pagamento);
-
+    const mensagem = encodeURIComponent(linhasMensagem.join("\n"));
     const url = "https://wa.me/" + telefone + "?text=" + mensagem;
 
     if (janela) {

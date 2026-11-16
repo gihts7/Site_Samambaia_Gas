@@ -18,7 +18,11 @@ if (isset($_POST["enviar"])) {
     $senha = $_POST["senha"];
     $confirmarSenha = $_POST["confirmarSenha"];
 
-    if ($senha !== $confirmarSenha) {
+    if (strlen($senha) < 6) {
+
+        $erro = "A senha deve ter pelo menos 6 caracteres.";
+
+    } elseif ($senha !== $confirmarSenha) {
 
         $erro = "As senhas não coincidem.";
 
@@ -337,6 +341,7 @@ if (isset($_POST["enviar"])) {
                     class="form-control"
                     type="password"
                     name="senha" required
+                    minlength="6"
                     placeholder="Digite sua senha">
 
                 <span class="input-group-text olho">
@@ -360,6 +365,7 @@ if (isset($_POST["enviar"])) {
                     class="form-control"
                     type="password"
                     name="confirmarSenha" required
+                    minlength="6"
                     placeholder="Digite novamente sua senha">
 
                 <span class="input-group-text olho">
