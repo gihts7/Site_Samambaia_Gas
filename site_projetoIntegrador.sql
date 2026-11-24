@@ -3,9 +3,9 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: mysql
--- Tempo de geração: 20/10/2026 às 01:01
+-- Tempo de geração: 13/11/2026 às 22:18
 -- Versão do servidor: 8.3.0
--- Versão do PHP: 8.3.31
+-- Versão do PHP: 8.3.36
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -88,6 +88,25 @@ CREATE TABLE `produtos` (
   `ativo` tinyint(1) NOT NULL DEFAULT '1'
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 
+--
+-- Despejando dados para a tabela `produtos`
+--
+
+INSERT INTO `produtos` (`id`, `nome`, `imagem`, `categoria_id`, `ativo`) VALUES
+(1, 'Gás de cozinha P5', 'imagens/p5.png', 1, 1),
+(2, 'Gás de cozinha P13', 'imagens/p13.png', 1, 1),
+(3, 'Gás de cozinha P20', 'imagens/p20.png', 1, 1),
+(4, 'Gás de cozinha P45', 'imagens/p45.png', 1, 1),
+(5, 'Água mineral 500ml', 'imagens/500ml.png', 2, 1),
+(6, 'Água mineral com gás 500ml', 'imagens/500mlgas.png', 2, 1),
+(7, 'Água mineral 20L', 'imagens/agua20l.png', 2, 1),
+(8, 'Regulador', 'imagens/regulador.png', 3, 1),
+(9, 'Kit regulador + Mangueira', 'imagens/kitMangueira.png', 3, 1),
+(10, 'Casco vazio P5', 'imagens/p5.png', 4, 1),
+(11, 'Casco vazio P13', 'imagens/p13.png', 4, 1),
+(12, 'Casco vazio P20', 'imagens/p20.png', 4, 1),
+(13, 'Casco vazio P45', 'imagens/p45.png', 4, 1);
+
 -- --------------------------------------------------------
 
 --
@@ -108,6 +127,13 @@ CREATE TABLE `usuarios` (
   `tipo` enum('cliente','admin') NOT NULL DEFAULT 'cliente',
   `criado_em` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+
+--
+-- Despejando dados para a tabela `usuarios`
+--
+
+INSERT INTO `usuarios` (`id`, `nome`, `email`, `data_nascimento`, `telefone`, `rua`, `numero`, `bairro`, `cidade`, `senha_hash`, `tipo`, `criado_em`) VALUES
+(1, 'adm', 'adminSamambaia@samambaia.com', '2026-11-09', '51989212294', 'Rua abc', '123', 'bairro', 'Santo Antônio da Patrulha', '$2y$10$dBZfdBODerRHL3fNxrUFPeFl43AsYU3dgov8J/MzJYiAhOpZKJzXe', 'admin', '2026-11-13 22:16:11');
 
 --
 -- Índices para tabelas despejadas
@@ -175,13 +201,13 @@ ALTER TABLE `pedido_itens`
 -- AUTO_INCREMENT de tabela `produtos`
 --
 ALTER TABLE `produtos`
-  MODIFY `id` int UNSIGNED NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=14;
 
 --
 -- AUTO_INCREMENT de tabela `usuarios`
 --
 ALTER TABLE `usuarios`
-  MODIFY `id` int UNSIGNED NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
 -- Restrições para tabelas despejadas
