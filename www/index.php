@@ -745,9 +745,12 @@ if (isset($_SESSION["id_usuario"])) {
 
                 document.getElementById("cidade").value =
                     <?= json_encode($enderecoCadastro['cidade'] ?? '') ?>;
+
+                atualizarEnderecoResumo();
+
             });
         }
     </script>
-
+    
 </body>
 </html>
