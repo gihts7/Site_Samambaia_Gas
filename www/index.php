@@ -156,7 +156,7 @@ $icones = [
 
             <div class="carousel-item active">
 
-                <img src="imagens/imgFachada3.jpeg"
+                <img src="imagens/img4.jpg"
                      class="d-block w-100"
                      alt="Banner 1">
 
@@ -164,7 +164,7 @@ $icones = [
 
             <div class="carousel-item">
 
-                <img src="imagens/imgFachada2.jpeg"
+                <img src="imagens/img7.jpeg"
                      class="d-block w-100"
                      alt="Banner 2">
 
@@ -172,9 +172,25 @@ $icones = [
 
             <div class="carousel-item">
 
-                <img src="imagens/imgFachada1.jpeg"
+                <img src="imagens/img5.jpg"
                      class="d-block w-100"
                      alt="Banner 3">
+
+            </div>
+
+            <div class="carousel-item">
+
+                <img src="imagens/img1.png"
+                     class="d-block w-100"
+                     alt="Banner 4">
+
+            </div>
+
+            <div class="carousel-item">
+
+                <img src="imagens/img3.jpg"
+                     class="d-block w-100"
+                     alt="Banner 5">
 
             </div>
 
